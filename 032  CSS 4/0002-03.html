@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+     label:has(+input:required)::before{
+      content: '*';
+      color: red;
+    }
+
+    </style>
+  </head>
+  <body>
+    <form>
+      <item>
+        <label>用戶名</label>
+        <input required>
+      </item>
+      <item>
+        <label>備註</label>
+        <input>
+      </item>
+    </form>
+    
+
+   
+  </body>
+</html>

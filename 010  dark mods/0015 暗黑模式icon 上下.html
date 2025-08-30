@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>暗黑模式在中間</title>
+    <style>
+
+        :root {
+            --primary-color: #000;
+            --secondary-color: #656565;
+            --font-color: #656565;
+            --bg-color: #fff;
+            
+        }
+
+        .dark {
+          --primary-color: #fff;
+          --secondary-color: #f0f0f0;
+          --font-color: #fff;
+          --bg-color: #000;
+          
+        }
+
+        body{
+          height: 1000vh;
+          background-color: var(--bg-color);
+        }
+
+        header{
+          height: 150px;
+         
+        }
+    
+        @media (min-width:600px){
+            .main {
+              display:flex;
+
+            }
+
+            .section {
+              width:60%;
+              padding:1.5em;
+              height:600px;
+              
+            }
+
+            .aside {
+              width:37%;
+              height: 180px;
+              position:sticky;
+              top: 0;
+              padding:50px;
+            }
+        }
+
+
+        .section p, .section h2,
+        .aside h2, .aside p {
+          color:var(--primary-color);
+        }
+          
+        .theme-switch-wrapper {
+            position:fixed;
+            right:20px;
+            top:50%;
+            Z-index:99;
+            width:30px;
+            height: 80px;
+            background-color: #ccc;
+            border-radius: 20px;
+        }
+        
+        .theme-switch{
+          display:inline-block;
+          width:30px;
+          position: relative; 
+        }
+
+        .theme-switch input{
+          display:none;
+        }
+
+        .slider{
+          position: absolute;
+          top: 0;
+          left:0;
+          right:0;
+          bottom:0;
+          background-color:#ff2d2d;
+          cursor: pointer;
+          transition: .4s;
+         /* border-radius: 34px;*/
+
+        }
+        
+        .slider:before{
+           background-color: #000;
+          /*  bottom: 4px;*/
+            content: "";
+            width: 20px;
+            height: 20px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            z-index: 9;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider{
+            background-color: #ccc;
+            
+        }
+        
+        input:checked + .slider:before{
+          transform: translateY(26px);
+        }
+
+        .slider .fa-moon {
+          height: 30px;
+          width: 30px;
+          font-size:18px;
+          position: absolute;
+          left:6px;
+          top:0;
+          
+        }
+
+        .slider .fa-sun {
+          height: 30px;
+          width: 30px;
+          font-size:18px;
+          position: absolute;
+          left:6px;
+          top:26px;
+          
+        }
+
+    
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <div class="banner">
+        <img src="Victoria.png" class="w-100">
+      </div>
+    </header>
+    <div class="main">
+        
+     
+        <div class="section">
+          <h2>Scroll back up again to "remove" the sticky position.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices </p>
+        </div>
+        <div class="aside">
+          <h2>這裡是側邊欄<br>aside</h2>
+          <p> Cras ac leo purus. Mauris quis diam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas</p>
+        </div>
+    </div>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </div>
+            </label>
+        <label style="margin-left: 10px;"></label>
+    </div>
+    <footer>footer</footer>
+   
+    <script>
+        // dark mode
+        $('#checkbox').click(function(){
+            var element = document.body;
+            element.classList.toggle("dark"); 
+        });
+    </script>  
+     <!--
+    <script>
+      let checkbox =document.getElementById("checkbox");
+
+      checkbox.addEventListener("change",function(){
+          var element = document.body;
+          element.classList.toggle("dark")
+      })
+    </script>-->
+    
+   
+  </body>
+</html>

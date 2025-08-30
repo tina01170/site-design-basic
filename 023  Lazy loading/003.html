@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>延遲加載</title>
+    <style>
+      img {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Delay Image Loading with jQuery Lazy</p>
+    <img class = "lazy" data-src = "images/pexels-bruno-scramgnon-1337825.jpg">
+    <img class = "lazy" data-src = "images/pexels-chevanon-photography-312418.jpg">
+    <img class = "lazy" data-src = "images/pexels-isabella-mendes-338713.jpg">
+    <img class = "lazy" data-src = "images/pexels-photomix-company-103566.jpg">
+    <img class = "lazy" data-src = "images/pexels-t-dw-1484678.jpg">
+    
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.plugins.min.js"></script>
+    <script>
+      $(function($) {
+        $("img.lazy").Lazy({    
+          effect: "fadeIn",
+          effectTime:2000,
+          threshold: 0
+        });
+      });
+    </script>
+  </body>
+</html>

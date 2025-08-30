@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>:has()選擇器</title>
+    <style>
+    .container:has(a) {
+      border: 2px solid blue;
+      padding: 10px;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <p>這是一個段落。</p>
+      <button>按鈕</button>
+    </div>
+    
+    <div class="container with-link">
+      <p>這是一個包含連結的段落：<a href="#">點擊這裡</a>。</p>
+    </div>
+    
+    <div class="container">
+      <p>另一個段落。</p>
+    </div>
+
+   
+  </body>
+</html>

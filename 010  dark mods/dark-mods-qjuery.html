@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+         color: black;
+         background-color: rgb(241, 241, 241);
+         text-align: center;
+         justify-content: center;
+      }
+      .dark-class {
+         color: white;
+         background-color: rgb(12, 10, 10);
+      }
+      p {
+         font-size: 1.2rem;
+      }
+
+      .toggleButton {
+         width: 5rem;
+         height: 2rem;
+         position: relative;
+         display: inline-block;
+      }
+
+      .toggleButton input {
+         opacity: 0;
+      }
+
+      .roundButton {
+         background-color: black;
+         top: 0;
+         left: 0;
+         position: absolute;
+         right: 0;
+         bottom: 0;
+         cursor: pointer;
+      }
+      
+      .roundButton:before {
+         left: 0;
+         bottom: 0;
+         position: absolute;
+         content: "";
+         background-color: grey;
+         transition: 1s;
+         height: 2rem;
+         width: 2rem;
+      }
+      input:checked+.roundButton {
+         background-color: white;
+      }
+      input:checked+.roundButton:before {
+         transform: translateX(3rem);
+      }
+      .roundButton.circle {
+         border-radius: 2rem;
+      }
+      .roundButton.circle:before {
+         border-radius: 50%;
+      }
+   </style>
+  </head>
+  <body>
+
+    <h2>Using the <i> JQuery </i> to toggle between light and dark modes in JavaScript.</h2>
+    <p>This is the content of the webpage.</p>
+    <label class = "toggleButton">
+        <input type = "checkbox" id = "toggle">
+        <div class = "roundButton circle" ></div>
+    </label>
+
+
+   <script>
+      // If the input checkbox is checked, activate dark mode by adding dark-class to the body
+      //如果選取輸入複選框，請透過向正文新增 dark-class 來啟動深色模式
+      // jquery is :根据选择器、DOM元素或 jQuery 对象来检测匹配元素集合，如果其中至少有一个元素符合这个给定的表达式就返回true。
+      
+      $('#toggle').change(() => {
+         if ($('#toggle').is(":checked")) {
+            $("body").addClass("dark-class");
+         } else {
+            $("body").removeClass("dark-class")
+         }
+      })
+   </script>
+    
+
+    
+   
+  </body>
+</html>

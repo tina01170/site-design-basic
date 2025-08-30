@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>dark-mods</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+
+        body.dark {background-color: #292c35;} /* #9b59b6 */
+
+        body.dark h1, body.dark .support a {color: #fff;}
+        
+        .toggle {
+          background-color:#e0e0e0;    
+          width: 120px;
+          height: 50px;
+          border-radius: 30px;
+          position: relative;
+          padding: 5px;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .toggle::before {
+          width:50px;
+          height:50px;
+        
+          content: "";
+          background-color: bisque;
+          bottom: 4px;
+          left: 4px;
+          position: absolute;
+          border-radius: 50%;
+          z-index: 0;
+         
+        } 
+
+        .sun, .moon {
+          width:45px;
+          height:45px;
+          z-index: 9;
+        }
+        /*
+        .sun {
+          width:50px;
+          height:50px;
+          background-color:bisque;
+          position:absolute;
+          left: 5px;
+          top:5px;
+          border-radius: 50%;
+          transition: transform 0.2s linear;
+        }
+
+        .moon {
+          width:50px;
+          height:50px;
+          background-color:lightblue;
+          position:absolute;
+          left:75px;
+          top: 5px;
+          border-radius: 50%;
+          transition: transform 0.2s linear;
+        }*/
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="toggle" id="checkbox">
+        <img class="sun" src="sun-svgrepo-com.svg">
+        <img class="moon" src="moon-svgrepo-com.svg">
+    </div>
+
+    <div class="container">
+      <h1>THIS IS A WEB SITE</h1>
+
+      <P>Lorem ipsum dolor sit amet consectetur 
+        adipisicing elit. Enim, iste.
+      </P>
+    </div>
+
+
+    <script>
+     
+      const checkbox = document.getElementById("checkbox")
+      
+      checkbox.addEventListener("change", () => {
+        document.body.classList.toggle("dark")
+      })
+
+
+    </script>
+      
+
+    </script>
+     
+
+     
+  
+  
+     
+
+  </body>
+</html>

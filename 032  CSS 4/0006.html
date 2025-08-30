@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+      .container{
+        width: 600px;
+        scroll-snap-type:x proximity;
+        overflow: auto;
+        white-space: nowrap;
+        /* 防止容器內的內容換行，強制內容在一行內顯示，
+        這對於水平滾動的圖片列表很有用。 */
+      }
+      .container img { 
+          scroll-snap-align: start;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="img/013-01.png" alt="">
+      <img src="img/013-02.png" alt="">
+      <img src="img/013-03.png" alt="">
+      <img src="img/013-04.png" alt="">
+      <img src="img/013-05.png" alt="">           
+    </div>
+    
+
+   
+  </body>
+</html>

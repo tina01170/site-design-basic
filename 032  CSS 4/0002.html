@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+      .comments{
+        padding: 10px;
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+      }
+      .comments:has(.special){
+        background-color: lightblue;
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="comments">
+      <div class="comment special">留言</div>
+      <div class="comment">這是一則留言</div>
+      <div class="comment">這是普通留言</div>
+    </div>
+
+    <div class="comments">
+      <div class="comment">留言</div>
+      <div class="comment">這是一則留言</div>
+      <div class="comment">這是普通留言</div>
+    </div>
+  
+   
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+      /*.group:has(+input:required){
+        content: '*';
+        color: red;
+      }*/
+      .group:has(.red)::before{
+        content: '*';
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+  
+
+    <form class="form">
+      <div class="group">
+        <label for="user_id">帳號</label>
+        <input type="text" name="" id="user_id" class="red">
+      </div>
+      <div class="group">
+        <label for="user_password">密碼</label>
+        <input type="password" name="" id="user_password" class="red">
+        <a href="#">忘記密碼？</a>
+      </div>
+      <div class="btn-group">
+        <button class="btn">登入</button>
+        <button class="btn">取消</button>
+      </div>
+    </form>
+   
+  </body>
+</html>

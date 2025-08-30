@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+      /*
+      .wrap{
+        width: 600px;
+        margin: 0 auto;
+      }
+      .title{
+        color:lightcoral
+      }
+      .text{
+        color:#282828;
+      }*/
+
+      /* 預設的淺色模式樣式 */
+      body {
+          background-color: white;
+          color: black;
+      }
+
+      /* 深色模式的樣式 */
+      @media (prefers-color-scheme: dark) {
+          body {
+              background-color: #121212; /* 深灰色 */
+              color: #f8f8f2; /* 淺灰色 */
+          }
+          /* 您可以針對其他元素添加深色模式的樣式 */
+          a {
+              color: #bb86fc; /* 例如，紫色的連結 */
+          }
+      }  
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h2 class="title">深深色模式的大標題</h2>
+      <p class="text">Css 4 的新東西與圖片</p>
+    </div>
+
+
+    
+   
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dark-mods</title>
+   
+    <style>
+      body.dark {
+         background-color: #2c2c2c;
+         color: #e0e0e0;
+       }
+    </style>
+  </head>
+  <body>
+
+    <h2>Toggle Dark/Light Mode</h2>
+    <p>Click the button to switch between dark and light mode</p>
+    <button onclick="toggle()">Dark/Light</button>
+    <script>
+    function toggle() {
+        var element = document.body;
+        element.classList.toggle("dark");
+    }
+    </script>
+    
+
+    
+   
+  </body>
+</html>
