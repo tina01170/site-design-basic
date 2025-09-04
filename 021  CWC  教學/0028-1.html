@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>site animation</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <style>
+          body {
+              font-size: 25px;
+             /* background-color: rgb(191, 191, 191);*/
+          }
+
+          h1 {
+              text-align: center;
+              font-size: 40px;
+              padding: 65px;
+          }
+
+          .item img {
+            width:480px;
+            height: 360px;
+          }
+
+          .item {
+            width:900px;
+            display:flex;
+            margin:50px;
+            background-color: lightblue;
+          }
+   
+    </style>
+  </head>
+  <body>
+      <header>
+        <h1>C w C Channel系列介紹</h1>
+      </header>
+
+      <div class="container">
+          <!-- 第1個系列 -->
+          <div class="item">
+              <div class="pic">
+                    <img src="img/pexels-001.jpg">
+              </div>
+              <div class="text">
+                    <h2>第一個系列</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+          </div>
+          <!-- 第2個系列 -->
+          <div class="item" data-aos="fade-right">
+                <div class="pic">
+                    <img src="img/pexels-002.jpg">
+                </div>
+                <div class="text">
+                    <h2>第2個系列</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+          </div>
+          <!-- 第3個系列 -->
+          <div class="item">
+                <div class="pic" data-aos="flip-left">
+                    <img src="img/pexels-009.jpg">
+                </div>
+                <div class="text" data-aos="fade-down-left">
+                    <h2>第3個系列</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+          </div>
+          <!-- 第4個系列 -->
+          <div class="item"  data-aos="zoom-in">
+                <div class="pic">
+                    <img src="img/pexels-005.jpg">
+                </div>
+                <div class="text">
+                    <h2>第4個系列</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+          </div>
+           <!-- 第5個系列 -->
+           <div class="item"  data-aos="slide-right">
+                <div class="pic">
+                    <img src="img/pexels-006.jpg">
+                </div>
+                <div class="text">
+                    <h2>第5個系列</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+          </div>
+
+
+      </div>
+
+      <script>
+          AOS.init({
+              duration: 3000,
+          });
+      </script>
+      
+    
+
+    
+   
+  </body>
+</html>

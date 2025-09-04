@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>site animation</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <style>
+          body {
+              font-size: 25px;
+              background-color: rgb(191, 191, 191);
+          }
+
+          h1 {
+              text-align: center;
+              font-size: 40px;
+              padding: 80px;
+          }
+
+          img {
+              width: 100%;
+              padding: 10px;
+          }
+
+          .box {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-gap: 30px;
+              background-color: lightgreen;
+              margin: 30px 80px 30px 80px;
+              height:350px;
+          }
+
+          a {
+              text-decoration: none;
+              color: brown;
+          }
+
+   
+    </style>
+  </head>
+  <body>
+      <header>
+        <h1>C w C Channel系列介紹</h1>
+      </header>
+
+      <div class="container">
+          <!-- 第一個系列 -->
+          <div class="box">
+              <img src="img/pexels-001.jpg">
+              <div class="description">
+                  <h3>HTML</h3>
+                  <p>HTML系列提供基本的HTML架構</p>
+                  <a href="#">詳細內容</a>
+              </div>
+          </div>
+          <!-- 第二個系列 -->
+          <div class="box" data-aos="fade-right">
+              <img src="img/pexels-002.jpg">
+              <div class="description">
+                  <h3>CSS</h3>
+                  <p>CSS系列學習如何美化網頁</p>
+                  <a href="#">詳細內容</a>
+              </div>
+          </div>
+          <!-- 第三個系列 -->
+          <div class="box">
+              <img src="img/pexels--003.jpg" data-aos="flip-left">
+              <div class="description" data-aos="fade-down-left">
+                  <h3>JavaScript</h3>
+                  <p>JavaScript系列增加網頁功能</p>
+                  <a href="#">詳細內容</a>
+              </div>
+
+          </div>
+          <!-- 第四個系列 -->
+          <div class="box" data-aos="zoom-in">
+              <img src="img/pexels-005.jpg">
+              <div class="description">
+                  <h3>Bootstrap</h3>
+                  <p>Bootstrap系列設計出以手機為導向的響應式網站</p>
+                  <a href="#">詳細內容</a>
+              </div>
+
+          </div>
+          <!-- 第五個系列 -->
+          <div class="box" data-aos="slide-right">
+              <img src="img/pexels-006.jpg">
+              <div class="description">
+                  <h3>專案</h3>
+                  <p>專案系列建立完整的網頁</p>
+                  <a href="#">詳細內容</a>
+              </div>
+
+          </div>
+
+
+      </div>
+
+      <script>
+          AOS.init({
+              duration: 3000,
+          });
+      </script>
+      
+    
+
+    
+   
+  </body>
+</html>

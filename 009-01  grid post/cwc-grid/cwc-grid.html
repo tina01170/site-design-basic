@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片分享區</title>
+    <!-- 連結CSS -->
+    <link rel="stylesheet" href="gallery.css">
+    <style>
+        body {
+            background-color: rgb(187, 187, 187);
+        }
+
+            h1 {
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            }
+
+            img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 3px 3px 3px black;
+            }
+
+            .container {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-auto-flow: dense;
+            }
+
+            .height {
+            grid-row: span 2;
+            }
+
+            .width {
+            grid-column: span 2;
+            }
+
+            .big {
+            grid-column: span 2;
+            grid-row: span 2;
+            }
+    </style>
+</head>
+
+
+
+<body>
+    <h1>照片分享區</h1>
+    <div class="container">
+        <a href="images/1.jpg" class="width">
+        <img src="images/1.jpg" alt="">
+        </a>
+
+        <a href="images/2.jpg" class="height">
+        <img src="images/2.jpg" alt="">
+        </a>
+
+        <a href="images/3.jpg" class="big">
+        <img src="images/3.jpg" alt="">
+        </a>
+
+        <a href="images/4.jpg">
+        <img src="images/4.jpg" alt="">
+        </a>
+
+        <a href="images/5.jpg" class="big">
+        <img src="images/5.jpg" alt="">
+        </a>
+
+        <a href="images/6.jpg" class="width">
+        <img src="images/6.jpg" alt="">
+        </a>
+
+        <a href="images/7.jpg" class="height">
+        <img src="images/7.jpg" alt="">
+        </a>
+
+        <a href="images/8.jpg" class="height">
+        <img src="images/8.jpg" alt="">
+        </a>
+
+        <a href="images/9.jpg" class="">
+        <img src="images/9.jpg" alt="">
+        </a>
+
+        <a href="images/10.jpg" class="width">
+        <img src="images/10.jpg" alt="">
+        </a>
+
+        <a href="images/11.jpg" class="big">
+        <img src="images/11.jpg" alt="">
+        </a>
+
+        <a href="images/12.jpg" class="">
+        <img src="images/12.jpg" alt="">
+        </a>
+
+        <a href="images/13.jpg" class="big">
+        <img src="images/13.jpg" alt="">
+        </a>
+
+        <a href="images/14.jpg" class="width">
+        <img src="images/14.jpg" alt="">
+        </a>
+
+        <a href="images/15.jpg" class="height">
+        <img src="images/15.jpg" alt="">
+        </a>
+
+        <a href="images/16.jpg" class="width">
+        <img src="images/16.jpg" alt="">
+        </a>
+
+
+
+
+    </div>
+
+</body>
+
+</html>

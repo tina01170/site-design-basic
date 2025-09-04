@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="reset.css">
+    
+    <style>
+
+      .main-banner-section {
+          width:100%;
+          max-width: 75em;
+          margin:0 auto;
+      }
+
+      .theme-wrapper {
+        
+          width:100%;
+      }
+
+      @media screen and (min-width: 50em) {
+        .main-banner-section {
+          width:1180px;
+        }
+      
+        .grid-container{
+            display: grid;
+            padding: 10px;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows:1fr 1fr;
+            column-gap: 25px;
+           
+        }
+        
+        .grid-item:first-child {
+          grid-column-start: 1;
+          grid-column-end: 2;
+          grid-row-start: 1;
+          grid-row-end: 3;
+         
+         }
+
+         .grid-item:last-child {
+          grid-column-start: 2;
+          grid-column-end: 3;
+          grid-row-start: 2;
+          grid-row-end: 3;
+         
+         }
+         
+         .grid-item:not(:first-child) img {
+            max-width: 640px;
+            height:213px;
+         }
+
+         
+
+        }  
+
+        .blog-banner {
+          position: relative;
+          z-index: 1;
+        }
+
+        .post-overlay {
+            position: absolute;
+            bottom:20px;
+            left:20px;
+        }
+      
+        .entry-cat li,
+        .entry-meta li {
+          list-style: none;
+         
+        }
+
+        .entry-meta {
+          display: flex;
+        }
+
+        .entry-cat li a,
+        .entry-meta li a,
+        .entry-meta li,
+        .entry-title a {
+           color:white;
+         
+        }
+        /*
+        .grid-item-2 .entry-cat,
+        .grid-item-2 .entry-meta {
+           margin:0;
+         
+        }*/
+        .grid-item:not(:first-child) .entry-title {
+          margin:8px 0;
+        }
+
+       
+    </style>
+  </head>
+  <body>
+
+  <div class="main-banner-section">
+  
+    <div class="theme-wrapper">
+      <div class="grid-container">
+        <div class="grid-item">
+            <img src="pexels-01.jpg">
+            <div class="post-overlay">
+              <div class="post-item-content">
+                <div class="entry-cat">
+                  <li><a href="#">Travel</a></li>
+                </div>
+                <h2 class="entry-title">
+                  <a href="#"> this is a site blog</a>
+                </h2>
+                <div class="entry-meta">
+                  <li class="post-author"> <a href="">by SMITH</a></li>
+                  <li class="post-date"><span> / </span>2023/6/19</li>
+                </div>
+              </div>   
+            </div>
+          
+        </div>
+        <div class="grid-item">
+          <img src="pexels-02.jpg">
+          <div class="post-overlay">
+            <div class="post-item-content">
+              <div class="entry-cat">
+                <li><a href="#">Travel</a></li>
+              </div>
+              <h2 class="entry-title">
+                <a href="#"> this is a site blog</a>
+              </h2>
+              <div class="entry-meta">
+                <li class="post-author"> <a href="">by SMITH</a></li>
+                <li class="post-date"><span> / </span>2023/6/19</li>
+              </div>
+            </div>   
+          </div>
+        
+        </div>
+        <div class="grid-item">
+          <img src="pexels-03.jpg">
+          <div class="post-overlay">
+            <div class="post-item-content">
+              <div class="entry-cat">
+                <li><a href="#">Travel</a></li>
+              </div>
+              <h2 class="entry-title">
+                <a href="#"> this is a site blog</a>
+              </h2>
+              <div class="entry-meta">
+                <li class="post-author"> <a href="">by SMITH</a></li>
+                <li class="post-date"><span> / </span>2023/6/19</li>
+              </div>
+            </div>   
+          </div>
+        
+        </div>
+ 
+
+        <!--  <div class="grid-item-4">4</div>-->
+          
+        
+      </div>
+
+   
+     
+    </div>
+  </div> 
+  </body>
+</html>

@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .teacher {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+
+        .button {
+            margin: auto;
+            width: 300px;
+        }
+        .item {
+            width: 300px;
+            height: 350px;
+            margin: auto;
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="teacher">
+        <button onClick="Mycolor()">Change Color</button>
+    
+        <div id="myID">Hello World</div>
+        <h2 id="heading">Hello World!Hello World!</h2>
+    </div>
+
+
+    <script type="text/javascript">
+        function Mycolor() {
+            var change = document.getElementById("myID");
+            change.style.backgroundColor='#71a2d5';
+        }
+
+        document.getElementById("heading").style.color = "#1896b1";
+    </script>
+
+    <div class="button">
+        <button onClick="Itemcolor()">Change Color</button>
+    </div>
+    <div id="item">
+        <img src="img/about me.jpg">
+        <div class="item-txt">
+            <h2 id="item-title">this is a test</h2>
+            <p id="content">Lorem ipsum, dolor sit amet consectetur elit. Corrupti </p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function Itemcolor() {
+            var mycolor = document.getElementById("item");
+            mycolor.style.backgroundColor='#000';
+        }
+
+
+        document.getElementById("item-title").style.color = "pink";
+
+        document.getElementById("content").style.color = "#997161";
+    </script>
+</body>
+
+
+</html>
+
+

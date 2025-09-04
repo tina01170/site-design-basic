@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-weight: 300;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        
+        h4 {
+            margin-top: 20px;
+        }
+        
+        #userMsg {
+            font-size: 36px;
+            font-weight: 100;
+        }
+        
+        #indyWork {
+            margin-top: 20px;
+        }
+        #show-search {
+
+        
+        }
+
+
+        #top-search {
+
+        color:black;
+
+        }
+
+        .search-btn {
+        width: 25px;
+        height: 25px;
+        border: none;
+        background-color: white;
+
+
+        /*outline: none;*/
+
+        /*cursor: pointer;*/
+        /*position: absolute;
+        top: 0;
+        right: 0;*/
+        }
+
+        #show-search {
+        margin-top: 15px;
+        padding:15px;
+        background: #fff;
+        width: 325px;
+        box-shadow: 0 4px 5px 0 rgb(0 0 0 / 15%);
+        -webkit-box-shadow: 0 4px 5px 0 rgb(0 0 0 / 15%);
+
+
+
+
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <button class="bg-btn btn-search btn-search-icon" id="searchBtnBar">Search</button>
+    <div class="container search-bar-container">
+    <form id="bgSearchBar">
+        <input type="search" name="searchfield" value="Search" class="searchField">
+        <button class="bgsearchbtn">Search <i class="fa-solid fa-arrow-right"></i></button>
+        <button class="bgcancelhbtn" onclick="this.closest('form').reset(); return false">Cancel</button>
+    </form>
+    </div>
+       
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+        <div id='top-search'>
+            <a href='#'><i class="fa fa-search"aria-hidden="true"></i>
+            </a>
+        </div>
+        <div id='show-search'>
+            <form role="search" method="get" id="search-form" action="http://kellyishome.atwebpages.com/">
+               <input type="search" class="search-field" placeholder="Search …" value="" name="s">
+               <button class="search-btn" type="submit" placeholder="Search">
+               <i class="fas fa-search"></i></button>
+            </form> 
+        </div>
+
+
+    
+</body>
+
+<script>
+    
+
+    $('#bgSearchBar').hide();
+
+    $("#searchBtnBar").click(function() {
+    var flag = ($(this).text() == 'Search');
+    $(this).fadeOut(function() {
+        $(this).text(flag ? 'Close Search' : 'Search').fadeIn();
+    })
+
+    $(this).toggleClass('btn-search-icon');
+    if (flag) {
+        $('#bgSearchBar').fadeIn();
+    } else {
+        $('#bgSearchBar').fadeOut();
+    }
+    })
+
+    $(".bgcancelhbtn").on("click", function(event) {
+    $(".searchField").val("");
+    });
+
+</script>
+
+</html>

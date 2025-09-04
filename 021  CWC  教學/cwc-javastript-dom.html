@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-weight: 300;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        
+        h4 {
+            margin-top: 20px;
+        }
+        
+        #userMsg {
+            font-size: 36px;
+            font-weight: 100;
+        }
+        
+        #indyWork {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+
+
+
+        <h1>寫JavaScript DOM 的多種方法</h1>
+
+
+        <h4>範例一：請按下按鈕來顯示訊息</h4>
+        <input type="button" onclick="Msg1()" value="訊息 1">
+        <input type="button" id="btn2" value="訊息 2">
+        <input type="button" id="btn3" value="訊息 3">
+        <input type="button" id="btn4" value="訊息 4">
+        <input type="button" id="btn5" value="訊息 5">
+        <p id="myText"></p>
+
+
+        <hr>
+        <!-- <h4>Type text, then click to have it show up</h4>
+                <input type="input" maxlength="40" id="userInput" onclick="showMsg()" placeholder="Enter text here...">
+                <p id="userMsg"></p> -->
+
+        <h4 id="colorMsg">範例二：選擇背景顏色：</div>
+            <select id="colorPicker" onchange="changeColor()">
+            <option value="transparent">無色</option>
+            <option value="yellow">黃色</option>
+            <option value="lightpink">幸福粉</option>
+            <option value="lightblue">天空藍</option>
+            <option value="limegreen">檸檬綠</option>
+            </select>
+
+
+    </body>
+</body>
+
+<script>
+    // 第一種寫法 - function分配法 (function 套用到方法 以及 分配到 object event)
+    function Msg1() {
+        document.getElementById('myText').innerHTML = '第一種方法';
+
+    }
+
+    // 第二種寫法 - 物件分配法 (從object 去抓function and event 然後套用方法)
+    document.getElementById("btn2").addEventListener("click", function() {
+        document.getElementById("myText").innerHTML = '第二種方法';
+    });
+
+    // 第三種寫法 - 物件分配法 函式精簡版
+    document.getElementById("btn3").addEventListener("click", () => {
+        document.getElementById("myText").innerHTML = '第三種方法';
+    });
+
+    // 第四種寫法 - 物件分配法 更精簡版(從object 去抓function and event 然後套用方法)
+    document.getElementById("btn4").onclick = () => {
+        document.getElementById("myText").innerHTML = '第四種方法';
+    };
+
+
+    // 第五種寫法 - 變數縮減法
+    const btn5 = document.getElementById("btn5");
+    const myText = document.getElementById("myText");
+
+    function myFunction() {
+        myText.innerHTML = '第五種方法';
+    }
+    btn5.addEventListener("click", myFunction);
+
+
+
+
+    //     const dateElement = document.getElementById('dateComponent');
+    //   const dateBtn = document.getElementById('dateBtn');
+    // renderDate = () => {
+    //   dateElement.innerHTML = Date();
+    // }
+    //   dateBtn.addEventListener('click', (event) => {
+    //     dateElement.innerHTML = Date();
+    //   });
+
+
+    // function showMsg() {
+    //     var userInput = document.getElementById('userInput').value;
+    //     document.getElementById('userMsg').innerHTML = userInput;
+    // }
+
+    // 方法一 
+    // function changeColor() {
+    //     var newColor = document.getElementById('colorPicker').value;
+    //     document.body.style.background = newColor;
+    // }
+
+    // 方法二
+    document.getElementById("colorPicker").addEventListener("change", function() {
+        document.body.style.background = document.getElementById('colorPicker').value;
+    });
+</script>
+
+</html>
