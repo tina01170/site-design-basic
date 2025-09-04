@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   
+    <style>
+        body {
+          font-family: "微軟正黑體";
+        }
+        .wrap {
+          width: 600px;
+          margin: 0 auto;
+        }
+
+        .header {
+          background-color: gray;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          height: 30px;
+        }
+
+        h2 {
+          font-weight: bold;
+          font-size: 24px;
+          padding: 10px 0;
+        }
+
+        .btn {
+          width: 50px;
+          border: 1px solid #fff;
+          margin-right: 5px;
+          margin-left: 5px;
+          outline: none;
+          height: 20px;
+          cursor: pointer;
+        }
+
+        .fontSize {
+          margin-right: 5px;
+          margin-left: 5px;
+          outline: none;
+          display: flex;
+          align-items: center;
+        }
+        
+        h2 {
+          padding: 20px;
+        }
+        h3 {
+          padding: 20px 0 20px 20px;
+          color: #fff;
+        }
+
+        .main {
+          height: 90vh;
+        }
+        p {
+          padding: 10px 20px;
+          line-height: 1.5;
+        }
+        .btn,
+        .fontSize {
+          cursor: pointer;
+        }
+        
+        .btnGroup {
+          display: flex;
+          align-items: center;
+        }
+        p {
+          color: #000;
+          margin-left: 10px;
+          line-height: 1.5;
+        }
+ 
+
+
+        .box {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div class="btnGroup">
+          <p>背景色：</p>
+          <button class="btn btnBlack jq-black"></button>
+          <button class="btn btnWhite jq-white"></button>
+          <button class="btn btnYellow jq-yellow"></button>
+        </div>
+        <div class="fontSize">
+          <button class="font jq-large">大</button>
+          <button class="font jq-medium">中</button>
+          <button class="font jq-small">小</button>
+        </div>
+      </div>
+    
+      <div class="main">
+        <h2>經過刷新，立即。</h2>
+        <p>
+          滑鼠外掛提醒起來思想過了過去免費電影協助著名全部，下載手裡網遊不了穩定深刻回答此處感到下面姑娘都有，熱情本次工廠好了網站一級時期期間，日期基層幫助睡覺住了接到，屏東指南批准轉載使得聰明一部臺灣，資金自主春節全文只有人事專業開關朋友馬上什麼命運人才健康，效。
+        </p>
+        <p>
+          滑鼠外掛提醒起來思想過了過去免費電影協助著名全部，下載手裡網遊不了穩定深刻回答此處感到下面姑娘都有，熱情本次工廠好了網站一級時期期間，日期基層幫助睡覺住了接到，屏東指南批准轉載使得聰明一部臺灣，資金自主春節全文只有人事專業開關朋友馬上什麼命運人才健康，效。
+        </p>
+        <p>
+          滑鼠外掛提醒起來思想過了過去免費電影協助著名全部，下載手裡網遊不了穩定深刻回答此處感到下面姑娘都有，熱情本次工廠好了網站一級時期期間，日期基層幫助睡覺住了接到，屏東指南批准轉載使得聰明一部臺灣，資金自主春節全文只有人事專業開關朋友馬上什麼命運人才健康，效。
+        </p>
+      </div>
+    </div>
+    
+
+    <script>
+        //文字大小更改
+        $(".jq-large").click(function (e) {
+          event.preventDefault(); //取消預設行為
+          $("h2").css("font-size", "28px");
+          $("p").css("font-size", "18px");
+        });
+
+        $(".jq-medium").click(function (e) {
+          event.preventDefault(); //取消預設行為
+          $("h2").css("font-size", "24px");
+          $("p").css("font-size", "16px");
+        });
+
+        $(".jq-small").click(function (e) {
+          event.preventDefault(); //取消預設行為
+          $("h2").css("font-size", "20px");
+          $("p").css("font-size", "12px");
+        });
+    </script>
+   
+  </body>
+</html>

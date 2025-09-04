@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>https://codepen.io/bradtraversy/pen/bGbREWg</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-size: 1.3rem;
+        font-family: 'Oswald', sans-serif;
+        background: #f9f9f9;
+      }
+
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        overflow: auto;
+        padding: 0 2rem;
+      }
+
+      .main-header {
+          height: 55vh;
+          padding: 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+      }
+
+      .main-header h1 {
+          font-size: 4rem;
+          margin-bottom: 2rem;
+          line-height: 1.2;
+      }
+
+      .main-header h1 span {
+        color: #b50d10;
+      }
+
+      .main-header p {
+        font-size:20px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+        background: #f1f1f1;
+        margin-bottom: 2rem;
+      }
+
+      .card h3 {
+        margin-bottom: 2rem;
+      }
+
+      .card img {
+        height: 400px;
+      }
+
+      .card > div {
+        padding: 2rem;
+      }
+
+      .card:nth-child(even) img {
+        order: 2;
+      }
+
+
+      .btn {
+        display: inline-block;
+        background: #000;
+        color: #fff;
+        padding: 0.8rem 1.8rem;
+        margin-top: 2rem;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        opacity: 0.8;
+      }
+
+      @media(max-width:600px) {
+        .card {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <h1><span>Acrylic Painting</span> Gallery</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
+        quam!
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="card" data-aos="slide-left" data-aos-duration="3000">
+        <img src="images/29-01.jpg" alt="" />
+        <div>
+          <h3>Acrylic Painting One</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
+            enim laudantium, animi veniam libero eveniet culpa unde perferendis
+            illo fugit corporis, voluptatibus totam dolorum, maiores magnam
+            officia. Ab, delectus.
+          </p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </section>
+
+      <section class="card" data-aos="fade-left">
+        <img src="images/29-02.jpg" alt="" />
+        <div>
+          <h3>Acrylic Painting Two</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
+            enim laudantium, animi veniam libero eveniet culpa unde perferendis
+            illo fugit corporis, voluptatibus totam dolorum, maiores magnam
+            officia. Ab, delectus.
+          </p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </section>
+
+      <section class="card" data-aos="zoom-in-left">
+        <img src="images/29-03.jpg" alt="" />
+        <div>
+          <h3>Acrylic Painting Three</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
+            enim laudantium, animi veniam libero eveniet culpa unde perferendis
+            illo fugit corporis, voluptatibus totam dolorum, maiores magnam
+            officia. Ab, delectus.
+          </p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </section>
+
+      <section class="card" data-aos="fade-up">
+        <img src="images/29-04.jpg" alt="" />
+        <div>
+          <h3>Acrylic Painting Four</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
+            enim laudantium, animi veniam libero eveniet culpa unde perferendis
+            illo fugit corporis, voluptatibus totam dolorum, maiores magnam
+            officia. Ab, delectus.
+          </p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </section>
+
+      <section class="card" data-aos="fade-down-right">
+        <img src="images/29-05.jpg" alt="" />
+        <div>
+          <h3>Acrylic Painting Five</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
+            enim laudantium, animi veniam libero eveniet culpa unde perferendis
+            illo fugit corporis, voluptatibus totam dolorum, maiores magnam
+            officia. Ab, delectus.
+          </p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </section>
+    </main>
+    
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 400, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 1000 // values from 0 to 3000, with step 50ms
+      });
+    </script>
+   
+  </body>
+</html>

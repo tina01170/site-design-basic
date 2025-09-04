@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+       * {
+        list-style: none;
+      }
+      /* Copy the following code to Blogger */
+
+      .pagination-container {
+          display: flex;
+          justify-content: center;
+      }
+      .pagination-container .page-numbers-container {
+          display: flex;
+          font-size: 18px;
+          overflow: hidden;
+          font-weight: bold;
+          font-family: "Roboto", sans-serif;
+          /*border-radius: 20px;*/
+          /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);*/
+      }
+      .page-numbers-container .page-number {
+          padding:8px 15px;
+          transition: all 400ms; 
+          border:1px solid #aaa;
+      }
+
+      .page-numbers-container .page-number:hover {
+          background: #c5c5e9;
+          cursor: pointer;
+      }
+
+      .page-numbers-container .page-number.active {
+          background: #6161f7;
+          color: #fff;
+      }
+
+    </style>
+    <script>
+       $(document).ready(function(){
+        //var li = $(".page-numbers-container li");
+        //console.log(li);
+          
+        $(".page-numbers-container li").click(function(){
+            $(".page-numbers-container li").removeClass('active')
+           
+            $(this).addClass('active');
+            
+         })
+
+       })
+    </script>
+  </head>
+  <body>
+    <div class="pagination-container">
+      <ul class="page-numbers-container">
+        <li class="page-number active">1</li>
+        <li class="page-number">2</li>
+        <li class="page-number">3</li>
+        <li class="page-number">4</li>
+        <li class="page-number">5</li>
+        <li class="page-number">6</li>
+      </ul>
+    </div>
+
+   
+
+  </body>
+</html>

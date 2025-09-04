@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>-->
+    <title>GSAP animate</title>
+    <style>
+      .block {
+        width: 100px;
+        height: 100px;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+  
+    
+    <div class="block"></div>
+    
+    <script>
+      gsap.to(".block", {
+          x: 500,
+          y: 200,
+          scale: 0.3,
+          rotate: 360,
+          borderRadius: 50,
+          backgroundColor: "#ccc",
+          ease: "expo.out",
+          repeat: -1,
+          duration: 3
+      });
+      /*
+      gsap.to()和gsap.from()：
+      gsap.to()定義的CSS是動畫的最後狀態，
+      也就是讓這個網頁元件依照時間定義，
+      從原本的狀態變成這裡定義的樣子；
+      而gsap.from()則相反，這裡定義的是開始狀態。
+
+      gsap.fromTo()：這個函式則融合上方的函式，
+      開始與結束狀態都在這裡先定義好，
+      因此第一個值指定好元件後，
+      第二個和第三個值則分別加入開始與結束狀態物件，
+      一樣需加入時間duration屬性。
+
+      */
+    </script>
+  </body>
+</html>

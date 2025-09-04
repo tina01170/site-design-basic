@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <style>
+      * {
+        list-style: none;
+      }
+      .page-content {
+          max-width: 600px;
+          margin: 0 auto;
+      }
+      .page-content p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      /* Copy the following code to Blogger */
+
+      .pagination-container {
+          display: flex;
+          justify-content: center;
+      }
+      .pagination-container .page-numbers-container {
+          display: flex;
+          font-size: 18px;
+          overflow: hidden;
+          font-weight: bold;
+          font-family: "Roboto", sans-serif;
+          /*border-radius: 20px;*/
+          /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);*/
+      }
+      .page-numbers-container .page-number {
+          padding:8px 15px;
+          transition: all 400ms; 
+          border:1px solid #aaa;
+      }
+
+      .page-numbers-container .page-number:hover {
+          background: #c5c5e9;
+          cursor: pointer;
+      }
+
+      .page-numbers-container .page-number.active {
+          background: #6161f7;
+          color: #fff;
+      }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="page-content">
+        <div class="page active">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi cumque repellendus quae, fuga delectus necessitatibus ipsum iste consequuntur recusandae dolores quam animi corrupti quidem nesciunt deserunt qui sit aut praesentium?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi cumque repellendus quae, fuga delectus necessitatibus ipsum iste consequuntur recusandae dolores quam animi corrupti quidem nesciunt deserunt qui sit aut praesentium?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi cumque repellendus quae, fuga delectus necessitatibus ipsum iste consequuntur recusandae dolores quam animi corrupti quidem nesciunt deserunt qui sit aut praesentium?
+            </p>
+        </div>
+        <div class="page">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi cumque repellendus quae, fuga delectus necessitatibus ipsum iste consequuntur recusandae dolores quam animi corrupti quidem nesciunt deserunt qui sit aut praesentium?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi cumque repellendus quae, fuga delectus necessitatibus ipsum iste consequuntur recusandae dolores quam animi corrupti quidem nesciunt deserunt qui sit aut praesentium?
+            </p>
+        </div>
+        <div class="page">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi cumque repellendus quae, fuga delectus necessitatibus ipsum iste consequuntur recusandae dolores quam animi corrupti quidem nesciunt deserunt qui sit aut praesentium?
+            </p>
+        </div>
+
+      </div>
+      <div class="pagination-container">
+        <ul class="page-numbers-container">
+          
+        </ul>
+      </div>
+    </main>
+    <script>
+      let pages = document.querySelectorAll(".page-content .page");
+      let pageNumberList = document.querySelector(".page-numbers-container")
+      //console.log(pages.length);
+      //console.log(pagenumber)
+      
+      function pagelist (){
+        for(i=0;i<pages.length;i++) {
+            let pageNumber = document.createElement("li");
+            pageNumber.classList.add("page-number");
+            pageNumber.textContent = i+1;
+            //console.log(pageNumber);
+            pageNumberList.appendChild(pageNumber);
+            //增加點擊事件
+            
+            pageNumber.addEventListener("click", () => {
+	            activatePage(i);
+	          })
+            
+        }
+        //console.log(pageNumberList);
+        document.querySelector(".page-number").classList.add("active");
+      }
+
+      pagelist ();
+
+      let pageNumbers = document.querySelectorAll(".page-numbers-container .page-number");
+      //console.log(pageNumbers.length);
+      
+      
+      function activatePage(p){
+        for(i=1;i<pageNumbers.length;i++){
+
+        }
+
+      }
+       
+	
+
+	  
+
+
+    </script>
+    
+      
+    
+   
+  </body>
+</html>
