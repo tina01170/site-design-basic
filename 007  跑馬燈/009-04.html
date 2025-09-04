@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   
+    <style>
+
+      .header {
+        width:100%;
+      
+        text-align: center;
+        margin:0 auto;
+        margin-bottom:50px;
+      }
+
+      .logo,
+      .logo img {
+        width:100%;
+      } 
+
+      nav {
+        width:100%;
+        font-size: 24px;
+        font-weight: 400;
+        height: 50px;
+      }
+
+      section{
+        height: 70px;
+       
+        display:flex;
+      }
+
+      .left {
+         width:15%;
+         text-align: center;
+         background-color: aqua;
+      }
+
+      .left p{
+        font-size: 32px;
+        
+      }
+
+      .marquee {
+        width:85%;
+      }
+
+      .card {
+        display:flex;
+        margin:0 16px;
+        align-items: center;
+      }
+
+      .card img {
+        width:25%;
+        height:25%;
+      
+      }
+
+      .card h2 {
+        margin:16px;
+      }
+
+       /* demo code start */
+
+       :root {
+          --gap: 125px;
+          --duration: 9s;
+          --scroll-start: 0;
+          --scroll-end: calc(-100% - var(--gap));
+        }
+
+       /* marquee */
+
+        .marquee {
+          display: flex;
+          overflow: hidden;
+          gap: var(--gap);
+          flex-direction: row;
+        }
+
+        .marquee--group {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          gap: var(--gap);
+          flex-direction: row;
+          animation: scroll-x var(--duration) linear infinite;
+        }
+
+        @keyframes scroll-x {
+          from {
+            transform: translateX(var(--scroll-start));
+          }
+          to {
+            transform: translateX(var(--scroll-end));
+          }
+        } 
+    </style>
+  </head>
+  <body>
+
+
+      <div class="header">
+          <div class="logo">
+            <img src="img/Victoria.png"/>
+          </div>
+        
+          <div class="nav">
+            <h2>Navigation</h2>
+          </div>
+      </div>
+
+      <section>
+          <div class="left">
+            <p>Marquee</p>
+          </div>
+          <div class="marquee">
+            <div class="marquee--group">
+                <div class="card">
+                  <img src="img/01.jpg"/>
+                  <h2>what do you think</h2>
+                </div>
+                <div class="card">
+                  <img src="img/02.jpg"/>
+                  <h2>give me away</h2>
+                </div>
+                <div class="card">
+                  <img src="img/03.jpg"/>
+                  <h2>let go </h2>
+                </div>
+                <div class="card">
+                  <img src="img/04.jpg"/>
+                  <h2>where ard we goging </h2>
+                </div>
+          </div>
+            
+          </div>
+      </section>
+
+  
+
+
+    
+   
+  </body>
+</html>

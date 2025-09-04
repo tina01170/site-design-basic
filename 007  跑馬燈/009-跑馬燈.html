@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .news li {
+          list-style: none;
+          font-size: 20px;
+        }
+
+        .news {
+          height:25px;
+          overflow: hidden;
+          background-color: lightcyan;
+        }
+        /*
+        .text {
+          height:50px;
+          overflow: hidden;
+        }*/
+
+        .bottom {
+          margin-top: 250px;
+        }
+            
+
+
+    </style>
+    <script>
+      $(document).ready(function(){
+        /*
+        setInterval(function(){
+          $('.news li:first-child').slideUp(function(){ 
+              $(this).appendTo($('.news')).slideDown() 
+          })       
+        },3000);*/
+
+        setInterval(function(){
+          $(".news li:first-child").slideUp(function(){
+              $(this).appendTo($(".news").slideDown())
+
+          })
+        },3000)
+
+
+      })
+    </script>
+  </head>
+  <body>
+    <div></div>
+
+  
+    <ul class="news">
+      <li>What I’ve learned from road trips</li>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>What your name?</li>
+      <li>go away. let me alone.</li>
+      <li>amet dolor Lorem ipsum  sit .</li>
+    </ul>
+
+    
+
+
+    
+  </body>
+</html>

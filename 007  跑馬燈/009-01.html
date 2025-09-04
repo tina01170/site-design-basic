@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <style>
+
+      @import "compass/css3";
+
+      /**
+      CSS Vertical Marquee
+      Autohr: Muki Wu
+      Article: https://muki.tw/tech/html-css/css-vertical-marquee/
+      **/
+
+      /* basic layout start (you can skip it) */
+
+      body {
+        background: #fff;
+        font-size: 16px;
+        color: #f0f0f0;
+        line-height: 1.1em;
+      }
+
+      header {
+          background:#84C1FF;
+          text-align: center;
+          color: #fff;
+          padding: .7em 0;
+          a {
+            color: rgba(255,255,255,.6);
+            @include text-shadow(1px 1px 1px #973735);
+          }
+          &:after {
+              content: " ";
+              position: absolute;
+              width: 0;
+              height: 0;
+              border-width: 10px;
+              border-style: solid;
+              border-color: #d9444a transparent transparent transparent;
+              top: 53px;
+              left: 50%;
+            }
+      }
+
+
+      img {
+        max-width: 100%;
+      }
+      a {
+        text-decoration: none;
+        color: #313131;
+          &:hover {
+            color: #000;
+          }
+        }
+      section {
+        max-width: 500px;
+        margin: 0 auto;
+        background: #333;
+        padding: 1em;
+      }
+    
+
+        h2 {
+          font-size: 1em;
+          margin: 0 0 .5em 0;
+          background: #444;
+          display: inline-block;
+          padding: .5em 1.2em;
+          position: relative;
+          left: -1em;
+        }
+
+        /* demo code start  */
+
+        :root {
+          --gap: 125px;
+          --duration: 5s;
+          --scroll-start: 0;
+          --scroll-end: calc(-100% - var(--gap));
+        }
+
+        .marquee {
+          display: flex;
+          overflow: hidden;
+          gap: var(--gap);
+          flex-direction: column;
+        }
+
+        .marquee--group {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          gap: var(--gap);
+          flex-direction: column;
+          animation: scroll-y var(--duration) linear infinite;
+        }
+
+        @keyframes scroll-y {
+          from {
+            transform: translateY(var(--scroll-start));
+          }
+          to {
+            transform: translateY(var(--scroll-end));
+          }
+        }
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+      CSS Vertical Marquee<br />
+      <a href="https://muki.tw/tech/html-css/css-vertical-marquee/" target="_blank">( https://muki.tw/tech/html-css/css-vertical-marquee/)</a>
+    </header>
+    
+    <section>
+      <div class="marquee">
+        <div class="marquee--group">
+          <img src="https://i.imgur.com/ET39TLV.png" />
+          <img src="https://i.imgur.com/ET39TLV.png" />
+          <img src="https://i.imgur.com/ET39TLV.png" />
+        </div>
+        <div aria-hidden="true" class="marquee--group">
+          <img src="https://i.imgur.com/ET39TLV.png" />
+          <img src="https://i.imgur.com/ET39TLV.png" />
+          <img src="https://i.imgur.com/ET39TLV.png" />
+        </div>
+      </div>
+    </section>
+    
+
+    
+   
+  </body>
+</html>
