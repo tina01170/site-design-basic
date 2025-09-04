@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>css animation</title>
+   
+    <style>
+          * {
+              margin: 0;
+              padding: 0;
+            }
+
+            body {
+              width: 100%;
+              height: 100vh;
+              overflow: hidden;
+              background-image: url(img/background.jpg);
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+            }
+
+            .bubbles img {
+              width: 30px;
+              animation: bubble 5s linear infinite;
+            }
+
+            @keyframes bubble {
+              0% {
+              transform: translateY(-700px);
+              opacity: 0;
+              }
+              50% {
+              opacity: 0.8;
+              }
+              70% {
+              opacity: 1;
+              }
+              100% {
+              transform: translateY(0px);
+              opacity: 0;
+              }
+            }
+
+            .bubbles {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              position: absolute;
+              bottom: 0;
+            }
+
+            .content {
+              position: absolute;
+              top: 50%;
+              left: 30%;
+              transform: translate(-50%, -50%);
+            }
+
+            .content h4 {
+              font-size: 40px;
+              color: rgb(255, 255, 255);
+              text-shadow: 0 0 3px lightskyblue, 0 0 5px blue;
+            }
+
+            .content h1 {
+              font-size: 100px;
+              color: rgb(255, 255, 255);
+              text-shadow: 0 0 3px lightskyblue, 0 0 20px blue;
+            }
+
+            .enter {
+                color: rgb(252, 252, 252);
+                padding: 10px 25px;
+                background: transparent;
+                border: 1px solid rgb(0, 217, 255);
+                border-radius: 20px;
+                outline: none;
+                cursor: pointer;
+                text-align: right;
+                text-shadow: 0 0 3px #36b9ff, 0 0 5px #04fcdb;
+                font-size: 40px;
+            }
+
+            .enter:hover {
+              background-color: lightskyblue;
+              color: blue;
+              transition: 1s;
+            }
+
+            .bubbles img:nth-child(1) {
+            animation-delay: 2s;
+            }
+
+            .bubbles img:nth-child(2) {
+            animation-delay: 1s;
+            }
+
+            .bubbles img:nth-child(3) {
+            animation-delay: 0.5s;
+            }
+
+            .bubbles img:nth-child(4) {
+            animation-delay: 2.5s;
+            }
+
+            .bubbles img:nth-child(5) {
+            animation-delay: 3s;
+            }
+
+            .bubbles img:nth-child(6) {
+            animation-delay: 1.6s;
+            }
+
+            .bubbles img:nth-child(7) {
+            animation-delay: 0.8s;
+            }
+
+            .bubbles img:nth-child(8) {
+            animation-delay: 1.2s;
+            }
+
+    </style>
+  </head>
+  <body>
+        <div class="content">
+            <h4>歡迎來到</h4>
+            <h1>清涼透地</h1>
+            <button type="button" class="enter">進來涼一下</button>
+        </div>
+    
+        <div class="bubbles">
+            <img src="img/bubble.png">
+            <img src="img/bubble.png">
+            <img src="img/bubble.png">
+            <img src="img/bubble.png">
+            <img src="img/bubble.png">
+            <img src="img/bubble.png">
+            <img src="img/bubble.png">
+            <img src="img/bubble.png">
+        </div>
+
+    
+   
+  </body>
+</html>

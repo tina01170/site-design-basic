@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>keydown</title>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("input").keydown(function(event){ 
+          $("div").html("Key: " + event.which);
+        });
+      });
+    </script>
+   
+  </head>
+  <body>
+    请随意键入一些字符：<input type="text" />
+    <p>当您在上面的框中键入文本时，下面的 div 会显示键位序号。</p>
+    <div></div>
+   
+    
+
+    
+   
+  </body>
+</html>

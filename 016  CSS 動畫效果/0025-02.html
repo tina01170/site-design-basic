@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   
+    <style>
+          .animate {
+            width:150px;
+            height:150px;
+            position: relative;
+            background-color: deeppink;
+            animation:move 8s linear 2s 2 alternate; 
+          }
+
+
+          @keyframes move {
+            0% { background-color: aqua; left:0; top:0;}
+            25% { background-color: cornflowerblue; left:400px; top:0;}
+            50% {background-color: blue; left:400px; top:400px;}
+            75% {background-color: brown; left:0; top:400px;}
+            100% { background-color: blueviolet; left:0; top:0;}
+          }
+        
+
+    </style>
+  </head>
+  <body>
+      <div class="animate"></div>
+    
+
+    
+   
+  </body>
+</html>

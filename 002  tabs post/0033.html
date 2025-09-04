@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>-->
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+    <!--<script src="jquery-3.6.0.min.js"></script>-->
+    <style>
+
+
+      .outer {
+          width:960px;
+          margin:100px 30px;
+          display: flex;
+      }
+
+      .outer .right-sidebar {flex-direction:row-reverse;}
+      .content {
+          display: flex;
+          flex-wrap: wrap;
+          width: 65%;
+          padding-right: 30px;
+      }
+      .sidebar {
+        width: 30%;
+      }
+      .item {
+        width: 50%;
+        padding:0 15px;
+        box-sizing: border-box;
+      }
+
+      .widget {width:250px}
+      .widget h2 {margin:0 0 20px;}
+      .item img,.widget img{ width:100%;}
+     
+  
+    </style>
+    <script>
+        // jquery replacetext plugin https://github.com/cowboy/jquery-replacetext
+        (function(e){e.fn.replaceText=function(t,n,r){return this.each(function(){var i=this.firstChild,s,o,u=[];if(i){do{if(i.nodeType===3){s=i.nodeValue;o=s.replace(t,n);if(o!==s){if(!r&&/</.test(o)){e(i).before(o);u.push(i)}else{i.nodeValue=o}}}}while(i=i.nextSibling)}u.length&&e(u).remove()})}})(jQuery);
+      
+    </script>
+    <script>
+    $(function(){
+       var options = ["left-sidebar","right-sidebar","full-width"]
+       var strike = options[1];
+       console.log(strike)
+
+       $('.outer').addClass(strike).each(function() {
+
+       //$('.outer strike').each(function() {
+          //var $this = $(this),type = $this.text();
+          var $this = $(this),type = strike;
+          console.log($this)   
+        
+          if (type.match('left-sidebar')) { //<style>.flex-section .outer-container{flex-direction:row-reverse;}</style>
+              $this.replaceWith('<style>.outer{flex-direction:row;}</style>');
+              
+          }
+          if (type.match('right-sidebar')) {
+              $this.replaceWith('<style>.outer{flex-direction:row-reverse;}</style>');
+          }
+          if (type.match('full-width')) {
+              $this.replaceWith('<style>.content{width:100%}.sidebar{display:none}</style>');
+          }
+         
+      });
+      
+    })
+    </script>
+
+  </head>
+  <body>
+   
+    <div class="outer">
+        <div class="content">
+            <div class="item">
+              <img src="images/pexels-001.jpg" alt="">
+              <h2><a href="">Chatgpe ai</a></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius tenetur natus deleniti iusto unde ad impedit eveniet, quaerat culpa, enim hic veniam quam placeat omnis! Minima nemo at praesentium.</p>
+            </div>
+            <div class="item">
+              <img src="images/pexels-002.jpg" alt="">
+              <h2><a href="">AI img</a></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius tenetur natus deleniti iusto unde ad impedit eveniet, quaerat culpa, enim hic veniam quam placeat omnis! Minima nemo at praesentium.</p>
+            </div>
+            <div class="item">
+              <img src="images/pexels-003.jpg" alt="">
+              <h2><a href="">TTsmaker ai</a></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius tenetur natus deleniti iusto unde ad impedit eveniet, quaerat culpa, enim hic veniam quam placeat omnis! Minima nemo at praesentium.</p>
+            </div>
+            <div class="item">
+              <img src="images/pexels-004.jpg" alt="">
+              <h2><a href="">photoshop ai</a></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius tenetur natus deleniti iusto unde ad impedit eveniet, quaerat culpa, enim hic veniam quam placeat omnis! Minima nemo at praesentium.</p>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <div class="widget">
+              <h2><a href="">sidebar</a></h2>
+              <img src="images/pexels-005.jpg" alt="">
+              
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius tenetur natus deleniti iusto unde ad impedit eveniet, quaerat culpa, enim hic veniam quam placeat omnis! Minima nemo at praesentium.</p>
+            </div>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </aside>
+    </div>
+
+    
+    
+   
+  </body>
+</html>

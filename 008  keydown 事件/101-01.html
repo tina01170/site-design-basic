@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>css hover</title>
+    <style>
+        /*
+        body {
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }*/
+
+        .content {
+          width: 400px;
+          height: 400px;
+          margin: 100px;
+        }
+
+        .box {
+          margin:90px 0;
+        }
+
+        .test {
+            width: 100px;
+        }
+
+        ol {
+            list-style: none;
+            position: absolute;
+            width: 100px;
+            opacity: 0;
+            background-color: rgba(116, 212, 231, 0.5);
+            transition: all 0.5s ease;
+        }
+        
+        .test:focus ol {
+          display: block;
+          opacity: 1;
+        }
+
+        
+        .test:hover ol {
+            opacity: 1;
+            display: block;
+        }
+
+        .list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: flex;
+        }
+
+        .list li {
+          margin:0   20px ;
+        }
+
+        .list li a {
+          font-size: 36px;
+          text-decoration: none;
+          color:#000;
+        }
+
+        .list li a:focus {
+          border:1px dashed #000 ;
+        }
+
+        /*
+        .list li a:hover {
+          background-color: #ccc;;
+        }*/
+    </style>
+  </head>
+  <body>
+    <div class="content">
+
+    
+      <div class="box">
+        <label class="test">
+            摸我
+            <ol>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ol>
+        </label>
+      </div>
+      <ul class="list">
+        <li><a href="">333</a></li>
+        <li><a href="">444</a></li>
+        <li><a href="">555</a></li>
+        <li><a href="">666</a></li>
+      </ul>
+
+    </div>  
+    
+
+    
+   
+  </body>
+</html>

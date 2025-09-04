@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+       .tabs-post {
+            width:960px;
+            margin:0 auto;
+            border: 1px solid #000;
+            display:flex;
+           
+          }
+
+          .post-tabs {
+            padding:0;
+            margin:0;
+            list-style:none;
+          }
+
+          .post-tabs li {
+            width:50%;
+            background-color:#fff;
+            padding:15px 10px;
+            margin:0;
+            cursor: pointer;
+            min-width:100px;
+            text-align:center;  
+          }
+
+          .post-tabs li a{
+            text-decoration:none;
+            color:#000;
+            font-size:18px;
+          }
+          .post-tabs li:hover,
+          .post-tabs li.active {
+            background-color:#ccc;
+          }
+
+          .tab-content {
+            padding:10px;
+           
+          }
+
+          .tab-container-wrap {
+            display:flex;
+          }
+
+          .tab-item,
+          .tab-item .post-thumbnail,
+          .tab-item .post-info {
+            width:100%;
+          }
+
+          .tab-item {
+            margin-bottom:1.5em;
+            background-color: #f0f0f0;
+          }
+
+          .tab-item .post-thumbnail {
+            object-fit:cover;
+          }
+
+          .tab-item .post-info h4 {
+            font-size:18px;
+            font-weight:600;
+            margin:1em 0;
+          }
+
+          .tab-item .post-info .post-meta {
+            font-size:16px;
+          }
+
+    </style>
+    <script>
+    $(function () {
+
+      $('.tabs-post').append('<div class="tab-wrap"></div>');
+
+      $('.post-tabs li').each(function(index){
+
+          $('.tab-wrap').append('<div class="content"></div>');
+          
+              //$("tab-content").append('<p>tab'+ index +'</p>');
+          
+              $('.content').append('<div class="name"></div>'); 
+     })
+
+    
+
+
+
+    })
+    </script>    
+  </head>
+  <body>
+    <div class="tabs-post">
+      <ul class="post-tabs">
+        <li><a class="latest">latest</a></li>
+        <li><a class="trending">trending</a></li>
+        <li><a class="trending">movie</a></li>
+      </ul>
+    </div>  
+    
+
+    
+   
+  </body>
+</html>

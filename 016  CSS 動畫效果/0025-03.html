@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   
+    <style>
+          .heart {
+            width:100px;
+            height:90px;
+            margin: 50px;
+            position: relative;
+
+            animation-name: heartbeat;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+          }
+
+          @keyframes heartbeat {
+            0% { transform: scale(1);}
+            50% { transform: scale(1.5);}
+            100% { transform: scale(1);}
+           
+          }
+
+
+          .heart:before, .heart:after {
+            position: absolute;
+            content:"";
+            left:50px;
+            top:0;
+            width:50px;
+            height:80px;
+            background-color: red;
+
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+          }
+
+
+          .heart:after {
+            left:0;
+         
+            border-radius: 50px 50px 0 0;
+            transform: rotate(45deg);
+            transform-origin:100% 100%;
+          }
+
+
+          /* ball */
+
+          .ball {
+            width:150px;
+            height:150px;
+            border-radius: 80px;
+            background-color: aquamarine;
+            position: relative;
+
+            animation-name:animate;
+            animation-duration:5s;
+            animation-iteration-count:3;
+          
+            /*animation-direction:reverse;*/
+            animation-direction:alternate;
+          
+          
+          }
+
+          @keyframes animate {
+            0% { background-color: aqua; left:0; }
+            /*25% { background-color: antiquewhite; left:250px; }*/
+            50% {background-color: blue; left:400px;}
+            /*100% { background-color: blueviolet; left:750px; }*/
+            100% { background-color: coral; left:800px; }
+
+          }
+
+
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+       <div class="heart"></div>
+    
+       <div class="ball"></div>
+
+    
+   
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>search keydown</title>
+   
+    <script>
+    $(function() {
+          //search
+          $(".search-wrap").find(".search-submit").on("keydown", function (e) {
+            var tabKey = e.keyCode === 9;
+            if (tabKey) {
+              e.preventDefault();
+              $(".search-show").focus();
+            }
+          });
+        
+
+          $(".search-show").on("keydown", function (e) {
+            var tabKey = e.keyCode === 9;
+            var shiftKey = e.shiftKey;
+            if ($(".search-wrap").hasClass("show")) {
+              if (shiftKey && tabKey) {
+                e.preventDefault();
+                $(".search-wrap").removeClass("show");
+                $(".search-show").focus();
+              }
+            }
+          });
+
+       
+    });
+    </script>
+  </head>
+  <body>
+    
+   
+    
+
+    
+   
+  </body>
+</html>

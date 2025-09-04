@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Bootstrap demo</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      a:focus {
+        border:1px dashed #000;
+      }
+
+      .header {
+        margin: 70px;
+      }
+
+      .header .logo {
+        text-decoration: none;
+        font-size: 36px;
+      }
+
+      .nav-menu {
+         display: flex;
+      }
+
+      .nav-menu li {
+          margin: 0 15px;
+      }
+      
+      .nav-menu li a {
+        cursor: pointer;
+        font-size: 20px;
+        text-decoration: none;
+      } 
+     
+
+      .open {
+        width:20px;
+        height:20px;
+        background-color:red;
+        color:#fff;;
+        display:inline-block;
+        cursor:pointer;
+        text-align:center;
+      }
+      .sub-menu {
+        display:none;
+      }
+    </style>
+    <script>
+    $(document).ready(function() {
+        /*
+        $('.open').click(function () {
+          $('li.menu-item-has-children').parent().closest('.sub-menu').toggle();
+        });*/
+
+        $('.open').click(function () {
+          $(this).next('.sub-menu').toggle();
+        });
+    });
+    </script>
+   
+  </head>
+  <body>
+    
+  <header class="header">
+    <a class="logo" href="#">victoria</a>
+    <ul class="nav-menu">
+      <li><a href="#">Item 9</a></li>
+      <li><a href="#">Item 8</a></li>
+      <li class="menu-item-has-children"><a href="#">Item 1</a>
+        <a href="#" class="open">+</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li> 
+          <li class="menu-item-has-children"><a href="#">Sub Item 3</a>
+            <a href="#" class="open">+</a>
+            <ul class="sub-menu">
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Item 5</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>  
+      <li><a href="#">Item 4</a></li>
+      <li><a href="#">Item 5</a></li>
+    </ul>
+  </header>  
+
+    
+   
+  </body>
+</html>

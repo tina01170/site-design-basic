@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Bootstrap demo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* layout */
+
+      .theme-wrapper {
+          width:100%;
+          max-width: 1300px;
+          margin:0 auto;
+          padding:0 20px;
+          /*border-left: 1px solid #ccc;
+          border-right: 1px solid #ccc;*/
+          background-color: #fcfcfc;
+      }
+
+      /* header */
+
+      .site-logo {
+        display: block;
+      }
+
+      .site-logo img {
+          width:100%;
+      }
+
+      /* menu */
+
+      .top-menu {
+          position: relative;
+          display: flex;
+          align-items: center;
+      }
+
+      /* search start */
+
+      .top-menu .search .search-wrap .search-show {
+        margin-top:-2px;
+        font-size:20px;
+        width:25px;
+        height:25px;
+        text-decoration:none;
+      }
+
+      .top-menu .search .search-wrap .search-form {
+        position:absolute;
+        top:50px;
+        right:0;
+        width:220px;
+        padding:6px;
+        z-index:99;
+        visibility: hidden;
+        background-color:#fff;
+        border:1px dotted #e0e0e0;
+        
+      }
+
+      .top-menu .search .search-wrap .search-form.active {
+        visibility: visible;
+      }
+
+      .top-menu .search .search-wrap .search-form input {
+        width:170px;
+        line-height: 1.6;
+        border:1px solid #ccc;
+      }
+
+
+      .top-menu .search .search-wrap .search-form .search-submit {
+        border:1px solid #ccc;
+        color:#000;
+        padding:3px 7px;
+        background-color:#fff;
+      }
+
+      /*  serach end */
+
+      .main-navigation {
+          display: block;
+          width: 100%;
+          position: relative;
+      } 
+
+      .main-navigation ul {
+        list-style: none;
+      }
+
+      .main-navigation ul li a {
+        text-decoration: none;
+        color:#000;
+        /*color:var(--primary-color);*/
+        font-size: 18px;
+      }
+
+      .main-navigation ul ul,
+      .main-navigation ul ul ul {
+        display: none;
+      }
+
+      @media (max-width:991px)  {
+          .menu-toggle {
+            display: block;
+            width:45px;
+            height:45px;
+            margin:0;
+            padding:0;
+            position: relative;
+            background: none;
+            /* border:1px solid #fff;*/
+            border:none;  
+          }
+
+          .menu-toggle span {
+            display:block;
+            width:36px;
+            height:3px;
+            margin:8px 3px;
+            background-color:#000;
+          }
+
+          .main-navigation ul li {
+            padding:5px 20px;
+          }
+
+          .main-navigation ul ul,
+          .main-navigation ul ul ul {
+           /* padding:5px 0;*/
+            margin: 0 -20px;
+          }
+
+          .main-navigation ul.nav-menu {
+            margin:0;
+            padding:15px 10px;
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            background-color:#fcfcfc;
+            z-index: 9999;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            position: absolute;
+            top:50px;
+            left:0;
+            display:none;
+          }
+
+      }
+
+      @media screen and (min-width:992px) {
+        .menu-toggle {
+            display: none;
+        }
+        /*
+        .nav-menu {
+            display: block !important;
+        }*/
+
+        .main-navigation ul {
+          display: flex ;
+          flex-wrap:wrap;
+          padding:10px 0;
+        }
+
+        .main-navigation ul li {
+          padding:0 20px; 
+          padding-bottom:10px;
+          position: relative;
+        }
+
+        .main-navigation ul ul {
+          position: absolute;
+          width: 170px;
+          z-index: 9;
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          background-color:#fff;
+        }
+
+        .main-navigation ul ul li {
+          padding:5px 0;
+          padding-left: 20px;
+        }
+
+        .main-navigation ul ul ul {
+          top:15px;
+          left:160px;
+        }
+
+        .main-navigation ul ul li:hover > ul,
+        .main-navigation ul ul li.focus > ul {
+              display: block;
+              left:140px;
+        }
+
+        .main-navigation ul li:hover > ul,
+        .main-navigation ul li:focus > ul {
+            display: block;
+            left: auto;
+        } 
+        
+      }
+
+
+      .dropdown {
+        transform: rotateX(180deg);
+        font-size: 15px;
+        padding: 0;
+        /*position: absolute;
+        top: 0;
+        right: 0;*/
+        z-index: 10;
+        border:none;
+        background-color: transparent;
+        color: #000;
+        width:15px;
+        height:15px;
+        line-height: 15px;
+        padding-left: 10px;
+        cursor: pointer;
+      }
+
+      .dropdown.active i {
+        background-color: #ccc;
+      }
+
+    </style>
+    <script>
+      $(function() { 
+
+        /*menu*/ 
+        $(".menu-toggle").click(function(){
+            $(".main-navigation .nav-menu").slideToggle(1500, function() {
+                if ($(this).css('display') == 'none') {
+                    // Remove inline class
+                    $(this).css('display', '');
+                }
+            });
+        });
+	
+        
+        $('.main-navigation .nav-menu .menu-item-has-children > a')
+          .after( $('<button class="dropdown"><i class="fas fa-chevron-up"></i></button>') );
+        
+        $('.dropdown').click(function() {
+            $(this).toggleClass('active');
+
+            $(this).next('.sub-menu').toggle();
+            
+        }); 
+
+
+        $(window).on('load resize', function() {
+            if ($(window).width() < 992) {
+                $('.main-navigation').find("li").last().on('keydown', function(e) {
+                    if (e.which === 9) {
+                        e.preventDefault();
+                        $('.header').find('.menu-toggle').focus();
+                    }
+                });
+            } else {
+                $('.main-navigation').find("li").off('keydown');
+            }
+        });
+  
+          
+          var primary_menu_toggle = $('#masthead .menu-toggle');
+          primary_menu_toggle.on('keydown', function(e) {
+              var tabKey = e.keyCode === 9;
+              var shiftKey = e.shiftKey;
+  
+              if (primary_menu_toggle.hasClass('open')) {
+                  if (shiftKey && tabKey) {
+                      e.preventDefault();
+                      $('.main-navigation').toggleClass('toggled');
+                      primary_menu_toggle.removeClass('open');
+                  };
+              }
+          });
+
+
+        // search
+        $(".search-show").on('click',function() {
+          $('.search .search-wrap .search-form').toggleClass("active");
+        });
+
+
+        $(".search-wrap").find(".search-submit").on("keydown", function (e) {
+            var tabKey = e.keyCode === 9;
+            if (tabKey) {
+              e.preventDefault();
+              $(".search-show").focus();
+            }
+        });
+          
+  
+        $(".search-show").on("keydown", function (e) {
+            var tabKey = e.keyCode === 9;
+            var shiftKey = e.shiftKey;
+            if ($(".search-wrap").hasClass("show")) {
+              if (shiftKey && tabKey) {
+                e.preventDefault();
+                $(".search-wrap").removeClass("show");
+                $(".search-show").focus();
+              }
+            }
+        });
+
+      })
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="theme-wrapper">
+          <a class="site-logo" href="index.html">
+            <img src="img/Victoria.png">
+          </a>
+          <div class="top-menu">
+              <nav class="main-navigation">
+                  <button class="menu-toggle">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                  </button>
+                  <ul class="nav-menu">
+                        <li class="menu-item"><a href="index.html">Home</a></li>
+                        <li class="menu-item"><a href="#">Travel</a></li>
+                        <li class="menu-item"><a href="#">Fashion</a></li>
+                        <li class="menu-item"><a href="#">Category</a></li>
+                        <li class="menu-item menu-item-has-children"><a href="#">Life-style</a>
+                          <ul class="sub-menu">
+                            <li class="menu-item"><a href="#">Category-1</a></li>
+                            <li class="menu-item"><a href="#">Category-2</a></li>
+                            <li class="menu-item menu-item-has-children"><a href="#">Category-3</a>
+                                <ul class="sub-menu">
+                                  <li class="menu-item"><a href="#">item-1</a></li>
+                                  <li class="menu-item"><a href="#">item-2</a></li>
+                                  <li class="menu-item"><a href="#">item-3</a>
+                                </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="menu-item"><a href="single.html">Single</a></li>
+                        <li class="menu-item"><a href="about.html">About</a></li>
+                        <li class="menu-item"><a href="contact.html">Contact</a></li>
+                    </ul>
+              </nav>
+              <div class="search">
+                <div class="search-wrap">
+                  <a href="#" title="Search" class="search-show"><i class="fa fa-search"></i></a>
+                  
+                  <form class="search-form">
+                    <input type="search" name="" id="">
+                    <button class="search-submit"><i class="fa fa-search"></i></button>
+                  </form>
+                </div>
+              </div>
+          </div> <!--top-menu-->
+      </div>
+    </header>
+    
+
+    
+   
+  </body>
+</html>

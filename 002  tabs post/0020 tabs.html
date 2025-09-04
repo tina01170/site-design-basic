@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+          .tabs-post-wrap {
+            width:360px;
+            margin:0 auto;
+            border: 1px solid #000;
+          }
+
+          .tabs-post-head {
+            width:360px;
+            margin-bottom:1.5em;
+          }
+
+          .post-tabs {
+            padding:0;
+            margin:0;
+            list-style:none;
+            display:flex;
+          }
+
+          .post-tabs li {
+            width:50%;
+            background-color:#fff;
+            padding:15px 10px;
+            margin:0;
+            cursor: pointer;
+            min-width:100px;
+            text-align:center;
+            
+            
+          }
+
+          .post-tabs li a{
+            text-decoration:none;
+            color:#000;
+            font-size:18px;
+          }
+          .post-tabs li:hover,
+          .post-tabs li.active {
+            background-color:#2894FF;
+          }
+
+          .tab-container {
+            padding:10px;
+            display:none;
+          }
+
+          .tab-item,
+          .tab-item .post-thumbnail,
+          .tab-item .post-info {
+            width:100%;
+          }
+
+          .tab-item {
+            margin-bottom:1.5em;
+            background-color: #f0f0f0;
+          }
+
+          .tab-item .post-thumbnail {
+            object-fit:cover;
+          }
+
+          .tab-item .post-info h4 {
+            font-size:18px;
+            font-weight:600;
+            margin:1em 0;
+          }
+
+          .tab-item .post-info .post-meta {
+            font-size:16px;
+          }
+
+          @media screen and (min-width: 56.25em) {
+            
+            .tabs-post-head {
+              margin-bottom:1em;
+            }
+
+            
+            .tab-item {
+              display:flex;
+              margin-bottom:0.75em;
+            }
+            
+            .tab-item .post-thumbnail{
+              width:37%;
+            }
+            
+            .tab-item .post-info{
+              width:57%;
+              margin-left:15px;
+            }
+            
+            .tab-item .post-info h4 {
+              font-size:16px;	
+              margin:0 0 0.5em;
+            }
+
+            .tab-item .post-info .post-meta 	{
+              font-size:14px;
+            }
+          }
+
+    </style>
+  </head>
+  <body>
+
+
+    <div class="tabs-post-wrap">
+			<div class="tabs-post-head">
+				<ul class="post-tabs">
+					<li><a href="#tab-1" class="latest">latest</a></li>
+          <li><a href="#tab-2" class="trending">trending</a></li>
+					
+				</ul>
+			</div>
+			<div class="tab-container-area">
+          <div class="tab-container" id="tab-1">
+              <p>latest</p>
+							<div class="tab-item">
+									<div class="post-info">
+										<h4 class="post-title">Happy new year 2021</h4>
+										<div class="post-meta">
+										
+											<div class="date">
+                        <p>2021/2/28</p>
+											</div>
+											<div class="author">
+                        <p>kelly smith</p>
+											</div>
+										</div>
+									</div>
+							</div>	
+				  </div>
+				  <div class="tab-container" id="tab-2">
+				      <p>trending</p>
+							<div class="tab-item">
+                  <div class="post-info">
+                    <h4 class="post-title">Happy new year 2021</h4>
+                    <div class="post-meta">
+                    
+                      <div class="date">
+                        <p>2021/2/28</p>
+                      </div>
+                      <div class="author">
+                        <p>kelly smith</p>
+                      </div>
+                    </div>
+                  </div>
+							</div>
+				</div>
+			</div>	
+		</div>	
+    <script>
+      // tab post
+	
+      $(".tab-container:first").show();
+      $(".post-tabs li:first").addClass('active');
+      
+      $(".post-tabs li").click(function(){
+            index = $(this).index();
+            $(".post-tabs li").removeClass('active');
+            $(this).addClass('active');
+            $(".tab-container").hide();
+            $(".tab-container").eq(index).show();
+      });
+    </script>
+    
+
+    
+   
+  </body>
+</html>

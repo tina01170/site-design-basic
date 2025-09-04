@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>選項卡</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        html,body {
+          font-family:sans-serif;
+          font-size: 18px;
+          line-height: 2;
+        }
+
+        .container{
+          max-width: 400px;
+          margin:0 auto;
+        }
+
+        .tab-navigation {
+          padding:0;
+          margin:0;
+          list-style:none;
+        }
+        .tab-navigation li {
+          display: inline-block;
+          color:#000;
+          background-color: #e0e0e0;
+          padding:5px 15px;
+          min-width:100px;
+          text-align: center;
+          border-radius: 5px 5px 0 0;
+          cursor: pointer;
+          transition:all 0.9s ease-in-out;
+        }
+
+        .tab-navigation li:hover,
+        .tab-navigation li.active {
+          background-color:#f0f0f0;
+        }
+  
+        .tab-container {
+          color:#000;
+          padding:10px;
+          display: none;
+        }
+
+
+        .tab-item,
+        .meta {
+          display: flex;
+        }
+
+        .tab-item .pic  {
+          width: 30%;
+        }
+        .pic img {
+          width:90px;
+        }
+        .tab-item .txt {
+          width: 70%;
+        }
+
+        .txt h3 {
+          font-size: 18px;
+          font-weight: 800;
+        }
+
+    </style>
+
+    <script>
+      $(document).ready(function(){
+        
+    
+          $(".tab-container:first").show();
+          $(".tab-navigation li:first").addClass('active');
+
+          $(".tab-navigation li").click(function(){
+              index = $(this).index();
+              $(".tab-navigation li").removeClass('active');
+              $(this).addClass('active');
+              $(".tab-container").hide();
+              $(".tab-container").eq(index).show();
+          });
+      });  
+
+
+    </script>
+  </head>
+  <body>
+      <div class="container">
+        <ul class="tab-navigation">
+            <li>tab1</li>
+            <li>tab2</li>
+           
+        </ul>
+        <div class="tab-container-area">
+            <div class="tab-container">
+                <h5>tab1</h5>
+                <div class="tab-item">
+                    <div class="pic">
+                       <img src="img/01.jpg">
+                    </div>
+                    <div class="txt">
+                        <h3>quia! Iste omnis</h3>
+                        <div class="meta">
+                            <div class="cat">
+                                <p>food</p>
+                            </div>
+                            <div class="date">
+                                <p>july 7</p>
+                            </div>
+                            <div class="author">
+                                <p>user</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-item">
+                  <div class="pic">
+                    <img src="img/02.jpg">
+                  </div>
+                  <div class="txt">
+                    <h3>quia! Iste omnis</h3>
+                    <div class="meta">
+                        <div class="cat">
+                            <p>food</p>
+                        </div>
+                        <div class="date">
+                            <p>july 7</p>
+                        </div>
+                        <div class="author">
+                            <p>user</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-item">
+                    <div class="pic">
+                        <img src="img/03.jpg">
+                    </div>
+                    <div class="txt">
+                      <h3>quia! Iste omnis</h3>
+                      <div class="meta">
+                          <div class="cat">
+                              <p>food</p>
+                          </div>
+                          <div class="date">
+                              <p>july 7</p>
+                          </div>
+                          <div class="author">
+                              <p>user</p>
+                          </div>
+                      </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="tab-container">
+              <h5>tab2</h5>
+              <div class="tab-item">
+                  <div class="pic">
+                     <img src="img/01.jpg">
+                  </div>
+                  <div class="txt">
+                      <h3>quia! Iste omnis</h3>
+                      <div class="meta">
+                          <div class="cat">
+                              <p>food</p>
+                          </div>
+                          <div class="date">
+                              <p>july 7</p>
+                          </div>
+                          <div class="author">
+                              <p>user</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="tab-item">
+                <div class="pic">
+                  <img src="img/02.jpg">
+                </div>
+                <div class="txt">
+                  <h3>quia! Iste omnis</h3>
+                  <div class="meta">
+                      <div class="cat">
+                          <p>food</p>
+                      </div>
+                      <div class="date">
+                          <p>july 7</p>
+                      </div>
+                      <div class="author">
+                          <p>user</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-item">
+                  <div class="pic">
+                      <img src="img/03.jpg">
+                  </div>
+                  <div class="txt">
+                    <h3>quia! Iste omnis</h3>
+                    <div class="meta">
+                        <div class="cat">
+                            <p>food</p>
+                        </div>
+                        <div class="date">
+                            <p>july 7</p>
+                        </div>
+                        <div class="author">
+                            <p>user</p>
+                        </div>
+                    </div>
+                  </div> 
+              </div>
+          </div>
+         
+        </div>
+      </div>
+
+    
+   
+
+     
+
+  </body>
+</html>

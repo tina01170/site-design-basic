@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS animation</title>
+   
+    <style>
+
+          .animation {
+            width:150px;
+            height:150px;
+            background-color: aquamarine;
+            position: relative;
+
+            animation-name:animate;
+            animation-duration:5s;
+            animation-delay:1s;
+            animation-iteration-count:2;
+            /*animation-iteration-count: infinite; 一直循還 */
+            /*animation-direction:reverse;*/
+            /*animation-direction:alternate;*/
+            animation-direction: alternate-reverse;
+            animation-play-state: running;
+            /*animation-play-state:paused;*/
+          }
+
+          @keyframes animate {
+            0% { background-color: aqua; left:0; top:0;}
+            25% { background-color: cornflowerblue; left:400px; top:0;}
+            50% {background-color: blue; left:400px; top:400px;}
+            75% {background-color: brown; left:0; top:400px;}
+            100% { background-color: blueviolet; left:0; top:0;}
+          }
+
+
+    </style>
+  </head>
+  <body>
+
+
+    <div class="animation"></div>
+
+   
+
+
+    
+
+    
+   
+  </body>
+</html>

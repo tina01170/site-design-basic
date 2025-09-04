@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Bootstrap demo</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      
+      a:focus {
+        border:1px dashed #000;
+      }
+
+      .header {
+        margin: 70px;
+      }
+
+      .header .logo {
+        text-decoration: none;
+        font-size: 36px;
+      }
+
+      .nav-menu {
+         display: flex;
+         
+      }
+
+      .nav-menu li {
+          margin:10px;
+          position: relative;
+      }
+    
+      .nav-menu li a {
+        cursor: pointer;
+        font-size: 20px;
+        text-decoration: none;
+      } 
+     
+
+      .dropdown {
+        width:20px;
+        height:20px;
+        border: none;
+        background-color: transparent;
+        color:#000;
+        display:inline-block;
+        cursor:pointer;
+        text-align:center;
+        /*transform: rotateX(180deg);*/
+      }
+
+      
+      .sub-menu {
+        display: none;
+       
+      }
+      
+      .nav-menu ul {
+        width: 200px;
+        position: absolute;
+        top:100%;
+        /*display: none;*/
+        z-index: 99;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        background-color:#fff;
+        padding:15px;
+      }
+
+      .nav-menu ul ul {
+        padding-left:12px;	
+        top:50%;
+        left:190px;
+      }
+
+
+      .nav-menu ul li a,
+      .nav-menu ul .sub-menu li a {
+          text-decoration: none;
+          font-size: 18px;
+          color:#000;
+          text-transform: uppercase;	
+          transition: ease-in 0.6s;   
+      }
+
+      
+      
+    </style>
+    <script>
+    $(document).ready(function() {
+        //$('.main-navigation .nav-menu .menu-item-has-children > a').after( $('<a href="#" class="dropdown-toggle"><i class="fas fa-chevron-up"></i></a>') );
+
+        $('.nav-menu .menu-item-has-children > a').after($('<button class="dropdown"><i class="fas fa-chevron-down"></i></button>'));
+
+        $('.dropdown').click(function () {
+         
+          $(this).next('.sub-menu').toggle();
+        });
+    });
+    </script>
+   
+  </head>
+  <body>
+    
+  <header class="header">
+    <a class="logo" href="#">victoria</a>
+    <ul class="nav-menu">
+      <li><a href="#">Item 9</a></li>
+      <li><a href="#">Item 8</a></li>
+      <li class="menu-item-has-children"><a href="#">Item 1</a>
+        <!--<a href="#" class="open">+</a>-->
+        <!--<button class="dropdown"><i class="fas fa-chevron-down"></i></button>-->
+        <ul class="sub-menu">
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li> 
+          <li class="menu-item-has-children"><a href="#">entertainment</a>
+            <!--<a href="#" class="open">+</a>-->
+            <!--<button class="dropdown"><i class="fas fa-chevron-down"></i></button>-->
+            <ul class="sub-menu">
+                <li><a href="#">Category-1</a></li>
+                <li><a href="#">Category-2</a></li>
+                <li><a href="#">Category-3</a></li>
+                <li><a href="#">Category-4</a></li>
+                <li><a href="#">Category-5</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>  
+      <li><a href="#">Item 4</a></li>
+      <li><a href="#">Item 5</a></li>
+    </ul>
+  </header>  
+
+    
+   
+  </body>
+</html>

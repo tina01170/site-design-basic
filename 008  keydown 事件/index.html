@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/custome.js"></script>
+    <title>Victoria</title>
+    <style>
+     
+    </style>
+    <script>
+    /*
+    $(function() {});  */
+    // $(document).ready(function(){   });  
+    $(function() {
+          //search
+          $(".search-wrap").find(".search-submit").on("keydown", function (e) {
+            var tabKey = e.keyCode === 9;
+            if (tabKey) {
+              e.preventDefault();
+              $(".search-show").focus();
+            }
+          });
+        
+
+          $(".search-show").on("keydown", function (e) {
+            var tabKey = e.keyCode === 9;
+            var shiftKey = e.shiftKey;
+            if ($(".search-wrap").hasClass("show")) {
+              if (shiftKey && tabKey) {
+                e.preventDefault();
+                $(".search-wrap").removeClass("show");
+                $(".search-show").focus();
+              }
+            }
+          });
+
+        /*navigation*/
+          $(window).on('load resize', function() {
+            if ($(window).width() < 992) {
+                $('.main-navigation').find("li").last().on('keydown', function(e) {
+                    if (e.which === 9) {
+                        e.preventDefault();
+                        $('.header').find('.menu-toggle').focus();
+                    }
+                });
+            } else {
+                $('.main-navigation').find("li").off('keydown');
+            }
+        });
+
+        
+        var primary_menu_toggle = $('#masthead .menu-toggle');
+        primary_menu_toggle.on('keydown', function(e) {
+            var tabKey = e.keyCode === 9;
+            var shiftKey = e.shiftKey;
+
+            if (primary_menu_toggle.hasClass('open')) {
+                if (shiftKey && tabKey) {
+                    e.preventDefault();
+                    $('.main-navigation').toggleClass('toggled');
+                    primary_menu_toggle.removeClass('open');
+                };
+            }
+        });
+    });
+    </script>
+    
+  </head>
+  <body>
+    <!--<header id="masthead" class="site-header">-->
+    <header class="header">
+      <div class="theme-wrapper">
+          <a class="site-logo" href="index.html">
+            <img src="img/Victoria.png">
+          </a>
+          <div class="top-menu">
+              <nav class="main-navigation">
+                  <button class="menu-toggle">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                  </button>
+                  <ul class="nav-menu">
+                        <li class="menu-item"><a href="index.html">Home</a></li>
+                        <li class="menu-item"><a href="#">Travel</a></li>
+                        <li class="menu-item"><a href="#">Fashion</a></li>
+                        <li class="menu-item"><a href="#">Category</a></li>
+                        <li class="menu-item menu-item-has-children"><a href="#">Life-style</a>
+                          <ul class="sub-menu">
+                            <li class="menu-item"><a href="#">Category-1</a></li>
+                            <li class="menu-item"><a href="#">Category-2</a></li>
+                            <li class="menu-item menu-item-has-children"><a href="#">Category-3</a>
+                                <ul class="sub-menu">
+                                  <li class="menu-item"><a href="#">item-1</a></li>
+                                  <li class="menu-item"><a href="#">item-2</a></li>
+                                  <li class="menu-item"><a href="#">item-3</a>
+                                </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="menu-item"><a href="single.html">Single</a></li>
+                        <li class="menu-item"><a href="about.html">About</a></li>
+                        <li class="menu-item"><a href="contact.html">Contact</a></li>
+                    </ul>
+              </nav>
+              <div class="search">
+                <div class="search-wrap">
+                  <a href="#" title="Search" class="search-show"><i class="fa fa-search"></i></a>
+                  
+                  <form class="search-form">
+                    <input type="search" name="" id="">
+                    <button class="search-submit"><i class="fa fa-search"></i></button>
+                  </form>
+                </div>
+              </div>
+          </div> <!--top-menu-->
+      </div>
+    </header>
+    <section>
+      <article class="item">
+        <div class="pic">
+          
+          <img src="https:picsum.photos/360/240?random=01" />
+        </div>
+        <div class="txt">
+          <h2><a href="single.html">2023 年值得一看的 12 部日劇</a>
+          </h2>
+          <p>
+          陷阱戰爭
+          是由草彅剛主演的政治復仇劇，是冬季口碑不錯的一部日劇，演員和劇情都不錯，編劇是後藤法子，戰爭三部曲都是他寫的。
+          </p>
+          <a href="single.html" class="btn">more</a>
+        </div>
+      </article>
+    </section>
+    
+    <footer class="footer">
+        <div class="theme-wrapper">    
+          <div class="copyright">
+              <p>2024 @copyright | All Right reserve</p>
+          </div>
+        </div>
+        <button class="topbutton"><i class="fas fa-chevron-up" style="font-size:30px"></i></button>
+    </footer>
+
+    
+
+   
+   
+  </body>
+</html>

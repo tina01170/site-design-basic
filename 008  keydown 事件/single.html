@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>html&css</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/custome.js"></script>
+    <style>
+       
+        #tab-list {
+          margin:20px 0;
+          cursor: pointer;
+          
+          z-index:200;
+          background: rgba(219, 219, 219, 0.5) ;
+          padding: 10px;
+          transition:2s;
+          min-width:200px
+          /*position: fixed;*/
+          /*min-width:200px;
+          max-width:350px;
+          max-height:70vh;*/
+        }
+
+        #tab-list summary{
+          font-size:20px;
+          padding-bottom: 10px;
+        }
+
+        #tab-list ol {
+          
+        }
+
+        #tab-list #list li {
+          padding:6px;
+        }
+
+
+        #tab-list #list li a {
+          font-weight: 500;
+          font-size: 20px;
+          text-decoration: none;
+          color: #000;
+        }
+    </style>
+  </head>
+  <body>
+    
+        <header class="header">
+          <div class="theme-wrapper">
+              <a class="site-logo" href="index.html">
+                <img src="img/Victoria.png">
+              </a>
+              <div class="top-menu">
+                  <nav class="main-navigation">
+                      <button class="menu-toggle">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                      </button>
+                      <ul class="nav-menu">
+                            <li class="menu-item"><a href="index.html">Home</a></li>
+                            <li class="menu-item"><a href="#">Travel</a></li>
+                            <li class="menu-item"><a href="#">Fashion</a></li>
+                            <li class="menu-item"><a href="#">Category</a></li>
+                            <li class="menu-item menu-item-has-children"><a href="#">Life-style</a>
+                              <ul class="sub-menu">
+                                <li class="menu-item"><a href="#">Category-1</a></li>
+                                <li class="menu-item"><a href="#">Category-2</a></li>
+                                <li class="menu-item menu-item-has-children"><a href="#">Category-3</a>
+                                    <ul class="sub-menu">
+                                      <li class="menu-item"><a href="#">item-1</a></li>
+                                      <li class="menu-item"><a href="#">item-2</a></li>
+                                      <li class="menu-item"><a href="#">item-3</a>
+                                    </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="menu-item"><a href="single.html">Single</a></li>
+                            <li class="menu-item"><a href="about.html">About</a></li>
+                            <li class="menu-item"><a href="contact.html">Contact</a></li>
+                            
+                        </ul>
+                  </nav>
+                  <div class="search">
+                    <div class="search-wrap">
+                      <a href="#" title="Search" class="search-show"><i class="fa fa-search"></i></a>
+                      
+                      <form class="search-form">
+                        <input type="search" name="" id="">
+                        <button class="search-submit"><i class="fa fa-search"></i></button>
+                      </form>
+                    </div>
+                  </div>
+              </div> <!--top-menu-->
+          </div>
+        </header>
+        <main class="container">
+          <div class="theme-wrapper">
+              <div class="contant-bg">
+                  <article class="article single-post">
+                      <h2 class="single-title">2023 年值得一看的 12 部日劇
+                      <details id="tab-list">
+                          <summary>目錄</summary>
+                          <ul id='list'>
+                          </ul>
+                      
+                      </details>
+                     
+                      <h3>1、陷阱戰爭</h3>
+                      <p>由草彅剛主演的政治復仇劇，是冬季口碑不錯的一部日劇，演員和劇情都不錯，編劇是後藤法子，戰爭三部曲都是他寫的。</p>
+                      <h3>2、星降的夜晚</h3>
+                      <p>這部劇與 silent 一樣男配角都是聽障者，但不只是戀愛劇，還描寫了男配柊一星擔任遺物整理師的職場戲，與雪宮鈴擔任婦產科醫生替婦女接生的情節。故事圍繞在男配佐佐木深夜(鈴的同事)、雪宮鈴與柊身上的愛情故事，這部愛情戲的元素有身障者、姐弟戀與三角關係，由於故事節奏緩慢看沒完。</p>
+                        
+                      <h3>3、逆轉交響樂團</h3>
+                      <p>
+                      這是一部以音樂為題材的日劇，劇情十分有趣也不拖戲，會讓人想一口氣看完。由女星門脇麥首次主演，她原是天才小提琴少女，後來被常葉認出來，他繳請她到玉交響樂團，她答應後成為樂團的第一首席，兩人一起破除重重難關的情節，會讓人想起交響情人夢這部日劇，但兩者是完全不一樣的故事。
+                      </p>  
+                      <h3>4、重啟人生</h3>
+                      <p>
+                      老實說這部劇其實不是很喜歡，雖然第一集開頭的設定很有趣，但前面幾集的劇情太平淡了，劇情進入第四、五集的時候才感覺比較有趣，劇情風格應該算喜劇吧，只有最後三、四集比較好看。
+                      </p> 
+                      <h3> 5、風間公親 教場-0-</h3>
+                      <p>
+                      雖然出場來賓是按集數出場，但是劇情還不錯，而且是著重在風間公親(木村拓哉飾演)與來賓的互動，案情相對比較簡單。
+                      </p>
+                      <h3> 6、獻給國王的無名指</h3>
+                      <p>
+                      由橋本環奈主演的輕鬆愛情喜劇，羽田綾香與社長新田是一對歡喜冤家，兩人在婚禮後共住一室鬧過不少笑話，雖然是老梗的愛情劇但是看得很高興。
+                      </p>
+                      <h3> 7、即使你不和我做</h3>
+                      <p>
+                      描述兩對夫妻在婚姻裡彼此的互動，他與她「早已沒有性生活」，只有愛情的婚姻還走得下去嗎？這部日劇應該會引起婚姻中女性的共鳴與反思，但是搞不倫的情節上演後就無力再看下去。
+                      </p>
+                      <h3> 8、Last man </h3>
+                      <p> 
+                      Last man 是以警察為主角的懸疑推理劇，案子是 每一集完結，因為有主線劇情不會讓人感覺無聊，每一集都會有一、二個笑點，說教味也不覺讓人感覺太重，是值得推薦的一部日劇。
+                      </p>
+                      <h3>9、VIVANT </h3>
+                      <p>
+                      如果一年只看一部日劇這部劇一定要看，前五集的劇情就像是諜報電影一樣精彩、刺激，尤其是乃木一行人一起逃亡的劇情如同電影般的情節。最後三集的反轉也讓人大呼過癮，TENT 的首領早明白乃木的目的，他們要買地的反轉讓人驚奇，最值得讓人嘆為觀止的情節是，TENT 的首領貝奇假投降真復仇的戲碼。
+                      </p>
+                      
+                  </article>
+                  <aside class="aside">
+                      <div class="meta">
+                        <h2>Meta</h2>
+                        <ul>
+                          <li><a href="#">April</a></li>
+                          <li><a href="#">May</a></li>
+                          <li><a href="#">july</a></li>
+                        </ul>
+                      </div>
+                      <div class="search">
+                        <h2>Search </h2>
+                        <form>
+                            <input type="search">
+                            <button><i class="fa fa-search"></i></button>
+                        </form>
+                      </div>
+                  </aside>
+              </div>  
+          </div>
+        </main>
+        <footer class="footer">
+            <div class="theme-wrapper">
+              <div class="copyright">
+                <p>@copyright All Right reserve</p>
+              </div>
+            </div>
+            <button class="topbutton"><i class="fas fa-chevron-up" style="font-size:30px"></i></button>
+        </footer>
+        <script>
+            let tab =document.getElementById("tab-list");
+            let title = document.querySelectorAll("H3");
+            let list = document.getElementById("list");
+            //console.log(title);
+
+            if (title.length >0) {
+              let lister=[];
+              for (let i = 0; i < title.length; i++) {
+                var z = i<9 ? "0" : '';
+                Ax = "chapit-"+z+(i+1);
+                title[i].setAttribute("id", Ax);
+                lister[i]="<li><a href='#"+Ax + "'>" + title[i].innerHTML+"</a></li>"; 
+              }
+              list.innerHTML=lister.join('');
+
+            } else { 
+              tab.style.display="none"; 
+            }
+        </script>
+      
+    
+
+    
+   
+  </body>
+</html>

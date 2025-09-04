@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>選項卡</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        html,body {
+          font-family:sans-serif;
+          font-size: 18px;
+          line-height: 2;
+        }
+        .container{
+          max-width: 700px;
+          margin:0 auto;
+        }
+        #tab-navigation {
+          padding:0;
+          margin:0;
+          list-style:none;
+        }
+        #tab-navigation li {
+          display: inline-block;
+          color:#000;
+          background-color: #e0e0e0;
+          padding:5px 15px;
+          min-width:100px;
+          text-align: center;
+          border-radius: 5px 5px 0 0;
+          cursor: pointer;
+          transition:all 0.9s ease-in-out;
+        }
+
+        #tab-navigation li:hover,
+        #tab-navigation li.active {
+          background-color:#f0f0f0;
+        }
+
+
+        .tab-container-area {}
+
+
+        #tab-container {
+          color:#000;
+          background-color: #e0e0e0;
+          padding:10px;
+          border-radius:0 5px 5px 5px;
+          display: none;
+        }
+
+
+    </style>
+    
+    <script>
+    $(document).ready(function(){
+        $(".tab-container:first").show();
+        $(".tab-navigation li:first").addClass('active');
+
+        $(".tab-navigation li").click(function(){
+            index = $(this).index();
+            $(".tab-navigation li").removeClass('active');
+            $(this).addClass('active');
+            $(".tab-container").hide();
+            $(".tab-container").eq(index).show();
+        });
+    });  
+    </script>
+    
+  </head>
+  <body>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <ul id="tab-navigation">
+            <li id="#tab1">tab1</li>
+            <li id="#tab2">tab2</li>
+            <li id="#tab3">tab3</li>
+            <li id="#tab4">tab4</li>
+        </ul>
+        <div class="tab-container-area">
+            <div id="tab-container">
+                <h2>tab1</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias excepturi commodi aliquid, libero quisquam voluptatem dolores natus impedit magnam error temporibus quia! Iste omnis veritatis corrupti nulla ea doloribus voluptate ab neque dolores tempore, adipisci consequatur vel aperiam reiciendis expedita ducimus illo debitis fugit laudantium modi rerum distinctio aliquid. Magni.</p>
+            </div>
+            <div id="tab-container">
+                <h2>tab2</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias excepturi commodi aliquid, libero quisquam voluptatem dolores natus impedit magnam error temporibus quia! Iste omnis veritatis corrupti nulla ea doloribus voluptate ab neque dolores tempore, adipisci consequatur vel aperiam reiciendis expedita ducimus illo debitis fugit laudantium modi rerum distinctio aliquid. Magni.</p>
+            </div>
+            <div id="tab-container">
+                <h2>tab3</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias excepturi commodi aliquid, libero quisquam voluptatem dolores natus impedit magnam error temporibus quia! Iste omnis veritatis corrupti nulla ea doloribus voluptate ab neque dolores tempore, adipisci consequatur vel aperiam reiciendis expedita ducimus illo debitis fugit laudantium modi rerum distinctio aliquid. Magni.</p>
+            </div>
+            <div id="tab-container">
+                <h2>tab4</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias excepturi commodi aliquid, libero quisquam voluptatem dolores natus impedit magnam error temporibus quia! Iste omnis veritatis corrupti nulla ea doloribus voluptate ab neque dolores tempore, adipisci consequatur vel aperiam reiciendis expedita ducimus illo debitis fugit laudantium modi rerum distinctio aliquid. Magni.</p>
+            </div>
+        </div>
+    </div>
+
+   
+  </body>
+</html>

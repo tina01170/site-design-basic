@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style> 
+      html,body {
+        height: 100%;
+      }
+
+      body {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .section {
+        width: 700px;
+        height: 500px;
+       
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+      }
+
+      #tab li {
+          width: 100px;
+          padding:20px 40px;
+          border: 1px solid #bbb;
+          cursor: pointer;
+         
+      }
+
+      #tab li a {
+        font-size: 26px;
+      }
+      
+      #container>div {
+        display: none;
+      }
+
+     
+  </style>
+  <script>
+     $(document).ready(function(){
+
+      $('#container>div').first().css("display",'block');
+      var $contents = $('#container>div'); 
+
+      var currIndex = 0;    //顯示當前內容div 的下標
+
+      $('#tab>li').click(function () { // 隐式遍历 //alert('----')
+          // 隐藏当前已经显示的内容div
+          $contents[currIndex].style.display = 'none';
+          // 显示对应的内容div
+          // 得到当前点击的Li在兄弟中下标 
+          var index = $(this).index();
+          // 找到对应的内容div,并显示 
+          $contents[index].style.display = 'block';
+          // 更新下标
+          currIndex = index;
+      })
+    })
+
+   
+
+  </script>
+</head>
+<body>
+    <div class="section">
+      <h2>tabs鍵操作</h2>
+      <ul id="tab">
+        <li id="#tab1"><a>latest</a></li>
+        <li id="#tab2"><a>trending</a></li>
+        <li id="#tab2"><a>express</a></li>
+      </ul>
+      <div id="container">
+        <div id="contant1">
+            在這之後，學會內的人員都開始以奧斯卡來作為小金人的暱稱。1934年的第六屆頒獎典禮後，好萊塢的專欄作家西德尼·斯科爾斯基（Sidney Skolsky）在他的文章中第一次公開使用了奧斯卡這個稱謂。1939年，學會最終認可了奧斯卡這個名字，並且開始正式的使用它。比如學院獎的官方網站的域名便是「oscar.com」（現在最新的域名是"oscar.go.com"）。至今，「奧斯卡」與「學院獎」兩個名稱都還在使用。
+        </div>
+        <div id="contant2">
+            奧斯卡評審委員即學院會員資格的獲得，必須先經過所在分會兩名以上會員提名或學院邀請產生。學院不公布其所屬會員的名單，但一般媒體對獲邀請的知名導演演員均有報導。學院對獲獎影片的資格有嚴格的規定，必須是前一年1月1日到12月31日間在洛杉磯地區的影院首映，並連續放映不少於7天的影片。此外對影片長度、底片規格等都有明確的規定。
+        </div>
+        <div id="contant3">
+            規則二也說明電影的長度，除了短片電影，長片電影必須至少 40 分鐘。報名電影也必須使用35毫米膠片或是70毫米膠片沖印，或是使用至少2048乘以1080畫素，24幀/秒或是48幀/秒逐行掃描的數位電影格式。
+        </div>
+      </div>
+    </div>
+   
+     
+</body>
+</html>
