@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   
+    <style>
+
+
+    </style>
+  </head>
+  <body>
+    <script>
+      // 啟動 cookie
+      console.log(navigator.cookieEnabled);
+      //document.cookie = "firstName=Spongebob; expires=Sun, 1 January 2030 12:00:00 UTC; path=/";
+      //document.cookie = "lastName=Squarepants; expires=Sun, 1 January 2030 12:00:00 UTC; path=/";
+      //let allCookies = document.cookie;
+      //console.log(allCookies);  
+
+      //console.log(document.cookie.expires)  //undefined
+      //console.log(document.cookie)
+      /*
+      document.cookie = "user=John; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=None; Secure"
+      console.log(document.cookie)
+      */
+      /*
+      setCookie(name, 965333156, 356)
+      console.log(document.cookie)
+
+      function setCookie(name, value, daysToLive){
+            const date = new Date();
+            date.setTime(date.getTime() +  (daysToLive * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + date.toUTCString();
+            document.cookie = `${name}=${value}; ${expires}; path=/`
+      }*/
+    
+
+      document.cookie = "user=John; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT";
+      console.log(document.cookie);
+
+      function setCookie(name,value,day) {
+        const date = new Date();
+        date.setTime(date.getTime() +(day *24 * 60* 60*1000))
+        let expires = "expires =" + date.toUTCString();
+        document.cookie = `${name}=${value}; ${expires}`;
+      }
+
+      /*
+      function deletecookie(name) {
+        setCookie(name)
+      }*/
+
+      function getCookie(name) {
+          var cd = decodeURIComponent(document.cookie);
+          var c = cd.split(';')
+
+          for(i=0;cd.length;i++) {
+            var k = c[i].trim();
+            if (k.indexOf(name) == 0) {
+                return k.substring(name.length, k.length)
+            }
+
+          }
+
+      }
+    
+    </script>
+    
+
+    
+   
+  </body>
+</html>

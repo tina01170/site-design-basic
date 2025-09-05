@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'></script>
+    <style>
+
+
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h4>人物</h4>
+      <div class="box">
+         <h3 id="name">APPLE</h3>
+         <p id ="gender">male</p>
+         <p id ="country">United States</p>
+         <p id ="email">leslie.gregory@example.com</p>
+      </div>
+    </div>
+    <script>
+        
+        var dataUrl = "https://api.randomuser.me/";
+        /*
+        $.ajax({
+          url:dataurl,    
+          method:'Get',   
+          dataType:'json',     
+          success: res =>{
+            console.log(res)
+            
+          },
+          error: err =>{
+            console.log(err)
+          },
+        })*/
+        axios.get(dataUrl)
+        .then ( (res) =>{
+          console.log(res.data);
+          //print(res.data)
+          
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+
+        /*
+        function print(data){
+          var newname = document.getElementById('name')
+          console.log(newname)
+          newname.innerHTML(`
+          <h3 class="name">${res.name.first}</h3>
+          `)
+        }*/
+       
+
+      
+       
+      
+
+
+    </script>
+    
+
+    
+   
+  </body>
+</html>

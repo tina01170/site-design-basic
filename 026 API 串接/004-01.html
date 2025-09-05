@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <script>
+     
+      $.ajax({
+        // url
+        url:'https://api.randomuser.me/',
+        // 請求釋型
+        method:'Get',
+        // 響應體結果
+         dataType:'json',  // API的格式   
+        // 參數
+        data:'',        // 若有傳送資料時的資料設定 (GET沒有)
+        // 超時時間
+        timeout:2000,
+        // 頭信息
+        headers: {
+           c:300,
+           d:400
+        },
+        //發送前調用
+        beforeSend: function () {
+
+        },
+        // 成功的回調
+        success: function (data) {
+          console.log(data);
+        },
+        // 失敗的回調
+        error: function () {
+          console.log('出錯了');
+        },
+        // 請求完成調用，不論成功 or 失敗
+        complete: function () {
+
+        },
+        // 請求成功後調用
+        dataFilter: function () {
+          
+        }
+
+
+      })
+
+     
+  </script>
+    
+
+    
+   
+  </body>
+</html>

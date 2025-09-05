@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script crossorigin="anonymous" src=""></script>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <!--
+      crossorigin 屬性概覽
+      crossorigin 屬性是 HTML 元素的一個屬性，
+      用於配置跨來源資源的請求方式。
+      它主要用於<link>、<img>、<script>等標籤，
+        以確定如何處理來自不同來源的資源。
+        這個屬性可以有三種可能的值：anonymous、use-credentials，
+        或者不設置。
+
+      anonymous	跨域請求將不會包含使用者憑證
+      （如Cookies和HTTP認證信息）。
+      如果伺服器不返回有效的CORS頭部，則圖片會被阻塞。  
+
+      use-credentials	
+      請求會包含用戶憑據，如Cookie和HTTP認證。
+      如果伺服器不返回有效的CORS頭部，則圖片會被阻塞。
+
+      不設置	如果未設置，則不會應用CORS規則。
+    -->
+
+    <!--
+      使用場景與示例
+      跨域字型
+      當使用Web字型（如Google字型）時，
+      <link>標籤的crossorigin屬性應設置為anonymous，
+      以確保字型文件能夠在跨域策略下被正確加載。
+    -->
+
+    <link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <!--
+      為了安全地加載跨域的JavaScript腳本，
+      可以為<script>標籤添加crossorigin屬性。
+        這有助於在腳本出錯時提供更詳細的錯誤信息，
+        而不是簡單地報告一個跨域錯誤。
+    -->
+
+    <script crossorigin="anonymous" src="https://example.com/script.js"></script>
+
+    
+    <!-- crossorigin 與網頁安全
+    使用crossorigin屬性可以增強網站的安全性。
+    它允許開發者精細控制哪些跨域資源可以被加載，以及如何加載，
+    從而減少了潛在的安全風險。
+    特別是在加載第三方資源時，
+    合理配置crossorigin屬性可以預防CSRF攻擊和數據洩露。
+
+    結語
+    crossorigin屬性是現代網頁開發中一個重要的安全特性，
+    它提供了一種靈活的方式來處理跨域資源的請求。
+    通過理解和正確使用這一屬性，
+    開發者可以在保護用戶隱私和提升網站安全性的同時，
+    確保網頁應用的正常運行。隨著網絡安全威脅的不斷演進，
+    s掌握這些基本的安全措施對於每一位開發者來說都是必要的。
+    -->
+    
+   
+  </body>
+</html>

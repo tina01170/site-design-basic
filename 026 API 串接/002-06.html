@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>重複請求</title>
+   
+    <style>
+
+
+    </style>
+  </head>
+  <body>
+    <button>點擊發送</button>
+    <script>
+      const btns = document.querySelectorAll('button');
+      let x = null;
+      let isSending = false; //標識是否正在發收請求
+
+      btns[0].onclick =  function () {
+          // 判斷標識變量
+          if(isSending) x.abort;  //如果正在發送則取消該請求，創建新的請求
+          x = new XMLHttpRequest();
+          isSending = true;
+
+          X.open("GET",url);
+          x.send();
+          xhr.onreadystatechange = function(){
+            if(x.readyState === 4 ){
+              isSending = false;
+            }
+        }
+      }
+
+      
+
+    </script>
+    
+
+    
+   
+  </body>
+</html>

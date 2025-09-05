@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+  h2 {
+    color: #f00;
+    margin: 15px 5px 5px;
+  }
+  div div {
+    border: 1px solid #000;
+    border-top-width: 5px;   /* 上邊框加粗 */
+    margin: 5px;
+    padding: 5px;
+  }
+  .a {writing-mode: horizontal-tb;}
+  .b {writing-mode: vertical-rl;}  /*直書且由右到左。*/
+  .c {writing-mode: vertical-lr;}  /*直書且由左到右。*/ 
+    </style>
+  </head>
+  <body>
+    <!--writing-mode 不只會影響文字書寫的水平方向，
+      也會影響其他元素排列方向，
+      下方範例展示三種不同語系的書寫方向，
+      英文語系轉換方向後，
+      字母的方向也會跟著旋轉 90 度 ( 包含半形數字和標點 )，
+      而中日韓文語系會保持原來的方向 ( 包含全形數字和標點 )，
+      而雖然方向改變不是「旋轉」，
+      因此原本區塊的樣式還是會保持一至 ( 上邊框不會變成左右邊框 )。-->
+  
+      <h2>horizontal-tb</h2>
+      <div class="a">
+        <div>Good morning! oxxo!</div>  
+        <div>早安圈叉叉圈！</div> 
+        <div>おはようございます。</div>
+        <div>좋은 아침이에요 잘 지내요？</div>
+        <div>0123456789!?</div>
+        <div>０１２３４５６７８９！？</div>
+      </div>
+
+      <h2>vertical-rl 直書且由右到左</h2>
+      <div class="b">
+        <div>Good morning! oxxo!</div>  
+        <div>早安！圈叉叉圈！</div> 
+        <div>おはようございます。</div>
+        <div>좋은 아침이에요 잘 지내요？</div>
+        <div>0123456789!?</div>
+        <div>０１２３４５６７８９！？</div>
+      </div>
+
+
+      <h2>vertical-lr 直書且由左到右</h2>
+      <div class="c">
+        <div>Good morning! oxxo!</div>  
+        <div>早安！圈叉叉圈！</div> 
+        <div>おはようございます。</div>
+        <div>좋은 아침이에요 잘 지내요？</div>
+        <div>0123456789!?</div>
+        <div>０１２３４５６７８９！？</div>
+      </div>
+
+    
+   
+  </body>
+</html>

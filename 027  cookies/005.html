@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   
+    <style>
+
+
+
+
+
+
+
+
+
+
+    </style>
+  </head>
+  <body onload="checkCookie()">
+    
+    
+
+    <script>
+        //设置 cookie
+        function setCookie(cname,cvalue,exdays){
+          var date = new Date();
+          date.setTime(date.getTime()+(exdays*24*60*60*1000));
+          var expires = "expires="+date.toGMTString();
+          document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+        //获取 cookie
+        function getCookie(cname) {
+          var name = cname + "="; //创建一个文本变量用于检索指定 cookie :cname + "="。
+          //使用分号来分割 document.cookie 字符串，并将分割后的字符串数组赋值给 ca
+          var ca = document.cookie.split(';'); 
+          for(var i=0; i<ca.length; i++) {
+            // 循环 ca 数组 (i=0;i<ca.length;i++)，然后读取数组中的每个值，并去除前后空格
+            var c = ca[i].trim(); 
+            if (c.indexOf(name)==0) { 
+              return c.substring(name.length,c.length); 
+            }
+          }
+          return "";
+        } 
+          /*
+           如果找到 cookie(c.indexOf(name) == 0)，
+           返回 cookie 的值 (c.substring(name.length,c.length)。
+           如果没有找到 cookie, 返回 ""。*/
+
+
+        //检测 cookie
+
+        function checkCookie() {
+            var username=getCookie("username");
+            if (username != "") {
+              alert("Welcome again " + username);
+            }  else   {
+              username = prompt("Please enter your name:","");
+              if (username!="" && username!=null)  {
+                setCookie("username",username,365);
+              }
+            }
+        }
+
+    </script>
+    
+
+    
+   
+  </body>
+</html>

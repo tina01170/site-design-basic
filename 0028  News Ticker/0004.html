@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' rel='stylesheet'/> 
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+    <style>
+	/*marquee*/
+/*marquee*/
+
+*{margin:0;padding:0}*,::after,::before{box-sizing:border-box}a{text-decoration:none;transition:all .5s ease-in-out 0s}
+a:hover{text-decoration:none}
+.acme-news-ticker{background:#fff;position:relative;height:45px;border:1px solid #1974d2;margin-top:45px}
+@media (min-width:768px){.acme-news-ticker{margin-top:0}}
+.acme-news-ticker-label { background:#1974d2;padding:10px;width:auto;float:left;margin-right:15px;line-height:normal;  height:100%;  color:#fff}
+@media (max-width:575px){.acme-news-ticker-label{position:absolute;top:-45px}}
+.acme-news-ticker-box {height:100%;  padding-top:10px;  overflow:hidden}
+@media (max-width:575px){.acme-news-ticker-box{padding-left:10px;padding-right:120px}}
+.acme-news-ticker-box ul {width:100%;list-style-type:none!important;padding:0;margin:0}
+.acme-news-ticker-box ul li a {font-size:20px; color:#000; text-decoration:none; line-height:30px; }
+.acme-news-ticker-controls {display:flex;position:absolute;height:100%;right:0; top:0; }
+.acme-news-ticker-controls button  {  height:100%; background:#f6f6f6; padding:0; width:40px; bordercolor:#eee; borderstyle:solid; borderwidth:0 0 0 1px; cursor:pointer; display:inline-block}
+.acme-news-ticker-controls button:hover{background:#eee}
+.acme-news-ticker-controls button .acme-news-ticker-arrow { margin:0; display:inline-block; position:relative; border:1px solid #ccc; }
+
+.acme-news-ticker-prev::after, .acme-news-ticker-next::after { font-family: 'Font Awesome 5 Free'; float: right; font-size: 14px; font-weight: 900; margin:5px 0 0 5px; font-size:20px; line-height:33px; padding:0 10px; color:#282828; 
+}
+.acme-news-ticker-pause::after  { font-family: 'Font Awesome 5 Free'; float: right; font-size: 10px; font-weight: 900; margin:5px 0 0 5px; font-size:14px; line-height:33px; padding:0 10px; color:#282828; }
+
+.acme-news-ticker-prev::after { content: '\f104'; }
+.acme-news-ticker-pause::after { content: '\f04c'; }
+.acme-news-ticker-next::after { content: '\f105'; }
+
+	</style>
+  </head>
+  <body>
+  
+    <div class='acme-news-ticker'>
+      <div class='acme-news-ticker-label'>News Ticker Label</div>
+      <div class='acme-news-ticker-box'>
+        <ul class='my-news-ticker'>
+          <li>
+            <a href='#'>Breaking News 1</a>
+          </li>
+          <li>
+            <a href='#'>Breaking News 2</a>
+          </li>
+          <li>
+            <a href='#'>Breaking News 3</a>
+          </li>
+        </ul>
+      </div>
+      <div class='acme-news-ticker-controls acme-news-ticker-horizontal-controls'>
+        <span class='acme-news-ticker-arrow acme-news-ticker-prev'/>
+        <span class='acme-news-ticker-pause'/>
+        <span class='acme-news-ticker-arrow acme-news-ticker-next'/>
+      </div>
+    </div>
+    </div>   
+    <script type='text/javascript'>
+    //<![CDATA[ 
+    (function ($) {
+	'use strict';
+	$.fn.AcmeTicker = function (options) {
+		/*Merge options and default options*/
+		let opts = $.extend({}, $.fn.AcmeTicker.defaults, options);
+
+		/*Functions Scope*/
+		let thisTicker = $(this), intervalID, timeoutID, isPause = false;
+
+		/*Always wrap, used in many place*/
+		thisTicker.wrap("<div class='acmeticker-wrap'></div>");
+
+		/*Wrap is always relative*/
+		thisTicker.parent().css({
+			position: 'relative'
+		})
+		/*Hide expect first*/
+		thisTicker.children("li").not(":first").hide();
+
+		/*Lets init*/
+		init();
+		function init() {
+			switch (opts.type) {
+				case 'vertical':
+				case 'horizontal':
+					vertiZontal()
+					break;
+
+				case 'marquee':
+					marQuee()
+					break;
+
+				case 'typewriter':
+					typeWriter()
+					break;
+
+				default:
+					break
+			}
+		}
+
+		/*Vertical - horizontal
+		* **Do not change code lines*/
+		function vertiZontal(prevNext = false) {
+			let speed = opts.speed,
+				autoplay = opts.autoplay,
+				direction = opts.direction;
+
+			if (prevNext) {
+				speed = 0;
+				autoplay = 0;
+				clearInterval(intervalID);
+				intervalID = false;
+			}
+
+			function play() {
+				if (isPause) {
+					clearInterval(intervalID);
+					intervalID = false;
+					return false;
+				}
+				let dChild,
+					eqType,
+					mType,
+					mVal;
+
+				dChild = thisTicker.find('li:first');
+				if (direction === 'up' || direction === 'right') {
+					eqType = '-=';
+				}
+				else {
+					eqType = '+=';
+				}
+				if (opts.type === 'horizontal') {
+					mType = 'left';
+					mVal = dChild.outerWidth(true);
+				}
+				else {
+					mType = 'margin-top';
+					mVal = dChild.outerHeight(true);
+				}
+				if (prevNext === 'prev') {
+					thisTicker.find('li:last').detach().prependTo(thisTicker);
+				}
+				else {
+					dChild.detach().appendTo(thisTicker);
+				}
+
+				thisTicker.find('li').css({
+					opacity: '0',
+					display: 'none'
+				});
+				thisTicker.find('li:first').css({
+					opacity: '1',
+					position: 'absolute',
+					display: 'block',
+					[mType]: eqType + mVal + 'px',
+				});
+				thisTicker.find('li:first').animate(
+					{ [mType]: '0px' },
+					speed,
+					function () {
+						clearInterval(intervalID);
+						intervalID = false;
+						vertiZontal();
+					});
+			}
+			if (intervalID) {
+				return false
+			}
+			intervalID = setInterval(play, autoplay);
+		}
+
+		/*Type-Writer
+		* **Do not change code lines*/
+		function typeWriter(prevNext = false) {
+			if (isPause) {
+				return false;
+			}
+			if (prevNext) {
+				clearInterval(intervalID);
+				intervalID = false;
+
+				clearTimeout(timeoutID);
+				timeoutID = false;
+
+				if (prevNext === 'prev') {
+					thisTicker.find('li:last').detach().prependTo(thisTicker);
+				}
+				else {
+					thisTicker.find('li:first').detach().appendTo(thisTicker);
+				}
+			}
+
+			let speed = opts.speed,
+				autoplay = opts.autoplay,
+				typeEl = thisTicker.find('li:first'),
+				wrapEl = typeEl.children(),
+				count = 0;
+
+			if (typeEl.attr('data-text')) {
+				wrapEl.text(typeEl.attr('data-text'))
+			}
+
+			let allText = typeEl.text();
+
+			thisTicker.find('li').css({
+				opacity: '0',
+				display: 'none'
+			});
+
+			function tNext() {
+				thisTicker.find('li:first').detach().appendTo(thisTicker);
+
+				clearTimeout(timeoutID);
+				timeoutID = false;
+
+				typeWriter();
+			}
+
+			function type() {
+				count++;
+				let typeText = allText.substring(0, count);
+				if (!typeEl.attr('data-text')) {
+					typeEl.attr('data-text', allText);
+				}
+
+				if (count <= allText.length) {
+					wrapEl.text(typeText);
+					typeEl.css({
+						opacity: '1',
+						display: 'block',
+					});
+				}
+				else {
+					clearInterval(intervalID);
+					intervalID = false;
+					timeoutID = setTimeout(tNext, autoplay);
+				}
+			}
+			if (!intervalID) {
+				intervalID = setInterval(type, speed);
+			}
+		}
+
+		/*marQuee
+		* **Do not change code lines*/
+		function marQuee() {
+			/*Marquee Special*/
+			let speed = opts.speed,
+				direction = opts.direction,
+				wrapWidth,
+				dir = 'left',
+				totalTravel,
+				defTiming,
+				listWidth = 0,
+				mPause = false;
+
+			mInit();
+			function mInit() {
+				thisTicker.css({
+					position: 'absolute'
+				})
+				thisTicker.find('li').css({
+					display: 'inline-block',
+					marginRight: '10px',
+				});
+				let tickerList = thisTicker.find("li");
+				wrapWidth = thisTicker.parent().outerWidth(true);
+
+				if (direction === 'right') {
+					dir = 'right'
+				}
+
+				/*Calculating ticker width*/
+				thisTicker.width(10000);/*temporary width to prevent inline elements wrapping to initial width of ticker*/
+				tickerList.each(function () {
+					listWidth += $(this).outerWidth(true) + 5;/*+5 for some missing px*/
+				});
+				thisTicker.width(listWidth);
+
+				totalTravel = listWidth + wrapWidth;
+				defTiming = totalTravel / speed;
+
+				marQueeIt(listWidth, listWidth / speed);
+			}
+
+			function marQueeIt(lPos, lSpeed) {
+				thisTicker.animate(
+					{ [dir]: '-=' + lPos },
+					lSpeed,
+					"linear",
+					function () {
+						thisTicker.css({
+							[dir]: wrapWidth
+						});
+						marQueeIt(totalTravel, defTiming);
+					}
+				);
+			}
+
+			function mRestart() {
+				let offset = thisTicker.offset(),
+					rOffset = direction === 'right' ? (listWidth - offset.left) : offset.left,
+					remainingSpace = rOffset + listWidth,
+					remainingTime = remainingSpace / speed;
+
+				marQueeIt(remainingSpace, remainingTime);
+			}
+			function mToggle() {
+				mPause = !mPause;
+				$(document).trigger('acmeTickerToggle', thisTicker, mPause)
+				if (mPause) {
+					thisTicker.stop();
+				}
+				else {
+					mRestart();
+				}
+			}
+
+			opts.controls.toggle && opts.controls.toggle.on('click', function (e) {
+				mToggle();
+			});
+			if (opts.pauseOnHover) {
+				thisTicker.on('mouseenter', function () {
+					thisTicker.stop();
+				}).on('mouseleave', function () {
+					mRestart();
+				});
+			}
+			if (opts.pauseOnFocus) {
+				thisTicker.on('focusin', function () {
+					thisTicker.stop();
+				}).on('focusout', function () {
+					mRestart();
+				});
+			}
+		}
+		/*marQuee End*/
+
+		/*Actions/Controls*/
+		if (opts.type !== 'marquee') {
+			opts.controls.prev && opts.controls.prev.on('click', function (e) {
+				e.preventDefault();
+				switch (opts.type) {
+					case 'typewriter':
+						typeWriter('prev')
+						break;
+
+					default:
+						vertiZontal('prev')
+						break
+				}
+			});
+			opts.controls.next && opts.controls.next.on('click', function (e) {
+				e.preventDefault();
+				switch (opts.type) {
+					case 'typewriter':
+						typeWriter('next')
+						break;
+
+					default:
+						vertiZontal('next')
+						break
+				}
+			});
+			function restart() {
+				if (!isPause) {
+					init();
+				}
+			}
+			opts.controls.toggle && opts.controls.toggle.on('click', function (e) {
+				e.preventDefault();
+				isPause = !isPause;
+				$(document).trigger('acmeTickerToggle', thisTicker, isPause)
+				restart();
+			});
+			if (opts.pauseOnHover) {
+				thisTicker.on('mouseenter', function () {
+					isPause = true;
+					restart();
+				}).on('mouseleave', function () {
+					isPause = false;
+					restart();
+				});
+			}
+			if (opts.pauseOnFocus) {
+				thisTicker.on('focusin', function () {
+					isPause = true;
+					restart();
+				}).on('focusout', function () {
+					isPause = false;
+					restart();
+				});
+			}
+		}
+	};
+
+	// plugin defaults - added as a property on our plugin function
+	$.fn.AcmeTicker.defaults = {
+		/*Note: Marquee only take speed not autoplay*/
+		type: 'horizontal',/*vertical/horizontal/marquee/typewriter*/
+		autoplay: 2000,/*true/false/number*/ /*For vertical/horizontal 4000*//*For typewriter 2000*/
+		speed: 50,/*true/false/number*/ /*For vertical/horizontal 600*//*For marquee 0.05*//*For typewriter 50*/
+		direction: 'up',/*up/down/left/right*//*For vertical up/down*//*For horizontal/marquee right/left*//*For typewriter direction doesnot work*/
+		pauseOnFocus: true,
+		pauseOnHover: true,
+		controls: {
+			prev: '',/*Can be used for vertical/horizontal/typewriter*//*not work for marquee*/
+			next: '',/*Can be used for vertical/horizontal/typewriter*//*not work for marquee*/
+			toggle: ''/*Can be used for vertical/horizontal/marquee/typewriter*/
+		}
+	};
+})(jQuery);
+  
+      
+      
+    //]]></script>    
+    <script>
+  $(function(){  
+    $('.my-news-ticker').AcmeTicker({
+      type:'typewriter',/*horizontal/horizontal/Marquee/type*/
+        direction: 'up',/*up/down/left/right*/
+        speed:50,/*true/false/number*/ /*For vertical/horizontal 600*//*For marquee 0.05*//*For typewriter 50*/
+        controls: {
+                prev: $('.acme-news-ticker-prev'),/*Can be used for horizontal/horizontal/typewriter*//*not work for marquee*/
+                toggle: $('.acme-news-ticker-pause'),/*Can be used for horizontal/horizontal/typewriter*//*not work for marquee*/
+                next: $('.acme-news-ticker-next')/*Can be used for horizontal/horizontal/marquee/typewriter*/
+      }
+    });   
+  })     
+    </script>  
+
+    
+   
+  </body>
+</html>

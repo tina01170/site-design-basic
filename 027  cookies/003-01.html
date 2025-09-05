@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   
+    <style>
+    </style>
+  </head>
+  <body>
+    <label for="firstText">first name:</label>
+    <input id="firstText"><br>
+    <label for="lastText">last name:</label>
+    <input id="lastText"><br>
+    <button id="submitBtn">submit</button>
+    <button id="cookieBtn">get cookies</button>
+    <!--<script src="index.js"></script>-->
+
+    <script>
+      const firstText = document.querySelector("#firstText");
+      const lasttText = document.querySelector("#lastText");
+      const submitBtn = document.querySelector("#submitBtn");
+      const cookieBtn = document.querySelector("#cookieBtn");
+
+      submitBtn.addEventListener("click", () => {
+          setCookie("firstName", firstText.value, 365);
+          setCookie("lastName", lastText.value, 365);
+      });
+
+      cookieBtn.addEventListener("click", () => {
+            firstText.value = getCookie("firstName");
+            lastText.value = getCookie("lastName");
+      });
+
+      // 設置cookie
+      function setCookie(name,value,day) {
+          const date = new Date();
+          date.setTime(date.getTime() + (day*24*60*60*1000));
+          let expires = "expires=" + date.toUTCString();
+          document.cookie = `${name}=${value}; ${expires}; path=/`
+          //console.log(document.cookie)
+      }
+
+      // 刪除cookie
+
+      function deleteCookie(name) {
+          setCookie(name,null,null)
+      }
+    
+      // 取得 cookie
+      function getCookie(name) {
+          //decodeURIComponent() 函数可对 encodeURIComponent() 函数编码的 URI 进行解码。
+          const cDecoded = decodeURIComponent(document.cookie);
+          const cArray = c.spit(";")  //分割字串成陣列
+          let result = null
+          cArray.forEach(element => {
+                if(element.indexOf(name) == 0){
+                    result = element.substring(name.length + 1)
+                }
+          })
+          return result;
+      }
+   
+     
+    </script>
+
+    
+
+    
+   
+  </body>
+</html>

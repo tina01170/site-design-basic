@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+      /*
+    .hot-item {position:relative;width: 700px;}
+   /* .rtl .hot-item{float:left}
+   .pic {float:left;margin-right:25px;}
+   .rtl .pic {float:right}*/
+   .hot-item {
+    display: flex; /* 使用 flexbox 佈局 */
+    align-items: flex-start; /* 讓內容對齊頂部 */
+    width: 500px; /* 設定容器寬度，方便觀察 */
+    border: 1px solid #ccc; /* 方便觀察 */
+}
+
+.pic {
+    width: 270px; /* 圖片區塊寬度 */
+    margin-right: 20px; /* 文字區塊間距 */
+}
+
+.pic img {
+    max-width: 100%; /* 圖片寬度不超過容器 */
+    height: auto; /* 高度自動調整 */
+}
+
+.text {
+    flex: 1; /* 文字區塊彈性填滿剩餘空間 */
+}
+
+.text h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.text p {
+    font-size: 16px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="hot-item">
+        <div class="pic">
+          <img src="https://picsum.photos/270/240?random=10">
+        </div>
+       
+        <div class="text">
+            <h2>this is a demo</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum debitis nemo vero, adipisci dicta incidunt.</p>
+        </div>
+    </div>
+  
+    
+
+    
+   
+  </body>
+</html>

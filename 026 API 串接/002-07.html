@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+  </head>
+  <body>
+    <script>
+      // 1.設一個變數把API的URL存起來
+      var dataUrl= "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6"
+      // 2.new一個XMLHttpRequest物件(以此物件的方法進行資料請求) 
+      var xhr = new XMLHttpRequest()
+      // 3.以GET方法開啟一個請求
+      //open('Method',API的URL,預設值為true非同步進行)
+      xhr.open('GET',dataUrl, true)
+      // 4.送出請求(若為GET參數不填或填null)
+      xhr.send() 
+      // 5-1 或直接用 onload => 資料接收/送出成功後執行的function
+      /*
+      xhr.onload = function () {
+          var data = JSON.parse(this.responseText);
+          console.log(data);
+      }*/
+      // 5-2.寫一個function處理狀態改變時(onReadyStateChange)
+      //   0=執行前    1=讀取中   2=已讀取  3=資訊交換中  4=完成
+      //   status(HTTP狀態碼):200 正常完成
+      //   on     when ...的時候
+      //   readystate  表示狀態
+      //   change    改變
+      xhr.onreadystatechange = function(){
+          // 如果完成(readyState=4 , 且HTTP狀態正常 status=200)
+          if(this.readyState === 4 && this.status === 200){
+              // 將接回的資料存到變數data
+              var data = JSON.parse(this.responseText);
+              // 6.~~ 應用data(這裡先以console.log確認打回來的資料內容):  
+                  console.log(data);
+          }
+      }
+
+
+      xhr.onreadystatechange = function(){
+          // 如果完成(readyState=4 , 且HTTP狀態正常 status=200)
+          if(this.readyState === 4){
+            //判斷響應體代碼是 200 401 403 404 500
+            if(xhr.status >= 200 && xhr.status< 300){
+                //console.log(xhr.status)
+                //console.log(xhr.statusText)
+                //console.log(xhr.getAllResponseHeaders)
+                //console.log(xhr.response)
+
+                result.innerHTML = xhr.response
+            } 
+          }
+      }
+
+  </script>
+    
+
+    
+   
+  </body>
+</html>

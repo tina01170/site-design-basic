@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>超時與網絡異常</title>
+   
+    <style>
+      #result {
+        width:200px;
+        height:100px;
+        border:1px solid #ff2d2d;
+      }
+
+    </style>
+  </head>
+  <body>
+    <button>點擊發送請求</button>
+    <div id="reulst"></div>
+    <script>
+
+      const btn = document.getElementsByTagName('button')[0]; 
+      const result = document.querySelector('#result');
+
+      btn.addEventListener('click', function(){
+          const xhr = new XMLHttpRequest();
+          xhr.timeout = 2000;
+          xhr.ontimeout = function () {
+            alert('網絡異常，請稍後重試')
+          }
+
+          xhr.onerror = function () {
+            alert('網路出現問題')
+          }
+
+          xhr.open("GET", 'http://127.0.0.1:8000/delay')
+          xhr.send();
+          xhr.onreadystatechange = function(){
+            if(xhr.readyState=== 4) {
+              if(xhr.status >= 200 && xhr.status< 300){
+                  result.innerHTML = xhr.response;
+              }
+            }
+          }
+      })
+    </script>
+    
+
+    
+   
+  </body>
+</html>

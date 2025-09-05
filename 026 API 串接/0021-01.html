@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   
+ 
+  </head>
+  <body>
+    <div id="contain"></div>
+    <h1>台灣獨立書店名冊<span>( 資料來源：政府資料開放平台 )</span></h1>
+    <div id="contain"></div>
+
+    <!--<script>
+        var dataUrl= "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6"
+        //var dataUrl =""
+        var xhr = new XMLHttpRequest();
+        xhr.open('Get',dataUrl,true)
+        xhr.send()
+        /*
+        xhr.onload = function(){
+            var data = JSON.parse(this.responseText)
+            console.log(data)
+        }*/
+        xhr.onreadystatechange = function() {
+          if ( this.readyState === 4 && this.status === 200){
+              var data = JSON.parse(this.responseText)
+              console.log(data)
+          }
+        }
+    </script>-->
+    <script>
+
+        var dataUrl = "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6";
+        var xhr = new XMLHttpRequest()
+
+        xhr.open("GET",dataUrl,true)
+        xhr.send();
+
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200){
+                var data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+     
+    </script>
+    
+
+    
+   
+  </body>
+</html>

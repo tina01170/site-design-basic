@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> 響應json 數據</title>
+   
+    <style>
+
+
+
+
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <script>
+
+      var result = document.getElementById("result")
+        // 1.設一個變數把API的URL存起來
+        //var dataUrl= "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6"
+        // 2.new一個XMLHttpRequest物件(以此物件的方法進行資料請求) 
+        
+        var xhr = new XMLHttpRequest()
+        // 3.以GET方法開啟一個請求
+        //open('Method',API的URL,預設值為true非同步進行)
+
+        //  設置響應體數據類型
+        xhr.responseType = 'json';
+
+        xhr.open('GET',url, true)
+        // 4.送出請求(若為GET參數不填或填null)
+        xhr.send() 
+      
+
+        // 5-2.寫一個function處理狀態改變時(onReadyStateChange)
+        //   0=執行前    1=讀取中   2=已讀取  3=資訊交換中  4=完成
+        //   status(HTTP狀態碼):200 正常完成
+        xhr.onreadystatechange = function(){
+            // 如果完成(readyState=4 , 且HTTP狀態正常 status=200)
+            if(this.readyState === 4 && this.status === 200){
+                // 1 自動轉換 
+                console.log(xhr.response)
+                result.innerText = xhr.response.name;
+
+                // 2 手機轉換
+                //let data = JSON.parse(xhr.response);
+                //console.log(data);
+                //result.innerHTML = data.name;
+            }
+        }
+
+        // 響應一個數據
+        const data = {
+          name:'personal'
+        }
+        // 對'對像'進行字符串轉換
+        let str = JSON.stringify(data)
+
+        // 設置響應體
+        response.send(str)
+
+    
+    </script>
+    
+   
+  </body>
+</html>

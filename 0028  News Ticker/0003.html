@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+.news-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* 隱藏超出容器的內容 */
+    height: 50px; /* 設定容器高度 */
+}
+
+.news-container .title {
+    position: absolute;
+    background: #df2020;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    color: white;
+    font-weight: bold;
+    z-index: 200;
+}
+
+.news-container ul {
+    /*display: flex;*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute; /* 設定絕對定位 */
+    left:160px;
+    top: 50px; /* 初始位置在容器底部 */
+    width: 100%;/* 確保寬度佔滿容器 */
+    animation: scroll 8s infinite linear;
+}
+
+.news-container ul li {
+    white-space: nowrap;
+    padding: 10px 24px;
+    color: #494949;
+    position: relative;
+    height: 50px; /* 設定每個項目的高度 */
+    line-height: 30px; /* 調整行高，使文字垂直置中 */
+}
+
+.news-container ul li a {
+    font-size: 22px;
+    text-decoration: none;
+    color: #282828;
+}
+
+.news-container ul li::after {
+    content:"";
+    width: 1px;
+    height: 100%;
+    background: #b8b8b8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none; /* 隱藏垂直分隔線 */
+}
+
+.news-container ul li:last-child::after {
+    display: none;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+
+    }
+}
+    </style>
+  </head>
+  <body>
+  
+    <div class="news-container">
+      <div class="title">
+          Breaking News
+      </div>
+      <ul>
+          <li>
+            <a href="">北部溼冷到下周二清晨 228連假大幅回暖</a>
+          </li>
+          <li>
+            <a href="">日劇：十角館殺人事件</a>
+          </li>
+          <li>
+            <a href="">名偵探柯南：黑鐵的魚影</a>
+          </li>
+          <li>
+            <a href="">閱讀 | 雲端幸福計畫</a>
+          </li>
+          <li>
+            <a href="">日劇推薦：要加熱這份戀情嗎？(原名：愛情加溫)</a>
+          </li>
+      </ul>
+    </div>    
+
+    
+   
+  </body>
+</html>

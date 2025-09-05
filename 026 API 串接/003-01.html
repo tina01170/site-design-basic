@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>axios</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'></script>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+        /*
+        var dataUrl= "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6"
+
+        axios.get(dataUrl)
+        .then( (res) => {
+            console.log(res.data);
+        })
+        .catch( (err) => {
+            console.log(err);
+        });*/
+
+        //var dataUrl = "https://api.randomuser.me/";
+        var dataUrl="https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6"
+        axios.get(dataUrl)
+        .then ( (res) =>{
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+
+    </script>
+
+    
+
+    
+   
+  </body>
+</html>

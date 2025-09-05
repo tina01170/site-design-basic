@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+      .tb {
+        writing-mode: horizontal-tb;
+      }
+      .lr {
+        -webkit-writing-mode: vertical-lr;
+        writing-mode: vertical-lr; /*直書且由左到右。*/ 
+      }
+      .rl {
+        -webkit-writing-mode: vertical-lr;
+        writing-mode:vertical-rl; /*直書且由右到左。*/
+      }
+
+
+    </style>
+  </head>
+  <body>
+      <h2>horizontal-tb</h2>
+      <div class="poem tb">
+        <div>床前明月光</div>
+        <div>疑似地上霜</div>
+        <div>舉頭望明月</div>
+        <div>低頭思故鄉</div>
+      </div>
+
+      <h2>vertical-lr</h2>
+      <div class="poem lr">
+        <div>床前明月光</div>
+        <div>疑似地上霜</div>
+        <div>舉頭望明月</div>
+        <div>低頭思故鄉</div>
+      </div>
+
+      <h2>vertical-rl</h2>
+      <div class="poem rl">
+        <div>床前明月光</div>
+        <div>疑似地上霜</div>
+        <div>舉頭望明月</div>
+        <div>低頭思故鄉</div>
+      </div>
+  
+      
+    
+
+    
+   
+  </body>
+</html>

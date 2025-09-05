@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   
+    <style>
+
+
+
+
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <div id="contain"></div>
+    <h1>人物</h1>
+    <div id="contain"></div>
+
+    <script>
+      //var cros = 'https://cors-anywhere.herokuapp.com/'
+      //var dataUrl = "https://cloud.culture.tw/frontsite/trans/emapOpenDataAction.do?method=exportEmapJson&typeId=M"
+      //var dataUrl = cros + originUrl
+      //var dataUrl= "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6"
+      var dataUrl = "https://api.randomuser.me/";
+      var xhr = new XMLHttpRequest()
+      xhr.open('GET',dataUrl, true)
+      xhr.send()
+      xhr.onload = function(){
+        var dataset = JSON.parse(this.responseText)
+        console.log(dataset)
+        //print(dataset);
+        
+      }
+      function print(dataset){
+        dataset.forEach( (data, index) => {
+          let newCard = document.createElement("div")
+          newCard.className = "infoCard"
+          newCard.dataset.page=index
+          document.querySelector("#contain").appendChild(newCard)
+          /*
+          let newCardInfo = `
+            <span class="order">${index + 1}</span>
+            <h3 class="name">${data.name}</h3>
+            <p class="address">${data.cityName}  ${data.address}</p>
+            <p class="openTime">${data.openTime}</p>
+          `*/
+
+          let newCardInfo = `
+            
+            <h3 class="name">${data.name.first}</h3>
+            <p class="address">${data.location.country}  ${data.location.city}</p>
+            <p class="gender">${data.gender}</p>
+            <p class="email">${data.email}</p>
+          `
+          newCard.innerHTML = newCardInfo
+        })
+      }
+
+
+
+</script>
+    
+
+    
+   
+  </body>
+</html>

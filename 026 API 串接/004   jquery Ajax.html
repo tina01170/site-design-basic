@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <script>
+        // 先把API的URL存成一個變數
+        var dataurl = "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6";
+        //var dataurl = "https://api.randomuser.me/";
+       
+        $.ajax({
+          url:dataurl,    // 指定API 的 URL 
+          method:'Get',   // 指定請求方法
+          //dataType: 'json',
+          dataType:'json',  // API的格式
+          data:'',        // 若有傳送資料時的資料設定 (GET沒有)
+          async:true,     // 預設是true=非同步,false=同步 (true時整行可省略)
+          success: res =>{
+            console.log(res)
+            
+          },
+          error: err =>{
+            console.log(err)
+          },
+
+
+        })
+
+       
+    </script>
+    <!--Note
+    備註：
+    若選擇開放使用的 API 仍出現無法成功取得資料，
+    開啟開發者瀏覽工具查看錯誤訊息，
+    若原因為 CORS (Cross-Origin Resource Sharing 
+    跨來源資源共用 ) 問題，
+    在純練習用時可先透過　cors-anywhere 的應用將 
+    API URL 前面加上 https://cors-anywhere.herokuapp.com/，
+    可暫時避開 CORS 問題，成功完成 GET 請求。
+    -->
+    
+
+    
+   
+  </body>
+</html>

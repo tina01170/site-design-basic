@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>文字書寫方向</title>
+    <style>
+      .left {
+        direction:ltr;
+      }
+      .right {
+        direction:rtl
+      }
+      .b div {
+        direction:rtl;
+      }
+      .rtl-text {
+        direction: rtl;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box left">
+     
+      依照檔案預設書寫方向(右對齊/左對齊)，水平書寫
+    </div>
+
+    <div class="box right">
+     
+      依照檔案預設書寫方向(右對齊/左對齊)，水平書寫
+    </div>
+    
+    <div class="b">
+      <div>صباح الخير!?{{([ علامات الترقيم بعد السطر الأخير معكوسة!?{{([</div>  
+      <div>בוקר טוב!?{{([ סימני הפיסוק אחרי השורה האחרונה הפוכים!?{{([</div> 
+        <div>Good morning!{{([  oxxo!{{([ </div>  
+          <div>依照檔案預設書寫方向(右對齊/左對齊)，水平書寫</div> 
+    </div>
+    
+   
+    <div class="rtl-text">
+      字文的示顯左至右從段一是這。
+    </div>
+    <div class="rtl-text">
+    這是一段從右至左顯示的文字。
+    </div>
+  </body>
+</html>
