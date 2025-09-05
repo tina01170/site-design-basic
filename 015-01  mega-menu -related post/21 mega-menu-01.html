@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mega-menu non rwd</title>
+    
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+       
+        .wrapper {
+
+            width:100%;
+        }
+
+        .mega-menu {
+            width:100%;
+            height: 60px;
+        }
+
+        .mega-menu ul {
+            width:100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+           /* line-height: 60px;*/
+            position: relative;
+        }
+
+        .mega-menu ul a {
+            color:black;
+        }
+
+        .mega-menu ul li {
+            
+            display: inline-block;
+            padding: 20px 15px;
+            margin: 0 15px;
+        }
+
+        .mega-menu ul li a {
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+        }
+
+        .mega-menu ul li .related-posts {
+            position: absolute;
+            background-color: #F0F0F0;
+            width: 70%;
+            left:100px;
+            top:60px;
+            padding:20px 10px;
+            margin:0 40px;
+            display: flex;
+            justify-content: space-around;
+            line-height:35px;
+            visibility: hidden;
+        }
+
+        .mega-menu ul li:hover .related-posts
+        {
+            visibility: visible;
+
+        }
+        .mega-menu ul li .related-posts .col img {
+            width:120px;
+            height:180px;
+
+        }
+
+        /*
+        .mega-menu ul li .mega-down-menu {
+            position: absolute;
+            background-color: #F0F0F0;
+            width: 70%;
+            left:100px;
+            top:60px;
+            padding:20px 10px;
+            margin:0 40px;
+            display: flex;
+            justify-content: space-around;
+            line-height:35px;
+            visibility: hidden;
+
+        }
+
+         .col header {
+
+            font-size: 20px;
+        }
+
+        .mega-menu ul li:hover .mega-down-menu {
+        
+            visibility: visible;
+
+        }
+        .mega-down-menu .col header {
+            font-size: 20px;
+        }
+        .mega-down-menu .col ul {
+            background-color: transparent;
+        }
+
+        .mega-down-menu .col ul li {
+            display: block;
+            padding:0;
+            text-align: left;
+
+        }
+        .mega-down-menu .col ul li a {
+
+            font-size: 16px;
+        }*/
+
+
+        /**/
+        .related-post img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .related-posts-title {
+            color: #222;
+            margin-bottom: 40px;
+            font-size: 24px;
+            position: relative;
+        }
+        
+        .related-posts {
+            display: flex;
+           
+        }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="mega-menu">
+            <ul>
+                <li><a href="#">FASHION</a></li>
+                <li><a href="#">MAKE-UP</a></li>
+                <li class="dropdown-img"><a href="#">jpeg</a>
+                    <div class="related-posts">
+
+                    </div>
+                </li>
+                <li><a href="#">SHOPPING</a></li>
+                <li class="dropdown-list"><a href="#">dropdown list</a>
+                </li>
+
+                
+            </ul>
+
+
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+
+    
+   
+  </body>
+</html>

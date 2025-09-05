@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mega-menu non rwd</title>
+   
+    <script src="jquery-3.6.0.min.js"></script>
+    <title>mega-menu non rwd</title>
+   
+    <style>body{
+            margin:0;
+            padding:0;
+            font-family:sans-serif;
+            font-size:16px;
+            line-height:1.4em;
+          }
+          *{
+            box-sizing:border-box;
+          }
+          a{
+            color:#333;
+            transition:all 200ms ease-in-out;
+          }
+          .container{
+            max-width:960px;
+            margin:0 auto;
+            padding:0 20px;
+          }
+          ul{
+            margin:0;
+            padding:0;
+            list-style-type:none;
+          }
+          
+          .megamenu{
+            display:flex;
+            position:relative;
+          }
+          .megamenu a{
+            display:block;
+            text-decoration:none;
+          }
+          .megamenu > li > a{
+            padding:4px 10px;
+          }
+          .megamenu > li{
+            position:relative;
+          }
+          .megamenu > li > ul{
+            /*display:none;*/
+            background-color: #fcfcfc;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            position:absolute;
+            top:100%;
+            left:0;
+            opacity:0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition:all 300ms ease-in-out 500ms; // Added delay for usability
+            transition:all 300ms ease-in-out;
+          }
+          .megamenu > li > ul > li{
+            
+          }
+          .megamenu > li > ul > li > a{
+            padding:4px 10px;
+          }
+          .megamenu > li > ul > li > a:hover{
+            background-color:rgba(0,0,0,0.15);
+          }
+          .megamenu > li:hover > ul{
+             display:block;
+            opacity:1;
+            visibility: visible;
+            transform: translateY(0px);
+            transition:all 300ms ease-in-out;
+          }
+          .megamenu > li > a:hover{
+            background-color:rgba(0,0,0,.05);
+          }
+          .megamenu .mega-menu{
+            position:static;
+          }
+          .megamenu .mega-menu > ul{
+            min-height:400px;
+            position:absolute;
+            top:100%;
+            left:0;
+            width:100%;
+            /*background:rgba(0,0,0,0.1);*/
+            background-color: #fcfcfc;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+          }
+          .megamenu .mega-menu > ul > li{
+            width:25%;
+            /* position:relative;*/
+          }
+          .megamenu .mega-menu > ul > li > a{
+            padding:10px;
+            /*background:rgb(246, 246, 246);*/
+            display:block;
+            background-color: #fff;
+          }
+
+          .megamenu .mega-menu > ul > li > a:hover {
+            background: rgb(240, 240, 240);
+          }
+
+          .megamenu .mega-menu > ul > li > ul{
+            display:none;
+            position:absolute;
+            top:0;
+            left:25%;
+            width:75%;
+            background:#fcfcfc;
+          }
+          
+          .megamenu .mega-menu > ul > li.show > ul{
+            display:block;
+            display:flex;  /*add*/
+          }
+          
+          .megamenu .mega-menu > ul > li > ul > li{
+            display:block;
+            width:100%;
+            /*float:left;*/
+            
+          }
+          .megamenu .mega-menu > ul > li > ul > li.col3{
+            width:33.3334%;
+            padding:0 10px;
+          }
+          .megamenu .mega-menu > ul > li > ul > li > a{
+            font-weight:bold;
+            /*border-bottom:1px solid #333;*/
+          }
+          .megamenu .mega-menu > ul > li > ul > li a{
+            /*padding:4px 10px;*/
+          }
+
+
+          .nav-title {
+            font-size:18px;
+            margin:5px 0;
+            display:none;
+          }
+
+          .megamenu .mega-menu > ul > li > ul > li.col3 > h4 {
+            margin:5px 0;
+            font-size: 10px;
+          }
+
+          .nav .big-nav > ul > li > ul > li.col3 > img {
+            
+          }
+
+          .nav .big-nav > ul > li > ul > li 
+
+         
+
+          .related-post {
+            display: flex;
+          }
+
+          .related-post img {
+            width:120px;
+          }
+
+
+    </style>
+    <script>
+      jQuery(function($) {
+          // Add en remove class on menu item hover  
+          $('.mega-menu > ul > li').mouseover(function(){
+            $(this).addClass('show').siblings().removeClass('show');
+          });
+          
+          /* Get the minimum height the big-nav elemtn*/
+          var min_height = 50;
+          $('.mega-menu > ul > li > ul').each(function(){
+            var this_height = $(this).outerHeight();
+            if (this_height > min_height) {
+              min_height = this_height;
+            }
+          });
+          $('.mega-menu > ul, .nav .mega-menu > ul > li > ul').css('min-height', min_height + 'px');
+          
+      });
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div class="inner">
+          <ul class="megamenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a>
+              <ul>
+                <li><a href="#">Marketing</a></li>
+                <li><a href="#">Webdesign</a></li>
+                <li><a href="#">Sales</a></li>
+              </ul>
+            </li>
+            <li class="mega-menu"><a href="#">Products</a>
+              <ul>
+                <li class="show"><a href="#">Category 1</a>
+                  <ul>
+                    <h3 class="nav-title">Category 3</h3>
+                    <li class="col3">
+                      <img src="img/pexels-003.jpg" width="180px">
+                     
+                    </li>
+                    <li class="col3">
+                      <img src="img/pexels-004.jpg" width="180px">
+                    </li>
+                    <li class="col3">
+                      <img src="img/pexels-006.jpg" width="180px">
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#">Travel</a>
+                  
+                </li>
+                <li><a href="#">AI</a>
+                  <ul id="tabmenu">
+
+                  </ul>
+                </li>
+                <li><a href="#">Category 4</a>
+                  <ul>
+                    <li class="col3">
+                      <img src="img/pexels-005.jpg" width="180px">
+                     
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="main-03.js"></script>
+
+  </body>
+</html>

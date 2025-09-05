@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          box-sizing: border-box;
+        }
+        .wrap {
+          max-width: 1024px;
+          margin:0 auto;
+          padding:50px;
+        }
+
+        #tabmenu {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .related-post {
+          width: 25%;
+          padding:0 20px;
+        }
+
+        .related-post img {
+         width: 100%;
+        }
+
+        .related-post a {
+          display: block;
+        }
+
+
+    </style>
+  </head>
+  <body>
+    <ul class="nav">
+        <li class="big-nav"><a href="#">Products</a>
+          <ul id="submenu">
+            <li class="show" id="sublist"><a href="#">work</a>
+              <ul id="tabmenu"></ul>
+            </li>
+            <li id="sublist"><a href="#">travel</a>
+              <ul id="tabmenu"></ul>
+            </li>
+            <li id="sublist"><a href="#">AI</a>
+              <ul id="tabmenu"></ul>
+            </li>
+            <li id="sublist"><a href="#">Category 4</a>
+              <ul id="tabmenu"></ul>
+            </li>
+          </ul>
+        </li>
+    </ul>
+
+ 
+   
+  </body>
+</html>

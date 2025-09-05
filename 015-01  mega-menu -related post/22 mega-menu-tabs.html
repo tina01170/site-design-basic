@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mega-menu non rwd</title>
+   
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+       
+        .wrapper {
+
+            width:100%;
+        }
+
+        .mega-menu {
+            width:100%;
+            height: 60px;
+        }
+
+        .mega-menu ul {
+            width:100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+           /* line-height: 60px;*/
+            position: relative;
+        }
+
+        .mega-menu ul a {
+            color:black;
+        }
+
+        .mega-menu ul li {
+            
+            display: inline-block;
+            padding: 20px 15px;
+            margin: 0 15px;
+        }
+
+        .mega-menu ul li a {
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+        }
+
+        .mega-menu ul li .mega-down-menu {
+            position: absolute;
+            /*background-color: #F0F0F0;*/
+            border:1px solid #000;
+            width: 88%;
+            left:20px;
+            top:60px;
+            padding:20px 10px;
+            margin:0 20px;
+            display: flex;
+            justify-content: space-around;
+            line-height:35px;
+            visibility: hidden;
+
+        }
+
+         .col header {
+
+            font-size: 20px;
+        }
+        
+        .mega-menu ul li:hover .mega-down-menu {
+        
+            visibility: visible;
+
+        }
+
+        .mega-down-menu .tabs-post-wrap {
+           width:980px;
+           /* border: 1px solid #000;*/
+            display: flex;
+        }
+
+
+        .tabs-post-head {
+            width:150px;
+            margin-right:15px;
+
+        }
+
+          .post-tabs {
+            padding:0;
+            margin:0;
+            list-style:none;
+           
+          }
+
+          .post-tabs li {
+            width:50%;
+            background-color: #f0f0f0;
+            padding:15px 10px;
+            margin:0;
+            cursor: pointer;
+            min-width:100px;
+            /*text-align:center;*/
+            
+          }
+
+          .post-tabs li a{
+            text-decoration:none;
+            color:#000;
+            font-size:18px;
+          }
+          .post-tabs li:hover,
+          .post-tabs li.active {
+            background-color:#fff;
+          }
+
+          .tab-container {
+            padding:10px;
+            display:none;
+          }
+          
+          .tab-container-wrap {
+            display:flex;
+          }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="mega-menu">
+            <ul>
+                <li><a href="#">FASHION</a></li>
+                <li><a href="#">MAKE-UP</a></li>
+                <li><a href="#">droptown</a>
+                </li>
+                <li><a href="#">SHOPPING</a></li>
+                <li><a href="#">movie</a>
+                    <div class="mega-down-menu">
+                        <div class="tabs-post-wrap">
+                            <div class="tabs-post-head">
+                                <ul class="post-tabs">
+                                    <li><a href="#tab-1" class="latest">latest</a></li>
+                                    <li><a href="#tab-2" class="trending">trending</a></li>
+                                    <li><a href="#tab-3" class="trending">tab-post-3</a></li>
+                                    <li><a href="#tab-4" class="trending">tab-post-4</a></li> 
+                                </ul>
+                            </div>
+                            <div class="tab-container-area">
+                                <div class="tab-container" id="tab-1">
+                                    <p>latest</p>
+                                    <div class="tab-container-wrap">
+                                        <div class="tab-item">
+                                            <div class="post-info">
+                                                <img src="img/pexels-001.jpg" width="240px">
+                                                <h4 class="post-title">Happy new year 2021</h4> 
+                                                <div class="post-meta">
+                                                <div class="date">
+                                                    <p>2021/2/28</p>
+                                                </div>
+                                                <div class="author">
+                                                    <p>kelly smith</p>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>	
+                                        <div class="tab-item">
+                                            <div class="post-info">
+                                            <img src="img/pexels-002.jpg" width="240px">
+                                            <h4 class="post-title">Happy new year 2021</h4>
+                                            <div class="post-meta">
+                                                <div class="date">
+                                                <p>2021/2/28</p>
+                                                </div>
+                                                <div class="author">
+                                                <p>kelly smith</p>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                      
+                                        <div class="tab-item">
+                                            <div class="post-info">
+                                                <img src="img/pexels-009.jpg" width="240px">
+                                                <h4 class="post-title">Happy new year 2021</h4> 
+                                                <div class="post-meta">
+                                                    <div class="date">
+                                                    <p>2021/2/28</p>
+                                                    </div>
+                                                    <div class="author">
+                                                    <p>kelly smith</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>	
+                                    </div>
+                                </div>
+                                <div class="tab-container" id="tab-2">
+                                    <p>trending</p>
+                                        <div class="tab-container-wrap">
+              
+                                            <div class="tab-item">
+                                                <div class="post-info">
+                                                    <img src="img/pexels-002.jpg" width="240px">
+                                                    <h4 class="post-title">Happy new year 2021</h4>
+                                                    <div class="post-meta">
+                                                    <div class="date">
+                                                        <p>2021/2/28</p>
+                                                    </div>
+                                                    <div class="author">
+                                                        <p>kelly smith</p>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-item">
+                                                <div class="post-info">
+                                                <img src="img/pexels-001.jpg" width="240px">
+                                                <h4 class="post-title">Happy new year 2021</h4> 
+                                                <div class="post-meta">
+                                                    <div class="date">
+                                                    <p>2021/2/28</p>
+                                                    </div>
+                                                    <div class="author">
+                                                    <p>kelly smith</p>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>	
+                              
+                                            <div class="tab-item">
+                                                <div class="post-info">
+                                                    <img src="img/pexels-005.jpg" width="240px">
+                                                    <h4 class="post-title">Happy new year 2021</h4> 
+                                                    <div class="post-meta">
+                                                        <div class="date">
+                                                        <p>2021/2/28</p>
+                                                        </div>
+                                                        <div class="author">
+                                                        <p>kelly smith</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>	
+                                        </div>
+                                </div>   
+                                <div class="tab-container" id="tab-3">
+                                    <p>latest</p>
+                                    <div class="tab-container-wrap">
+                                        <div class="tab-item">
+                                            <div class="post-info">
+                                                <img src="img/pexels-001.jpg" width="240px">
+                                                <h4 class="post-title">Happy new year 2021</h4> 
+                                                <div class="post-meta">
+                                                <div class="date">
+                                                    <p>2021/2/28</p>
+                                                </div>
+                                                <div class="author">
+                                                    <p>kelly smith</p>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>	
+                                        <div class="tab-item">
+                                            <div class="post-info">
+                                            <img src="img/pexels-002.jpg" width="240px">
+                                            <h4 class="post-title">Happy new year 2021</h4>
+                                            <div class="post-meta">
+                                                <div class="date">
+                                                <p>2021/2/28</p>
+                                                </div>
+                                                <div class="author">
+                                                <p>kelly smith</p>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                      
+                                        <div class="tab-item">
+                                            <div class="post-info">
+                                                <img src="img/pexels-009.jpg" width="240px">
+                                                <h4 class="post-title">Happy new year 2021</h4> 
+                                                <div class="post-meta">
+                                                    <div class="date">
+                                                    <p>2021/2/28</p>
+                                                    </div>
+                                                    <div class="author">
+                                                    <p>kelly smith</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>	
+                                    </div>
+                                </div>
+                                <div class="tab-container" id="tab-4">
+                                    <p>trending</p>
+                                        <div class="tab-container-wrap">
+              
+                                            <div class="tab-item">
+                                                <div class="post-info">
+                                                    <img src="img/pexels-002.jpg" width="240px">
+                                                    <h4 class="post-title">Happy new year 2021</h4>
+                                                    <div class="post-meta">
+                                                    <div class="date">
+                                                        <p>2021/2/28</p>
+                                                    </div>
+                                                    <div class="author">
+                                                        <p>kelly smith</p>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-item">
+                                                <div class="post-info">
+                                                <img src="img/pexels-001.jpg" width="240px">
+                                                <h4 class="post-title">Happy new year 2021</h4> 
+                                                <div class="post-meta">
+                                                    <div class="date">
+                                                    <p>2021/2/28</p>
+                                                    </div>
+                                                    <div class="author">
+                                                    <p>kelly smith</p>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>	
+                              
+                                            <div class="tab-item">
+                                                <div class="post-info">
+                                                    <img src="img/pexels-005.jpg" width="240px">
+                                                    <h4 class="post-title">Happy new year 2021</h4> 
+                                                    <div class="post-meta">
+                                                        <div class="date">
+                                                        <p>2021/2/28</p>
+                                                        </div>
+                                                        <div class="author">
+                                                        <p>kelly smith</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>	
+                                        </div>
+                                    </div>      
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </li>
+
+                
+            </ul>
+
+
+        </div>
+    </div>
+    
+    <script>
+        // tab post
+      
+        $(".tab-container:first").show();
+        $(".post-tabs li:first").addClass('active');
+        
+        $(".post-tabs li").click(function(){
+              index = $(this).index();
+              $(".post-tabs li").removeClass('active');
+              $(this).addClass('active');
+              $(".tab-container").hide();
+              $(".tab-container").eq(index).show();
+        });
+      </script>
+
+    
+   
+  </body>
+</html>

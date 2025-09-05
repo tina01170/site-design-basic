@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mega-menu non rwd</title>
+   
+    <script src="jquery-3.6.0.min.js"></script>
+    <title>mega-menu non rwd</title>
+   
+    <style>body{
+            margin:0;
+            padding:0;
+            font-family:sans-serif;
+            font-size:16px;
+            line-height:1.4em;
+          }
+          *{
+            box-sizing:border-box;
+          }
+          a{
+            color:#333;
+            transition:all 200ms ease-in-out;
+          }
+          .container{
+            max-width:960px;
+            margin:0 auto;
+            padding:0 20px;
+          }
+          ul{
+            margin:0;
+            padding:0;
+            list-style-type:none;
+          }
+          
+          .nav{
+            display:flex;
+            position:relative;
+          }
+          .nav a{
+            display:block;
+            text-decoration:none;
+          }
+          .nav > li > a{
+            padding:4px 10px;
+          }
+          .nav > li{
+            position:relative;
+          }
+          .nav > li > ul{
+             /*display:none;*/
+            background-color: #fcfcfc;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            position:absolute;
+            top:100%;
+            left:0;
+            opacity:0;
+            /*visibility: hidden;*/
+            /*transform: translateY(20px);
+            transition:all 300ms ease-in-out 500ms; // Added delay for usability
+            transition:all 300ms ease-in-out;*/
+          }
+          .nav > li > ul > li{
+            
+          }
+          .nav > li > ul > li > a{
+            padding:4px 10px;
+          }
+          .nav > li > ul > li > a:hover{
+            background-color:rgba(0,0,0,0.15);
+          }
+          .nav > li:hover > ul{
+             display:block;
+            opacity:1;
+            visibility: visible;
+            transform: translateY(0px);
+            transition:all 300ms ease-in-out;
+          }
+          .nav > li > a:hover{
+            background-color:rgba(0,0,0,.05);
+          }
+          .nav .big-nav{
+            position:static;
+          }
+          .nav .big-nav > ul{
+            min-height:400px;
+            position:absolute;
+            top:100%;
+            left:0;
+            width:100%;
+            /*background:rgba(0,0,0,0.1);*/
+            background-color: #fcfcfc;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+          }
+          .nav .big-nav > ul > li{
+            width:25%;
+            /* position:relative;*/
+          }
+          .nav .big-nav > ul > li > a{
+            padding:10px;
+            /*background:rgb(246, 246, 246);*/
+            display:block;
+            background-color: #fff;
+          }
+
+          .nav .big-nav > ul > li > a:hover {
+            background: rgb(240, 240, 240);
+          }
+
+          .nav .big-nav > ul > li > ul{
+            display:none;
+            position:absolute;
+            top:0;
+            left:25%;
+            width:75%;
+            background:#fcfcfc;
+          }
+          
+          .nav .big-nav > ul > li.show > ul{
+            display:block;
+            display:flex;  /*add*/
+          }
+          
+          .nav .big-nav > ul > li > ul > li{
+            display:block;
+            width:100%;
+            /*float:left;*/
+            
+          }
+          .nav .big-nav > ul > li > ul > li.col3{
+            width:33.3334%;
+            padding:0 10px;
+          }
+          .nav .big-nav > ul > li > ul > li > a{
+            font-weight:bold;
+            /*border-bottom:1px solid #333;*/
+          }
+          .nav .big-nav > ul > li > ul > li a{
+            /*padding:4px 10px;*/
+          }
+          .nav-title {
+            font-size:18px;
+            margin:5px 0;
+            display:none;
+          }
+
+          .nav .big-nav > ul > li > ul > li.col3 > h4 {
+            margin:5px 0;
+            font-size: 10px;
+          }
+
+          .nav .big-nav > ul > li > ul > li.col3 > img {
+           
+          }
+
+         
+
+          .related-post img {
+            width:120px;
+          }
+    </style>
+    <script>
+      $(function () {
+          // Add en remove class on menu item hover  
+          $('.big-nav > ul > li').mouseover(function(){
+            $(this).addClass('show').siblings().removeClass('show');
+          });
+          
+          /* Get the minimum height the big-nav elemtn*/
+          var min_height = 50;
+          $('.big-nav > ul > li > ul').each(function(){
+            var this_height = $(this).outerHeight();
+            if (this_height > min_height) {
+              min_height = this_height;
+            }
+          });
+          $('.big-nav > ul, .nav .big-nav > ul > li > ul').css('min-height', min_height + 'px');
+
+      });
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div class="inner">
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a>
+              <ul>
+                <li><a href="#">Marketing</a></li>
+                <li><a href="#">Webdesign</a></li>
+                <li><a href="#">Sales</a></li>
+              </ul>
+            </li>
+            <li class="big-nav"><a href="#">Products</a>
+              <ul id="submenu">
+                <li class="show" id="sublist"><a href="#">work</a>
+                  
+                </li>
+                <li id="sublist"><a href="#">travel</a>
+                   
+                </li>
+                <li id="sublist"><a href="#">AI</a>
+                 
+                </li>
+                <li id="sublist"><a href="#">Category 4</a>
+                    
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="main-07.js"></script>
+
+  </body>
+</html>
