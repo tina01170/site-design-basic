@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <style type="text/css">
+      .Scontainer{
+      position: relative;
+      width:100vw;
+      height: auto;
+      max-height: 100vh;
+      aspect-ratio: 16 / 9;
+      }
+      
+      .Scontainer .Slide{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height:90%;
+      box-shadow: 0 10px 20px #303030d0;
+      }
+      
+      .Scontainer .Slide .item{
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      background-position: 50% 50%;
+      background-size: cover;
+      display: inline-block;
+      transition: 0.5s;
+      }
+      
+      .Slide .item:nth-child(n+3){
+      width: 13vw;
+      height: 20vw;
+      box-shadow: 0 10px 20px #505050;
+      border-radius: 1vw;
+      }
+      
+      .Slide .item:nth-child(-n+2){
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+      width: 100%;
+      height: 100%;
+      }
+      
+      
+      .Slide .item:nth-child(3){
+      left: 52vw;
+      }
+      .Slide .item:nth-child(4){
+      left: calc(65.5vw + 5px);
+      }
+      .Slide .item:nth-child(5){
+      left: calc(79.35vw + 5px);
+      }
+      
+      .Slide .item:nth-child(n + 6){
+      left: 93.5vw;
+      opacity: 0;
+      }
+      
+      .item .content{
+      position: absolute;
+      top: 50%;
+      left: 100px;
+      width: 45%;
+      text-align: left;
+      text-shadow: 0 1px 5px #e04030;
+      color: #eee;
+      transform: translate(0, -50%);
+      font-family: system-ui;
+      display: none;
+      }
+      
+      .Slide .item:nth-child(2) .content{
+      display: block;
+      }
+      
+      .content .name{
+      font-size: 40px;
+      text-transform: uppercase;
+      font-weight: bold;
+      opacity: 0;
+      animation: animate 1s ease-in-out 1 forwards;
+      }
+      
+      .content .des{
+      margin-top: 10px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: animate 1s ease-in-out 0.3s 1 forwards;
+      }
+      
+      .content button{
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      animation: animate 1s ease-in-out 0.6s 1 forwards;
+      }
+      
+      @keyframes animate {
+      from{
+      opacity: 0;
+      transform: translate(0, 100px);
+      filter: blur(33px);
+      }
+      
+      to{
+      opacity: 1;
+      transform: translate(0);
+      filter: blur(0);
+      }
+      }
+      
+      
+      .button{
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      bottom: 9.5%;
+      }
+      
+      .button button{
+      width: 40px;
+      height: 35px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin: 0 5px;
+      border: 1px solid #000;
+      transition: 0.3s;
+      }
+      
+      .button button:hover{
+      background: #ababab;
+      color: #fff;
+      }
+      
+      @media only screen and (max-width: 800px) {
+      .item .content {
+      left: 20px;
+      width: 80%;
+      }
+      .Slide .item:nth-child(n+3){ 
+        transform: translate(0, 70%)
+      }
+      .button button { transform: scale(.8)}
+      .button{ bottom: -14%; left: -10%; }
+      }
+      </style>
+  </head>
+  <body>
+    <div class="Scontainer">
+
+        <div class="Slide">
+        
+        <div class="item" style="background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLQugAILa5Y8ZSimzHE4dM9KBDHWd7xy9Fz5iBw7_202fe89Y8P-hcdpnWvJZcT-OPJ8CeWcPGbuo-V5Cr4L2_jF_BoM4sdjG88ymCPuWX7cLoybIHjyqOKK6uTySvY7paYOmspRWNlllPkzjmn8etTlZ9LvckLoDx_u8PbwVrMBeeUzZQMcYRjTfTo_o/s1600-rw/3293.jpg);">
+            <div class="content">
+            <div class="name">大港橋</div>
+            <div class="des">台灣首座水平旋轉橋、也是亞洲最長跨港旋轉橋，以貝殼和海豚等作為設計意象，橫跨於高雄港第三船渠，連結駁二藝術特區與高雄港蓬萊商港區。</div>
+            <button>更多內容</button>
+        </div>
+        </div>
+        <div class="item" style="background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTx6mYUpHSZNxLq_B0JbqbL8RXhPwVTQJwm4Mpr1OnZfwyQLX9Y00PTYbcbTBfkvp8gDpTTaELLmW7kkIySXOvwrnt6ygBduoCwnhJ26sqdpUO9ihEPFtpbPjBkcCqF-d7jG2shedmeaXbixhZBaDVClhReTFq3qnhiJq_YoK57R38lvR7L6x5dqAAYxg/s1600-rw/32932.jpg);">
+            <div class="content">
+            <div class="name">高雄輕軌</div>
+            <div class="des">環狀路線，也是亞洲新灣區建設的一部分及聯外交通。</div>
+            <button>更多內容</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGHbtH8I_pd0b0BO29QMMbtomiN3MRH-RkXA7u_JyOB8wFQVnng2w6CsRq8P78KLBQS2OR_M3jl5FSnpIyvZZVdyRVL-84Uja0Shg7MnE7CX5zEgCkgvOD5cgmJ3xtmAbqQmkcPTEudkkhtxd3yo7vH28DomYrPQ_P7ejnbef0EvRpwUykDpNWXyOcxNI/s1600-rw/3522);">
+            <div class="content">
+            <div class="name">高雄港旅運中心</div>
+            <div class="des">以高聳且富有未來感的船型建築，迎接乘座豪華遊輪的國際旅客，是南臺灣的海洋門戶。</div>
+            <button>更多內容</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpUV_V7DelJc7qYoUFMdRdOcQm83RpuCKJbZGem1cDI74cQy2X9ck9DPRgWBLB01ffIAoHhWy4U5yw_9p5Eq2vcAUP50c50zImwyMPZsz0FZfSgIOWBFJ8OIXq2omHJlUnW_d3uCQ9kFAYNDtx0pUOED_0HDtpjGQoGSC1PrJoMObBza-3EaEf1pd-kX0/s1600-rw/36782);">
+            <div class="content">
+            <div class="name">高雄展覽館</div>
+            <div class="des">座落在亞洲新灣區核心，以專業會展團隊支援各項展覽、會議、活動。</div>
+            <button>更多內容</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg87xjxCMQ0NrvnGedNMj3B7PGBJRcm1e67qseeIDCLZRmsfUh1fqqWicFEXr5IDsorEknvEhTeqhyphenhyphenISfnF5B1OBaMhMcvl4U4svh-bw_apLNYcxnDi6ytXWhYZOeXjXEa4VHv2wT5zRNOidf5yc23sUZ1mZl_rVdSftS2IG_204d46023VEb9oHaP6q1g/s1600-rw/6782);">
+            <div class="content">
+            <div class="name">黃色小鴨</div>
+            <div class="des">2024 重返高雄，並將活動主題訂為「2024 Kaohsiung Wonderland 冬日遊樂園」，更與高雄捷運公司聯手推出期間限定的「小鴨輕軌列車」，黃色小鴨睽違10年回到高雄，一定要去看它！</div>
+            <button>更多內容</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1r3291ca69ivC_68Zu94xluiifbxmJ694T9xJYI7CwWbmX2HC7FhZyw3XdzVxAbmdl9DhQAGUxU-QYWvOwwSbkCtvHTCBlgJUKP9YdcGPerawb1ZLnfNf1k5guVl2WdJtL1BxuSXMT-TAh8XHtWsSl6xkoPPzD54Ye-n8Z3gIcEsBlwLvYvCH1u-xmLk/s1600-rw/3678);">
+            <div class="content">
+            <div class="name">流行音樂中心</div>
+            <div class="des">以珊瑚礁造型為意象，為獨立兩層樓設計，南方音樂基地，高雄首座千人規格專業演唱會場域，可提供體驗、展示及複合型商業空間。</div>
+            <button>更多內容</button>
+            </div>
+        </div>
+      
+      </div>
+      
+      <div class="button">
+      <button class="prev"><svg viewbox='2 1 24 24'><path d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H23v-2z' fill='#777'/></svg></button>
+      <button class="next"><svg transform='rotate(180)' viewbox='2 -1 24 24'><path d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H23v-2z' fill='#777'/></svg></button>
+      </div>
+      
+      </div>
+      <script>
+        let next = document.querySelector('.next')
+        let prev = document.querySelector('.prev')
+        
+        next.addEventListener('click', loop)
+        
+        prev.addEventListener('click', function(){
+            let items = document.querySelectorAll('.item')
+            document.querySelector('.Slide').prepend(items[items.length - 1])
+        })
+        
+        function loop(){
+            let items = document.querySelectorAll('.item')
+            document.querySelector('.Slide').appendChild(items[0])
+        }
+        
+        setInterval(loop, 20000); // 每2分鐘、自動換頁，若不需要 ~ 可以刪除這行 
+      
+      </script> 
+        
+    
+
+    
+   
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
+    
+    <!-- gsap  cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <title>Bootstrap demo</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      .carousel-container {
+        
+        max-width: 1200px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .carousel  {
+        display: flex;
+      }
+
+      .slide {
+        flex:0 0 100%;
+      }
+
+      .slide img {
+        width: 100%;
+        vertical-align: middle;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="carousel-container">
+        <div class="carousel">
+            <div class="slide">
+              <img src="https:picsum.photos/960/300?random=01" />
+            </div>
+            <div class="slide">
+              <img src="https:picsum.photos/960/300?random=02" /> 
+            </div>
+            <div class="slide">
+              <img src="https:picsum.photos/960/300?random=03" />
+            </div>
+            <!--
+            <div class="slide">
+              <img src="https:picsum.photos/960/300?random=04" />
+            </div>-->
+        </div>
+      </div>
+      <button class="btn" id="prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="btn" id="next"><i class="fas fa-chevron-right"></i></button>  
+    </div>  
+    <script>
+
+      const slides = document.querySelectorAll('.slide'); 
+      const totalSlides = slides.length;
+      let currentIndex = 0;
+
+      document.querySelector('#prev')
+        .addEventListener('click', function() {
+          if (currentIndex > 0) {
+              goToSlide (currentIndex - 1);
+          } else {
+              goToSlide (totalSlides - 1);
+          }
+        })
+
+
+      document.querySelector('#next')
+        .addEventListener('click', function() {
+          if (currentIndex < totalSlides - 1) {
+              //currentIndex++;
+               goToSlide (currentIndex + 1);
+          } else {
+              currentIndex = 0;
+              goToSlide (0);
+          }
+        }) 
+
+          
+      function goToSlide (index) {
+        gsap.to('.carousel', {
+          x: `-${index * 100}%`, 
+          duration: 0.6,
+        });
+
+        currentIndex = index;
+      }
+    
+              
+
+        
+            
+
+    </script>
+
+    
+   
+  </body>
+</html>

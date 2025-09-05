@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
+    <script src="js/jquery-3.6.0.min.js"></script>
+   
+    <title>漫遊天地 Blog</title>
+    <style>
+      * {
+          margin: 0;
+          padding:0;
+          list-style: none;
+          box-sizing: border-box;
+      }
+
+      body {
+          word-break: break-word;
+      }
+
+      
+
+      .theme-wrapper {
+        max-width: 1300px;
+        margin:0 auto;
+        padding: 0 20px;
+        position: relative;
+      }
+
+    
+
+      .section-title {
+        font-size: 28px;
+        padding:30px 0;
+      }
+
+      /* slider */
+      .slider {
+          padding-top: 50px;
+          padding-bottom: 80px;
+      }
+
+      .slider-wrapper {
+        position: relative;
+      }
+      
+
+      .slider-wrapper .carousel{
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: calc((100% / 3) - 12px);
+          gap: 18px;
+          overflow-x: auto;   /*overflow:hidden*/
+          /*scroll-behavior: smooth;*/
+          position: relative;
+      }
+
+      .carousel::-webkit-scrollbar {
+          display: none;
+      }
+
+      .carousel .item {
+         
+      }
+
+      .carousel .item .img {
+          width: 300px;
+          height: 200px;
+      }
+        
+      .item .img img {
+          width: 300px;
+          height: 200px;
+          object-fit: cover;
+          vertical-align: middle;
+          
+      }
+
+      .carousel .item h2 {
+          margin:10px auto;
+          font-size: 22px;
+          text-align: center;
+      }
+        
+        .arrow {
+            cursor: pointer;
+            font-size:30px;
+            width: 36px;
+            height: 36px;
+            z-index: 2;
+            border: none;
+            position: absolute;
+            top:35%;
+            background-color:rgba(0,0,0,0.6);
+            color:#fff;
+            opacity: 0;
+        }
+
+        .arrow:hover {
+          opacity: 1;
+        }
+      
+        #prev {
+            left:5px;
+        }
+        #next {
+            right:15px;
+        }
+
+        @media screen and (max-width: 900px) {
+          .slider-wrapper .carousel {
+            grid-auto-columns: calc((100% / 2) - 9px);
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .slider-wrapper .carousel {
+            grid-auto-columns: 100%;
+          }
+        } 
+
+      /* slider end */  
+
+     
+    </style>
+  </head>
+  <body>
+      
+      
+        <div class="theme-wrapper">
+          <section class="slider">
+            <h2 class="section-title">熱門景點</h2>
+            <div class="slider-wrapper">
+                <ul class="carousel">
+                    <li class="item">
+                      <div class="img"><img src="img/pexels-rivver-01.jpg" alt="img"></div>
+                      <h2>花蓮 | 東山河畔</h2>  
+                    </li>
+                    <li class="item">
+                      <div class="img"><img src="img/pexels-rivver-02.jpg" alt="img"></div>
+                      <h2>苗栗 | 造橋</h2> 
+                    </li>
+                    <li class="item">
+                      <div class="img"><img src="img/29-03.jpg" alt="img"></div>
+                      <h2>Lariach French</h2>
+                    </li>
+                    <li class="item">
+                      <div class="img"><img src="img/29-04.jpg" alt="img"></div>
+                      <h2>James Khosravi</h2>
+                    </li>
+                    <li class="item">
+                      <div class="img"><img src="img/29-05.jpg" alt="img"></div>
+                      <h2>Kristina Zasiadko</h2>
+                    </li>
+                    <li class="item">
+                      <div class="img"><img src="img/029-05.png" alt="img"></div>
+                      <h2>Donald Horton</h2>
+                    </li>
+                </ul>
+                <button class="arrow" id="prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="arrow" id="next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </section>
+         
+        </div>
+       
+        <script>
+          let scrollcontainer = document.querySelector(".carousel");
+          let prebtn = document.getElementById("prev");
+          let nextbtn = document.getElementById("next");
+                
+          prebtn.addEventListener("click",function(){
+              scrollcontainer.scrollLeft -= 335;
+          });
+            
+          nextbtn.addEventListener("click",function(){
+              scrollcontainer.scrollLeft += 335;
+              scrollcontainer.style.scrollBehavior = "smooth";
+          });
+  
+
+          let slideIndex = 1;
+
+          showSlide(slideIndex);
+
+          //上一頁
+          let prev = document.getElementById("prev");
+          
+          prev.onclick = function(){
+              showSlide((slideIndex -= 1));
+          }
+          //下一頁
+          let next = document.getElementById("next");
+              
+          next.onclick = function(){
+              showSlide((slideIndex += 1))
+          }	
+
+          function showSlide(num) {
+              let list = document.getElementsByClassName("slide");
+                
+              if (num > list.length) {
+                  slideIndex = 1;
+              }
+
+              if (num < 1) {
+                  slideIndex = list.length;
+              }
+                  
+              for (let i = 0; i < list.length; i++) {
+                  list[i].style.display = "none";
+              }
+                  
+              list[slideIndex - 1].style.display = "block";   
+          }
+      
+          setInterval(function () {
+              showSlide();
+          }, 1000);
+        </script>
+  </body>
+</html>

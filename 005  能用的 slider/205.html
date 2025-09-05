@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
+    <title>Bootstrap demo</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        box-sizing: border-box;
+      }
+      /*
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+       
+      }*/
+
+      .gallery {
+        width: 1200px;
+        display: flex;
+        overflow-x: scroll;
+      }
+
+      .gallery div {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 30px;
+        padding:80px 50px;
+        /*overflow-x: auto; */  /*overflow:hidden*/
+      }
+
+      .gallery div img {
+        width: 360px;
+        height: 240px;
+        object-fit: cover;
+        vertical-align: middle;
+        
+      }
+      
+      .gallery::-webkit-scrollbar {
+        display: none;
+      }
+  
+      .gallery-wrap {
+
+      }
+
+      .arrow {
+            cursor: pointer;
+            line-height: 36px;
+            text-align: center;
+            font-size:30px;
+            width: 36px;
+            height: 36px;
+            z-index: 2;
+            position: absolute;
+            top: 180px;
+            background-color:rgba(0,0,0,0.6);
+            color:#fff;
+      }
+      
+        #prev {
+            left:10px;
+        }
+        #next {
+            right:10px;
+        }
+
+
+
+
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="gallery-wrap">
+      <button class="arrow" id="prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="gallery">
+            <div>
+              <span><img src="img/29-01.jpg" alt=""></span>
+              <span><img src="img/29-02.jpg" alt=""></span>
+              <span><img src="img/29-03.jpg" alt=""></span>
+            </div>
+            <div>
+              <span><img src="img/29-04.jpg" alt=""></span>
+              <span><img src="img/029-04.png" alt=""></span>
+              <span><img src="img/029-05.png" alt=""></span>
+            </div> 
+        </div>
+        <button class="arrow" id="next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <script>
+      let scrollcontainer = document.querySelector(".gallery");
+      let prebtn = document.getElementById("prev");
+      let nextbtn = document.getElementById("next");
+    
+      prebtn.addEventListener("click",function(){
+        scrollcontainer.scrollLeft -= 390;
+      });
+
+      nextbtn.addEventListener("click",function(){
+        scrollcontainer.scrollLeft += 420;
+        scrollcontainer.style.scrollBehavior = "smooth";
+      });
+
+      
+    
+    
+    </script>
+   
+  </body>
+</html>

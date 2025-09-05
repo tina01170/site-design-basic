@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <style>
+      * {
+          margin: 0;
+          padding:0;
+          list-style: none;
+          box-sizing: border-box;
+      }
+
+      body {
+          word-break: break-word;
+      }
+
+      /* layout */
+      .theme-wrapper {
+          max-width: 1300px;
+          margin:0 auto;
+          padding: 0 20px;
+         /*border-left: 1px solid #ccc;
+          border-right: 1px solid #ccc;*/
+          
+      }
+
+    
+
+      /* slider */
+
+      .slider {
+        padding:50px 0;
+      }
+
+      .slider h2 {
+        padding-bottom:30px;
+      }
+
+      .wrap {
+        display: flex;
+        margin:0 -20px;
+        flex-wrap: wrap;
+        position: relative;
+      }
+
+      .arrow {
+          cursor: pointer;
+          line-height: 36px;
+          text-align: center;
+          font-size:30px;
+          width: 36px;
+          height: 36px;
+          z-index: 2;
+          position: absolute;
+          top:60%;
+          background-color:rgba(0,0,0,0.6);
+          color:#fff;
+      }
+
+      #prev {
+          left:20px;
+      }
+      
+      #next {
+          right:20px;
+      }
+
+      .item {
+          width: 33.33%;
+          padding:0 20px;
+          position: relative;    
+          margin:30px 0;
+      }
+
+      .item img {
+          width: 100%;
+          vertical-align: middle;
+            
+      }
+
+      .item .text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding:0 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .item .text h3{
+        padding-left: 20px;
+        color:#fff;
+        font-size: 18px;
+      }
+
+      
+      
+
+    
+      @media screen and (max-width:375px){
+       
+
+        .item {
+          width: 100%;
+        }
+      }  
+
+
+ 
+     
+    
+    </style> 
+  </head>
+  <body>
+      
+      <div class="container">
+        <div class="theme-wrapper">
+          <div class="slider">
+              <h2>熱門景點</h2>
+              <div class="wrap">
+                  <div class="item">
+                    <img src="img/29-01.jpg" alt="1">
+                    <div class="text">
+                      <h3>花蓮 | 東山河畔</h3>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="img/29-02.jpg" alt="1">
+                    <div class="text">
+                      <h3>苗栗 | 造橋</h3> 
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="img/29-03.jpg" alt="1">
+                    <div class="text">
+                      <h3>屏東 | 墾丁</h3>  
+                    </div>
+                  </div>
+                  <button class="arrow" id="prev"><i class="fas fa-chevron-left"></i></button>
+              <button class="arrow" id="next"><i class="fas fa-chevron-right"></i></button>
+              </div>
+              
+          </div>
+            
+        </div>
+      </div>
+      
+    
+  </body>
+</html>

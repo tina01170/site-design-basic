@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+    <script src="jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript" src="06-moveAnimation.js"></script>
+    
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        #container {        /*最外層的div */
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #list {
+            width: 4200px;
+            height: 400px;
+            position:absolute;
+            z-index: 1;
+            left:-600px;
+        }
+
+        #list img {
+            float:left;
+        }
+        
+        #pointsDiv {     /*包含所有圓點按鈕的div*/
+            height: 10px;
+            width: 150px;
+            z-index: 2;
+            bottom: 30px;
+            left:250px;
+            position: absolute;
+        }
+    
+        #pointsDiv span {
+            cursor: pointer;
+            float:left;
+            border: 1px solid #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+            background-color: #333;
+        }
+        
+        
+        #pointsDiv span.active {
+            background-color: #ff2d2d;
+        }
+
+        .arrow {
+            cursor: pointer;
+            line-height: 36px;
+            text-align: center;
+            font-size:30px;
+            width: 36px;
+            height: 36px;
+            z-index: 2;
+            position: absolute;
+            top: 180px;
+            background-color:rgba(0,0,0,0.6);
+            color:#fff;
+        }
+
+        #prev {
+            left:20px;
+        }
+        #next {
+            right:20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="list">
+            <img src="img/29-05.jpg" alt="5">
+            <img src="img/29-01.jpg" alt="1">
+            <img src="img/29-02.jpg" alt="2">
+            <img src="img/29-03.jpg" alt="3">
+            <img src="img/29-04.jpg" alt="4">
+            <img src="img/29-05.jpg" alt="5">
+            <img src="img/29-01.jpg" alt="1">
+        </div>
+        <!--
+        <div id="pointsDiv">
+            <span index="1" class="active"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+            <span index="4"></span>
+            <span index="5"></span>
+        </div>-->
+        <button class="arrow" id="prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="arrow" id="next"><i class="fas fa-chevron-right"></i></button>
+        
+
+    </div>
+    <script>
+    $(function(){
+      
+        var $container = $('#container');
+        
+        var $pointsDiv = $('#pointsDiv > span');
+
+       
+        var $prev = $('#prev');
+        var $next = $('#next');
+        var lastIndex = 1;
+
+        
+
+        // 切上一张图
+        $prev.on('click', function () {
+            switchPic(lastIndex - 1);
+            
+        });
+        // 切下一张图
+        $next.on('click', function () {
+            switchPic(lastIndex + 1);
+            
+        });
+
+       
+        function switchPic(targetIndex) {
+            var picWidth = $container.css('width');
+            
+            
+            // 第0张实际上是第5张
+            if (targetIndex <= 0) {
+                targetIndex = 5;
+            }
+
+            // 第6张实际上是第1张
+            if (targetIndex >= 6) {
+                targetIndex = 1;
+            }
+            
+            /*
+            for (let i = 0; i < slide.length; i++) {
+                slide[i].style.display = "none";
+                
+            }
+            return -targetIndex * parseFloat(picWidth);*/
+           
+        }
+      
+        
+    })
+    </script>
+   
+</body>
+</html>

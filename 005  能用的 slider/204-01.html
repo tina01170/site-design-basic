@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
+    <title>Bootstrap demo</title>
+   
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          box-sizing: border-box;
+          
+        }
+        .slider .title {
+          font-size: 28px;
+          padding:20px;
+        }
+
+        .slider {
+          
+        }
+
+        .wrapper {
+          max-width: 1100px;
+          width: 100%;
+          position: relative;
+          padding:0 20px;
+        }
+
+        .wrapper .carousel{
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: calc((100% / 3) - 12px);
+          gap: 18px;
+          overflow-x: auto;   /*overflow:hidden*/
+          /*scroll-behavior: smooth;*/
+        }
+
+        .carousel::-webkit-scrollbar {
+          display: none;
+        }
+
+        .carousel .item {
+         
+        }
+
+        .carousel .item .img {
+          width: 300px;
+          height: 200px;
+        }
+        
+        .item .img img {
+          width: 300px;
+          height: 200px;
+          object-fit: cover;
+          vertical-align: middle;
+          
+        }
+        .carousel .item h2 {
+          margin:10px auto;
+          font-size: 22px;
+          text-align: center;
+        }
+        
+        .arrow {
+            cursor: pointer;
+            font-size:30px;
+            width: 36px;
+            height: 36px;
+            z-index: 2;
+            border: none;
+            position: absolute;
+            top:35%;
+            background-color:rgba(0,0,0,0.6);
+            color:#fff;
+            /*opacity: 0;*/
+        }
+
+        .arrow:hover {
+          opacity: 1;
+        }
+      
+        #prev {
+            left:5px;
+        }
+        #next {
+            right:15px;
+        }
+
+        
+        @media screen and (max-width: 900px) {
+          .wrapper .carousel {
+            grid-auto-columns: calc((100% / 2) - 9px);
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .wrapper .carousel {
+            grid-auto-columns: 100%;
+          }
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+        <h2 class="title">熱門景點</h2>
+        <div class="wrapper">
+            <div class="carousel">
+                <div class="item">
+                  <div class="img"><img src="img/29-01.jpg" alt="img" draggable="false"></div>
+                  <h2>Blanche Pearson</h2>
+                  
+                </div>
+                <div class="item">
+                  <div class="img"><img src="img/29-02.jpg" alt="img" draggable="false"></div>
+                  <h2>Joenas Brauers</h2>
+                  
+                </div>
+                <div class="item">
+                  <div class="img"><img src="img/29-03.jpg" alt="img" draggable="false"></div>
+                  <h2>Lariach French</h2>
+                
+                </div>
+                <div class="item">
+                  <div class="img"><img src="img/29-04.jpg" alt="img" draggable="false"></div>
+                  <h2>James Khosravi</h2>
+                
+                </div>
+                <div class="item">
+                  <div class="img"><img src="img/29-05.jpg" alt="img" draggable="false"></div>
+                  <h2>Kristina Zasiadko</h2>
+                
+                </div>
+                <div class="item">
+                  <div class="img"><img src="img/029-05.png" alt="img" draggable="false"></div>
+                  <h2>Donald Horton</h2>
+                
+                </div>
+            </div>
+            <button class="arrow" id="prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow" id="next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <script>
+      let scrollcontainer = document.querySelector(".carousel");
+      let prebtn = document.getElementById("prev");
+      let nextbtn = document.getElementById("next");
+    
+      prebtn.addEventListener("click",function(){
+        scrollcontainer.scrollLeft -= 335;
+      });
+
+      nextbtn.addEventListener("click",function(){
+        scrollcontainer.scrollLeft += 335;
+        scrollcontainer.style.scrollBehavior = "smooth";
+      });
+
+
+      
+
+    </script>
+    
+  </body>
+</html>
