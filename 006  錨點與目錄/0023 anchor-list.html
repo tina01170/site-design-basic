@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>anchor-list</title>
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+   
+    <style>
+       
+    </style>
+    <script>
+        $(function () {
+          $.fn.anchorlist = function(options){
+
+            var defaults = {
+              anchor     : $('h2'),
+              classname  : 'anchorlist'
+            };
+            var setting = $.extend(defaults, options);
+
+            var obj = $(this);
+            var list = $('<ul class="' + setting.classname + '">');
+            
+            setting.anchor.each(function(i){
+              var num = i + 1;
+              $(this).attr( 'id', 'content' + num );
+              list.append('<li><a href="#content' + num + '">'
+                + $(this).text() + '</a></li>');
+            });
+
+            obj.append(list);
+
+
+            $('#anchor-list').anchorlist({ anchor: $('article h2') });
+
+          };
+        })
+
+
+   </script>
+
+<script>
+  $(document).ready(function() {
+    // Find all h2 elements inside the article
+    var headings = $('article h2');
+
+    // Create an unordered list for the anchor links
+    var anchorList = $('<ul>');
+
+    // Iterate through each heading
+    headings.each(function(index) {
+      // Create a unique ID for the anchor link based on the heading text
+      var id = 'section-' + (index + 1);
+
+      // Add an ID attribute to the heading
+      $(this).attr('id', id);
+
+      // Create an anchor link and append it to the anchor list
+      var listItem = $('<li><a href="#' + id + '">' + $(this).text() + '</a></li>');
+      anchorList.append(listItem);
+    });
+
+    // Append the anchor list to the navigation element
+    $('#anchor-list').append(anchorList);
+  });
+</script>
+
+  </head>
+  <body>
+
+    <h1>Anchor List Demo</h1>
+
+    <nav id="anchor-list"></nav>
+    
+    
+    <div class="content">
+        <div class="item">
+          <h2>Title 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h2>Title 2</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+          <h2>Title 3</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h2>Title 4</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+        </div>  
+    </div>
+   
+    
+
+    
+    
+
+    
+  </body>
+</html>

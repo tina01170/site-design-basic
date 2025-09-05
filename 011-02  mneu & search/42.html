@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Awesome 5 Icons</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>mobile-icon change</title>
+    <style>
+        /* header */
+
+        #masthead {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+        }
+
+        .site-branding {
+            padding: 15px 0;
+            text-align: center;
+            
+        }
+
+        .site-branding-logo img {
+            max-height: 125px;
+            
+            width: 100%;
+        }
+
+        .site-title {
+            font-size: 24px;
+            margin: 0 0 2px;
+            line-height: 1.2;
+            font-weight: 600;
+        
+        }
+
+        .site-title a {
+            color: #000;
+        }
+
+        .site-title a:hover {
+            color: #191970
+        }
+
+
+        /* nav */
+
+        .adore-header {
+            background-color: var(--color-background);
+            border-bottom: 1px solid rgba(var(--color-text-rgb), 0.15);
+            box-shadow: 0 0 4px 0 rgb(10 10 10 / 6%);
+        }
+        @media (min-width: 1024px) {
+            body.admin-bar .adore-header.fix-header {
+                top: 32px;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 768px) {
+            body.admin-bar .adore-header.fix-header {
+                top: 46px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .adore-header.fix-header .site-branding {
+                display: none;
+            }
+        }
+
+        .adore-header.fix-header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 15;
+        }
+
+        .header-wrapper {
+          /*  padding-block: 10px;*/
+            width: 100%;
+
+        }
+
+        .header-menu-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        /* navigation search  */
+        .navigation-search {
+            width: 30px;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .navigation-search .navigation-search-wrap .navigation-search-icon {
+            color: var(--color-text);
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+            outline: 0;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .navigation-search .navigation-search-wrap .navigation-search-icon:focus,
+        .navigation-search .navigation-search-wrap .navigation-search-icon:hover {
+            color: var(--primary-color);
+        }
+
+        .navigation-search .navigation-search-wrap .navigation-search-icon:focus-within {
+            outline: 1px dashed;
+        }
+
+        .navigation-search .navigation-search-wrap .navigation-search-form {
+            position: absolute;
+            background: #fff;
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            top: 100%;
+            width: 325px;
+            padding: 14px;
+            z-index: 99;
+            box-shadow: 0 2px 9px -7px #000;
+        }
+
+        .dark-mode .navigation-search .navigation-search-wrap .navigation-search-form {
+            background-color: var(--color-dark);
+        }
+
+        .navigation-search .navigation-search-wrap .navigation-search-form .search-form {
+            display: flex;
+        }
+
+        .navigation-search .navigation-search-wrap .navigation-search-form .search-form label {
+            width: 75%;
+        }
+
+        .navigation-search .navigation-search-wrap .navigation-search-form .search-form label input {
+            width: 100%;
+            border-radius: 0px;
+        }
+
+        .navigation-search .navigation-search-wrap .navigation-search-form .search-form input.search-submit {
+            border-radius: 0px;
+            width: 25%;
+            margin: 0;
+            font-size: var(--font-size-sm);
+            border: none;
+            background: var(--primary-color);
+            color: #fff;
+            line-height: 1;
+            padding: 0.6em 1em;
+        }
+
+        .navigation-search .navigation-search-wrap.show .navigation-search-form {
+            margin: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 480px) {
+            .navigation-search {
+                position: unset;
+            }
+
+            .navigation-search .navigation-search-wrap .navigation-search-form {
+                width: 100%;
+            }
+        }
+
+        /* navigation search  */
+        /* desktop navigation */
+
+        .main-navigation ul {
+               /*display: none;*/
+                list-style: none;
+                margin: 0;
+                padding-left: 10px;
+
+        }
+
+        .main-navigation ul a {
+            text-decoration: none;
+            color:black;
+        }
+
+        .main-navigation li {
+                position: relative;
+                padding:10px;
+
+        }
+
+        .main-navigation ul li a:hover {
+		    color: #0080FF;
+	    }
+
+        .main-navigation ul li.menu-item-has-children>a::after {
+                
+                font-family: Font Awesome\ 5 Free;
+                font-weight: 900;
+                line-height: inherit;
+                vertical-align: baseline;
+                content: "\f107";
+                display: inline-block;
+                margin-inline-start: 10px;
+        }
+
+        .main-navigation ul ul li.menu-item-has-children>a::after {
+            content: "\f105";
+        }
+
+
+        @media(min-width:860px) {
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .header-menu-container {
+            display: flex;
+            align-items: center;
+        }
+        .main-navigation ul {
+            display: flex;
+           /* flex-wrap: wrap;
+            margin-left: -15px;*/
+        }
+
+        .main-navigation ul a {
+            font-size: 18px;
+            padding:5px;
+        }
+        
+        .main-navigation ul ul {
+            width: 150px;
+        }
+
+        .main-navigation ul ul a{
+            padding:5px 15px;
+        }
+        .main-navigation ul ul {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+            float: left;
+            position: absolute;
+            top: 100%;
+            left: -999em;
+            z-index: 99;
+            background-color:gainsboro;
+            }
+
+            .main-navigation ul ul ul {
+                    
+                top: 25px;
+                left: -999em;
+                background-color:gainsboro;
+                    
+            }
+            .main-navigation ul ul li:hover > ul,
+            .main-navigation ul ul li.focus > ul {
+                display: block;
+               left:140px;
+            }
+
+            
+
+            .main-navigation ul li:hover > ul,
+            .main-navigation ul li.focus > ul {
+                display: block;
+                left: auto;
+            }
+        }
+          
+  
+        /* menu-toggle */
+        @media(max-width:859px) {
+
+            .menu-toggle {
+                width: 50px;
+                height: 50px;
+                position: relative;
+                transform: rotate(0deg);
+                transition: 0.5s ease-in-out;
+                cursor: pointer;
+                padding: 0;
+                background: none;
+            /*  border: none;*/
+                margin: 20px;
+            }
+
+            .menu-toggle span {
+                display: block;
+                position: absolute;
+                height: 3px;
+                width:80%;
+            
+                text-align: center;
+                background-color: black;
+                border-radius: 3px;
+                opacity: 1;
+                left: 0;
+                transform: rotate(0deg);
+                transition: 0.25s ease-in-out;
+            }
+        
+            
+            .menu-toggle span:nth-child(1) {
+                top: calc(50% - 15px);
+            }
+
+            .menu-toggle span:nth-child(2) {
+                top: 50%;
+                transform: translateY(-50%);
+
+            }
+
+            .menu-toggle span:nth-child(3) {
+                bottom: calc(50% - 15px);
+            }
+
+            .main-navigation.toggled .menu-toggle span:nth-child(1) {
+                top: 14px;
+                width: 0%;
+                left: 50%;
+            }
+
+            .main-navigation.toggled .menu-toggle span:nth-child(2) {
+                transform: rotate(45deg);
+            }
+
+            .main-navigation.toggled .menu-toggle span:nth-child(3) {
+                top: 50%;
+                transform: translateY(-50%) rotate(-45deg);
+            }
+
+            .header-wrapper {
+                flex-direction: column;
+            }
+
+            .header-menu-container {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+            }
+
+            .main-navigation ul a {
+                padding: 3px;
+                display: block;
+            }
+
+            .main-navigation ul.nav-menu {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-align: left;
+                position: absolute;
+                top: 100%;
+                width: 100%;
+                z-index: 9999;
+                display: none;
+                background: #fff;
+                box-shadow: var(--shadow);
+            }
+
+            .main-navigation ul ul {
+                    height: 0;
+                    transform: scaleY(0);
+                    transform-origin: top left;
+                    overflow: hidden;
+                    transition: all 0.5s ease-in-out;
+                    margin-inline-start: 0;
+                }
+                    .main-navigation ul li.menu-item-has-children:hover>ul, .main-navigation ul li.menu-item-has-children.focus>ul {
+                    height: auto;
+                    transform: scaleY(1);
+                }
+                .main-navigation .menu li {
+                    position: relative;
+                }
+                
+            
+
+
+         }
+
+       
+
+        
+
+
+       
+
+	
+	
+
+    </style>
+    <script>
+        //search-bar
+          $(document).ready(function(){
+            
+            $("#top-search").click(function(){
+                $("#show-search").show();
+                $("#top-search-close").show();
+                $("#top-search").hide();
+            });
+            $("#top-search-close").click(function(){
+                $("#show-search").hide();
+                $("#top-search").show();
+                $("#top-search-close").hide();
+            });
+            
+          });
+    </script>
+</head>
+<body>
+        <header id="masthead" class="site-header">
+            <div class="site-branding">
+                <div class="container">
+                    <div class="site-branding-logo">
+                        <a href="#"></a>
+                        <img src="img/Victoria.png"/>   
+                    </div><!-- .site-branding-logo -->
+
+                </div><!-- .container -->
+            </div><!-- .site-branding -->
+
+            
+                    <div class="theme-wrapper">
+						<div class="header-wrapper">
+
+							<div class="header-menu-container">
+								<div class="header-menu">
+									<nav id="site-navigation" class="main-navigation">
+										<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+											<span></span>
+											<span></span>
+											<span></span>
+										</button>
+                                        
+                                        <div class="menu-primary-menu-container">
+                                            <ul id="primary-menu" class="menu nav-menu">
+                                                <li id="menu-item-40" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-40"><a href="http://34.136.97.144" aria-current="page">Home</a></li>
+                                                <li id="menu-item-41" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41"><a href="http://34.136.97.144/category/travel/">Travel</a></li>
+                                                <li id="menu-item-42" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42"><a href="http://34.136.97.144/category/fashion/">Fashion</a></li>
+
+                                                <li id="menu-item-43" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-43"><a href="http://34.136.97.144/category/life-style/">Life-style</a>
+                                                <ul class="sub-menu">
+
+                                                    <li id="menu-item-44" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-44"><a href="http://34.136.97.144/category/uncategorized/">Category</a></li>
+                                                    <li id="menu-item-45" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-45"><a href="http://34.136.97.144/category/uncategorized/">Category</a></li>
+                                                    <li id="menu-item-46" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-46"><a href="http://34.136.97.144/category/uncategorized/">Category</a>
+                                                        <ul class="sub-menu">
+                                                            <li id="menu-item-47" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47"><a href="http://34.136.97.144/category/uncategorized/">Item</a></li>
+                                                            <li id="menu-item-48" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-48"><a href="http://34.136.97.144/category/uncategorized/">Item</a></li>
+                                                            <li id="menu-item-49" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-49"><a href="http://34.136.97.144/category/uncategorized/">Item</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                </li>
+                                                <li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="http://34.136.97.144/sample-page/">Sample Page</a></li>
+                                            </ul>   
+                                        </div>	
+                                        								
+                                    </nav><!-- #site-navigation -->
+								</div>
+
+								<div class="header-end">
+                                    <div class="navigation-search">
+                                        <div class="navigation-search-wrap">
+                                            <a href="#" title="Search" class="navigation-search-icon">
+                                                <i class="fa fa-search"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+							</div>			
+                        </div>
+                    </div>
+                
+                
+        </header><!-- #masthead -->
+
+
+   
+
+</body>
+</html>

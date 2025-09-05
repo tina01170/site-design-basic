@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>anchor-list</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .anchor-list {
+          
+      }
+
+      ul li a {
+        font-size: 20px;
+        text-decoration: none;
+      }
+
+      .sub-item a {
+        color:aqua;
+      }
+
+      ul .sub-item li.h3 {
+        color:aqua;
+      }
+
+
+      #container {
+        margin:50px;
+        border: 1px solid #ccc;
+      }
+
+      #container h3 {
+        padding:20px 30px;
+      }
+
+      #container ul li {
+        padding:0 30px;
+      }
+
+      .post {
+        padding: 30px;
+      }
+
+      .post h2 {
+        margin:30px 0;
+      }
+       
+      .post h3 {
+        padding: 20px 0;
+      }
+
+      .post p {
+        font-size: 18px;
+        line-height: 1.68;
+      }
+    </style>
+    <script>
+     
+      
+    </script>
+  </head>
+  <body>
+    <!--
+    <h1>Anchor List Demo</h1>
+    <nav id="anchor-list"></nav>
+    -->
+
+    <section id="container">
+        <article class="post">
+          <h2 class="title">Title 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <div class="item">
+                <h3>Title 1-1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+          <h2>Title 2</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <div class="item">
+                <h3>Title 2-1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+          <h2>Title 3</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <div class="item">
+                <h3>Title 3-1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+          <h2>Title 4</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="item">
+              <h3>Title 4-1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          
+        
+        </article>
+    </section>
+    <script>
+        var container = document.getElementById("container");
+        var post = document.querySelector(".post");
+        //var title = document.querySelector(".title")
+
+        // 創建元素節點
+        var ul = document.createElement("ul");
+        //var list = document.createAttribute("list");
+			  //ul.setAttributeNode(list);
+
+			  //var li = document.createElement("li");
+        var li = "<li>項目一</li>";
+  
+			  //ul.appendChild(li);
+        ul.innerHTML = li;
+        container.insertBefore(ul,post);
+
+        // 增加 title 
+        var title = document.createElement("h3");
+        var text = document.createTextNode("目錄");
+        title.appendChild(text);
+        container.insertBefore(title,ul);
+        
+    </script>
+
+
+
+    
+    
+
+  </body>
+</html>

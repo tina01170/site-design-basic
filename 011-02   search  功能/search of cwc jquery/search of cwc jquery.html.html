@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>搜尋功能JQuery</title>
+<!-- JQuery 連結 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- CSS 連結 -->
+<link rel="stylesheet" href="search.css">
+</head>
+
+<body>
+<h1>會員資料表</h1>
+<form action="" class="search">
+<input type="text" id="myInput" placeholder="搜尋…">
+</form>
+
+<table id="myTable">
+<thead>
+<tr>
+<th style="width:50px">ID</th>
+<th style="width:200px">姓名</th>
+<th style="width:200px">Email</th>
+<th style="width:300px">個人網站</th>
+</tr>
+</thead>
+
+<tbody id="myBody">
+<tr>
+<td>1</td>
+<td>陳阿其</td>
+<td>promooo@promoo.info</td>
+<td>promooo.info</td>
+</tr>
+<tr>
+<td>2</td>
+<td>林小明</td>
+<td>aa@gmail.com</td>
+<td>aa.info</td>
+</tr>
+<tr>
+<td>3</td>
+<td>王小珍</td>
+<td>abc@gmail.com</td>
+<td>abc.info</td>
+</tr>
+
+</tbody>
+</table>
+
+<!-- JQuery在這 -->
+<script> 
+    $(document).ready(function() {
+        $("#myInput").on("keyup", function() {
+            // 抓 搜尋的關鍵詞
+            var value = $(this).val().toLowerCase();
+            // 抓Table裡頭有沒有符合
+            $("#myBody tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
+
+</script>
+
+</body>
+
+</html>
+

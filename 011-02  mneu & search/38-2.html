@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Awesome 5 Icons</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>mobile-icon change</title>
+    <style>
+        /* header */
+
+        #masthead {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+        }
+
+        .site-branding {
+            padding: 15px 0;
+            text-align: center;
+            
+        }
+
+        .site-branding-logo img {
+            max-height: 125px;
+            
+            width: 100%;
+        }
+
+        .site-title {
+            font-size: 24px;
+            margin: 0 0 2px;
+            line-height: 1.2;
+            font-weight: 600;
+        
+        }
+
+        .site-title a {
+            color: #000;
+        }
+
+        .site-title a:hover {
+            color: #191970
+        }
+
+        /* nav */
+
+        .navigation-part {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                }
+        .main-navigation {
+            display: block;
+            width: 100%;
+	        position: relative;
+           
+
+
+        }
+
+        .main-navigation ul {
+         /*  display: none;*/
+            list-style: none;
+            margin: 0;
+            padding-left: 10px;
+
+         }
+
+
+
+        .main-navigation li {
+            position: relative;
+            padding:10px;
+
+        }
+
+        .main-navigation a {
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 18px;
+            color: black;
+            position: relative;
+
+
+        }
+        
+        
+        .main-navigation ul ul{
+                display: none;
+                padding-left:20px;
+        }
+
+
+        .main-navigation ul ul li:hover > ul,
+        .main-navigation ul ul li.focus > ul {
+            display: block;
+            left: auto;
+        }
+
+        .main-navigation ul li:hover > ul,
+            .main-navigation ul li.focus > ul {
+                display: block;
+                left: auto;
+            }
+
+           /* Small menu. */
+           .menu-toggle,
+            .main-navigation.toggled ul {
+                    display: block;
+            }
+
+            .menu-toggle {
+                    display: block;
+                    width: 45px;
+                    height: 45px;
+                    margin:20px;
+                    padding:0;
+                    background-color:white;            
+            }
+
+            @media screen and (min-width: 37.5em) {
+
+                
+
+                .menu-toggle {
+                    display: none;
+                }
+
+                .main-navigation ul {
+                    display: flex;
+                    
+                }
+                .main-navigation ul ul {
+                    display:block;
+                    
+                }
+                .main-navigation ul ul a {
+                    width: 150px;
+                }
+                .main-navigation ul ul {
+                    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+                    float: left;
+                    position: absolute;
+                    top: 100%;
+                    left: -999em;
+                    z-index: 99999;
+                    background-color:gainsboro;
+                }
+
+                .main-navigation ul ul ul {
+                    
+                    top: 30px;
+                    left: -999em;
+                    background-color:gainsboro;
+                    
+                }
+            }
+
+          
+
+
+            @media (max-width: 726px) {
+            
+
+
+
+                #site-navigation .main-navigation-links {
+                position: fixed;
+                right:0;
+              /*  right: -130%;*/
+                height: 100%;
+                top: 0;
+                background-color: var(--clr-background);
+                min-width: 300px;
+                padding-top: 60px;
+                padding-right: 10px;
+                width: 60%;
+              /*  transition: all 400ms ease;*/
+                display: block;
+                border-right: 1px solid #fff;
+                z-index: 9999;
+                box-shadow: 2px 0 18px 0 rgba(0, 0, 0, 0.5);
+                opacity: 1;
+              /*  opacity: 0;
+                visibility: hidden;*/
+            }
+
+            
+            #site-navigation.toggled .main-navigation-links {
+               inset-inline-end: 0;
+                inset-inline-start: auto;
+                overflow-x: auto;
+                right:0;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            }
+
+            .main-navigation .main-menu {
+                position: fixed;
+              /* inset-inline-end: -130%;*/
+                height: 100%;
+                top: 0;
+                background-color: #fff;
+                min-width: 300px;
+                padding-top: 60px;
+                width: 50%;
+                transition: all 400ms ease;
+                display: block;
+                border-inline-end: 1px solid #fff;
+                z-index: 13;
+                box-shadow: 2px 0 18px 0 rgba(0, 0, 0, 0.5);
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .main-navigation.toggled .main-menu {
+                inset-inline-end: 0;
+                inset-inline-start: auto;
+                overflow-x: auto;
+                opacity: 1;
+                visibility: visible;
+            }
+
+          
+
+       
+          
+    </style>
+</head>
+<body>
+    <header id="masthead" class="site-header">
+        <div class="site-branding">
+			<div class="container">
+				<div class="site-branding-logo">
+					<a href="#"></a>
+                    <img src="img/Victoria.png"/>   
+				</div><!-- .site-branding-logo -->
+
+			</div><!-- .container -->
+		</div><!-- .site-branding -->
+
+        <div class="bottom-header-part">
+			<div class="ascendoor-wrapper">
+				<div class="bottom-header-wrapper">
+					<div class="navigation-part">
+                        <nav id="site-navigation" class="main-navigation">
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+
+                            <div class="main-navigation-links">
+
+                                <div class="menu-primary-menu-container">
+                                    <ul id="primary-menu" class="menu nav-menu">
+                                        <li id="menu-item-40" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-40"><a href="http://34.136.97.144" aria-current="page">Home</a></li>
+                                        
+                                        <li id="menu-item-41" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41"><a href="http://34.136.97.144/category/travel/">Travel</a></li>
+                                        <li id="menu-item-42" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42"><a href="http://34.136.97.144/category/fashion/">Fashion</a></li>
+                    
+                                        <li id="menu-item-43" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-43"><a href="http://34.136.97.144/category/life-style/">Life-style</a>
+                                            <ul class="sub-menu">
+                                                <li id="menu-item-44" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-44"><a href="http://34.136.97.144/category/uncategorized/">Category</a></li>
+                                                <li id="menu-item-45" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-45"><a href="http://34.136.97.144/category/uncategorized/">Category</a></li>
+                                                
+                                                <li id="menu-item-46" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-46"><a href="http://34.136.97.144/category/uncategorized/">Category</a>
+                                                <ul class="sub-menu">
+                                                    <li id="menu-item-47" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47"><a href="http://34.136.97.144/category/uncategorized/">Item</a></li>
+                                                    <li id="menu-item-48" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-48"><a href="http://34.136.97.144/category/uncategorized/">Item</a></li>
+                                                    <li id="menu-item-49" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-49"><a href="http://34.136.97.144/category/uncategorized/">Item</a></li>
+                                                </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="http://34.136.97.144/sample-page/">Sample Page</a></li>
+                                    </ul>
+                                </div>		
+
+                            </div>
+
+                        </nav><!-- #site-navigation -->
+                        <div class="bottom-header-right-part">
+                            <div class="header-search">
+                                <div class="header-search-wrap">
+                                    <a href="#" title="Search" class="header-search-icon">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                    <div class="header-search-form">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header><!-- #masthead -->
+
+
+
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	
+</head>
+<body>
+	<div id="related-postwrap">
+		<div class='related-title'>
+			<h2>related post</h2>
+		</div>
+	</div>
+	<script type="text/javascript">
+	
+			
+			var relatedpost = document.getElementById("related-postwrap");
+
+			// 增加一個 class 是 related-post 的 divs
+			/*
+			var div = document.createElement("div");
+			var rp = document.createAttribute("related-post");
+			div.setAttributeNode(rp);
+
+			var li = document.createElement("li");
+			div.appendChild(li);
+			relatedpost.appendChild(div);*/
+			
+			var ul = document.createElement("ul");
+			var rp = document.createAttribute("related-post");
+			ul.setAttributeNode(rp);
+
+			var li = document.createElement("li");
+			ul.appendChild(li);
+			relatedpost.appendChild(ul);
+	
+		
+		
+	</script>
+</body>
+</html>

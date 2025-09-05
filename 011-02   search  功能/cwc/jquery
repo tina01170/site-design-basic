@@ -1,0 +1,10 @@
+  $(document).ready(function() {
+            $("#myInput").on("keyup", function() {
+                // 抓 搜尋的關鍵詞
+                var value = $(this).val().toLowerCase();
+                // 抓Table裡頭有沒有符合
+                $("#myBody tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });

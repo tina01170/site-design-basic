@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="UTF-8"></meta>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <title>文字與圖片橫排</title> 
+       
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            
+            .banner img {
+                width:100%;
+            }
+            /* menu */
+            .side-menu{
+                position: relative;
+                
+                /*width: 300px;
+                height: 100%;*/
+                padding:20px;
+                /*box-sizing: border-box;*/
+                background-color: antiquewhite;
+                display: flex;
+                flex-direction: column;
+                /*box-shadow: 5px 0px 10px hsla(240, 40%, 15%,.6);*/
+                /*transform: translateX(-100%);*/
+                /*transition: .3s;*/
+            }
+           
+
+            .nav a{
+                display: block;
+                padding: 10px;
+                color: #000;
+                text-decoration: none;
+                position: relative;
+                font-size: 18px;
+            }
+
+            .nav a:hover {
+
+                color:#0080FF;
+            }
+            .nav li{
+                position: relative;
+            }
+
+           
+           .nav ul{
+                display: none;
+                left:20px;
+                
+            }
+
+            .nav ul a{
+                left:15px;
+
+            }
+           .nav ul ul a{
+                left:30px;
+
+            }
+            .nav li:hover > ul{
+                display: block;
+            }
+                
+
+            @media screen and (min-width: 37.5em) {
+                .side-menu{
+                    
+                    height:50px;
+                    padding:5px;
+                }
+                .nav {
+                    display: flex;
+                }
+                .nav ul {
+                    width:200px;
+                    position: absolute;
+                    top:45px;
+                    left:5px;
+                    background-color:gainsboro;
+                    box-shadow: 5px 5px 10px hsla(240, 40%, 15%,.6);
+                    transition: .10s;
+
+                }
+                .nav ul ul {
+                    width:200px;
+                    position: absolute;
+                    top:20px;
+                    left:200px;
+                    background-color:gainsboro;
+                    box-shadow: 5px 5px 10px hsla(240, 40%, 15%,.6);
+                    transition: .10s;
+                }
+            }
+
+        </style>
+       
+    </head> 
+    <body>
+        
+        <div class="banner">
+            <img src="img/Victoria.png">
+        </div>
+        <div class="side-menu">
+            
+            <ul class="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">暴力班入門</a></li>   
+                <li><a href="#">金魚網頁</a></li>
+                
+                <li>
+                    <a href="#">鐵人賽<span>▼</span></a>
+                    <ul>
+                        <li>
+                            <a href="#">網頁設計入門</a>
+                        
+                            
+                        </li>
+                        <li>
+                            <a href="#">CSS 選取器</a>
+                            
+                            
+                        </li>
+                        <li>
+                            <a href="#">網頁畫面怎麼切</a>
+                            
+                            
+                        </li>
+                        <li>
+                            <a href="#">網頁設計教學 ▼</a>
+                            <ul>
+                                <li><a href="#">DAY1</a></li>
+                                <li><a href="#">DAY2</a></li>
+                                <li>
+                                    <a href="#">DAY3<span>▼</span></a>
+                                <ul>
+                                    <li>
+                                        <a href="#">網頁設計入門</a>
+                                    
+                                        
+                                    </li>
+                                    <li>
+                                        <a href="#">CSS 選取器</a>
+                                        
+                                        
+                                    </li>
+                                    <li>
+                                        <a href="#">網頁畫面怎麼切</a>
+                                        
+                                        
+                                    </li>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">金魚切版</a></li>  
+                 
+            </ul>
+            
+        </div>
+
+
+    
+    
+
+
+    
+    </body>
+</html>

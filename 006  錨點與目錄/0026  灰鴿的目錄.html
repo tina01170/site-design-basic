@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>灰鴿的目錄</title>
+    <style type='text/css'>
+      
+      html{
+        scroll-behavior: smooth;
+      }
+
+      /* 標題和屋頂的距離 */
+      #main h3{
+        padding-top:1em
+      }
+
+     
+      #tab-content {
+        cursor: pointer;
+        bottom:-90vh;
+        z-index:200;
+        background: rgba(0,0,0,0.5) ;
+        padding: 10px;
+        transition:2s;
+        /*position: fixed;*/
+        min-width:200px;
+        max-width:350px;
+        max-height:70vh;
+      }
+
+      /*
+      #tab-content summary{ 
+        font-size:22px; 
+        color:#ff3;
+      }
+      #tab-content summary::marker{
+        color:red;
+      }
+      #tab-content ol { 
+        background: #f6f6d6;  
+        color: #68f; 
+        padding:10px 30px
+      }
+      #tab-content li a { 
+        font-size:18px; 
+        color:#777;
+      }
+      #tab-content li:hover a { 
+        color:#f2e; 
+      }
+      #tab-content li{ 
+        display: list-item; 
+        line-height:1.8; 
+      }
+       
+      */
+      .S-tab {
+      bottom:0px !important;
+      }
+
+      </style>
+  </head>
+  <body>
+    <details id="tab-content">
+      <summary>章節目錄</summary>
+      <ol id='chap'/>
+    </details>
+
+    <section id="main">
+      <h3>目錄1</h3>
+      <div id="chap">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe provident assumenda, accusantium necessitatibus veritatis consequatur minus dolores ab itaque perspiciatis dolor? Beatae sequi est culpa necessitatibus cupiditate mollitia animi at.
+      </div>
+      <h3>目錄2</h3>
+      <div id="chap">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe provident assumenda, accusantium necessitatibus veritatis consequatur minus dolores ab itaque perspiciatis dolor? Beatae sequi est culpa necessitatibus cupiditate mollitia animi at.
+      </div>
+      <h3>目錄3</h3>
+      <div id="chap">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe provident assumenda, accusantium necessitatibus veritatis consequatur minus dolores ab itaque perspiciatis dolor? Beatae sequi est culpa necessitatibus cupiditate mollitia animi at.
+      </div>
+      <h3>目錄4</h3>
+      <div id="chap">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe provident assumenda, accusantium necessitatibus veritatis consequatur minus dolores ab itaque perspiciatis dolor? Beatae sequi est culpa necessitatibus cupiditate mollitia animi at.
+      </div>
+      <h3>目錄5</h3>
+      <div id="chap">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe provident assumenda, accusantium necessitatibus veritatis consequatur minus dolores ab itaque perspiciatis dolor? Beatae sequi est culpa necessitatibus cupiditate mollitia animi at.
+      </div>
+
+    </section>
+    
+   
+    
+    <script> // <![CDATA[
+      let Doc = document;
+      let M = Doc.getElementById("main").querySelectorAll("h3");
+      let Chap = Doc.getElementById("chap");
+      let Tab = Doc.getElementById("tab-content");
+      
+      if (M.length >0) {
+        let Chapter=[];
+
+        for (let i = 0; i < M.length; i++) {
+            var z = i<9 ? "0" : '';
+
+            Ax = "chapit-"+z+(i+1);
+
+            M[i].setAttribute("id", Ax);
+
+            Chapter[i]="<li><a href='#"+Ax + "'>" + M[i].innerHTML+"</a></li>"; 
+        }
+
+        Chap.innerHTML=Chapter.join('');
+
+        Doc.onscroll = function() {
+          if (window.pageYOffset >= 200) {
+              Tab.classList.add("S-tab");
+          } else { 
+              Tab.classList.remove("S-tab");
+          }
+        }
+
+      } 
+        else { Tab.style.display="none"; 
+
+      }
+    // ]]>
+    </script>
+    
+    
+
+    
+   
+  </body>
+</html>

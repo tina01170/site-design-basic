@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>增加優化</title>
+  <script>
+      window.onload = function() {
+
+        //結合createElement和innerHTML，優化修改上述添加代碼邏輯
+        
+        document.getElementById("addEmpButton").onclick = function() {
+            // 獲取name/email/salary
+            var empName = document.getElementById("empName").value;
+            var email = document.getElementById("email").value;
+            var salary = document.getElementById("salary").value;
+
+            // 校驗數據是否為空
+            if (!empName || !email || !salary) {
+                alert("有數據為空，無法添加！");
+                return;
+            }
+
+            // 創建元素節點
+            var tr = document.createElement("tr");
+
+            // 添加子節點
+            var empNameTd = "<td>" + empName + "</td>";
+            var emailTd = "<td>" + email + "</td>";
+            var salaryTd = "<td>" + salary + "</td>";
+            var aTd = "<td><a href=\"javascript:;\">Delete</a></td>";
+            tr.innerHTML = empNameTd + emailTd + salaryTd + aTd;
+
+            // 為a綁定單擊相應函數
+            tr.getElementsByTagName("a")[0].onclick = delRow;
+
+            // 將tr添加至table中
+            // document.getElementById("employeeTable").appendChild(tr);
+            // 注意：瀏覽器生成的table結構會在內部套一層tbody，為了以防萬一，也為了結構一致性和樣式一致性，應該將其添加至tbody中
+            var employeeTable = document.getElementById("employeeTable");
+            var tbody = employeeTable.getElementsByTagName("tbody")[0];
+            tbody.appendChild(tr);
+        }
+      }
+  </script>
+</head>
+<body>
+   
+
+
+  
+</body>
+</html>

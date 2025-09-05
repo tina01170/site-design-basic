@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <style>
+        .header {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+        }
+        
+
+        .site-branding {
+            padding: 15px 0;
+            width:100%;
+           
+        }
+
+        .container {
+            text-align: center;
+            width:100%;
+        }
+        .site-branding-logo img {
+            max-height: 125px;
+            
+            width: 100%;
+        }
+
+        .site-title {
+            font-size: 24px;
+            margin: 0 0 2px;
+            line-height: 1.2;
+            font-weight: 600;
+        
+        }
+
+        .site-title a {
+            color: #000;
+        }
+
+        .site-title a:hover {
+            color: #191970
+        }
+
+       
+        /* search */
+        .openBtn {
+        background: #f1f1f1;
+        border: none;
+        padding: 10px 15px;
+        font-size: 20px;
+        cursor: pointer;
+        width:45px;
+        height:45px;
+        }
+
+        .openBtn:hover {
+        background: #bbb;
+        }
+
+        .overlay {
+        height:100%;
+        width: 100%;
+        display: none;
+        position: fixed;
+        z-index: 1;
+        top:0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.8);
+        opacity: 1;
+        }
+
+        .overlay-content {
+        position: relative;
+        top: 30%;
+        width: 46%;
+        text-align: center;
+        margin-top: 30px;
+        margin: auto;
+        }
+
+        .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        cursor: pointer;
+        color: white;
+        }
+
+        .overlay .closebtn:hover {
+        color: #ccc;
+        }
+
+        .overlay input[type=text] {
+        padding: 15px;
+        font-size: 17px;
+        border: none;
+        float: left;
+        width: 80%;
+        background: white;
+        }
+
+        .overlay input[type=text]:hover {
+        background: #f1f1f1;
+        }
+
+        .overlay button {
+        float: left;
+        width: 20%;
+        padding: 15px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+        }
+
+        .overlay button:hover {
+        background: #bbb;
+        }
+        
+
+        /*nav*/
+       
+        .main-navigation .menu-bars, 
+        .sidenav .closebtn {
+            display:none;
+        }
+        
+        .main-navigation {
+            display: block;
+            width: 100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-navigation ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding-left: 20px;
+
+         }
+
+         .main-navigation li {
+            position: relative;
+            padding:15px;
+
+        }
+
+        .main-navigation li a {
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            
+        }
+
+        @media screen and (max-width: 37.5em) {
+
+            .main-navigation .menu-bars, 
+            .sidenav .closebtn {
+                display:block;
+            }
+
+            .sidenav ul {
+            display: block;
+             }
+
+
+            .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            }
+
+            .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+
+            .sidenav a:hover {
+            color: #f1f1f1;
+            }
+
+            .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            }
+
+        }
+
+        
+        @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+        }
+
+      
+
+     
+        </style>
+        <script>
+
+            // side-menu
+            function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            }
+
+            // search
+            function openSearch() {
+            document.getElementById("myOverlay").style.display = "block";
+            }
+
+            function closeSearch() {
+            document.getElementById("myOverlay").style.display = "none";
+            }
+        </script>
+</head>
+<body>
+
+
+    <div class="header">
+        <div class="site-branding">
+            
+			<div class="container">
+				<div class="site-branding-logo">
+					<a href="#"></a>
+                    <img src="img/Victoria.png"/>   
+				</div><!-- .site-branding-logo -->
+                <div class="site-text">
+
+                    <p>just another cite</p>
+                </div>
+			</div><!-- .container -->
+            <div id="site-navigation" class="main-navigation">
+
+                
+                    <div class="menu-bars">
+                        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                    </div> 
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    
+                        <ul class="nav-link">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">janpan</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Clients</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">About</a></li>
+                        </ul>
+                    </div>  
+                    <div class="search-bars"> 
+                        <button class="openBtn" onclick="openSearch()"><i class="fa fa-search"></i></button>
+                        <div id="myOverlay" class="overlay">
+                            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+                            <div class="overlay-content">
+                                <form action="/action_page.php">
+                                    <input type="text" placeholder="Search.." name="search">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                 
+                   
+                
+            </div>
+
+            
+            
+		</div><!-- .site-branding -->
+    </div>
+
+    
+    
+
+        
+       
+
+        
+   
+</body>
+</html> 

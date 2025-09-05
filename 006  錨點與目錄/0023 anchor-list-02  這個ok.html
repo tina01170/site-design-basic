@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>anchor-list</title>
+    <style>
+      .sub-item a {
+        color:aqua;
+      }
+      .anchor-list {
+        list-style: none;
+      }
+
+      .anchor-list a {
+        text-decoration: none;
+        color:#000;
+      } 
+      .anchor-list h3 {
+        padding: 0 20px;
+      }
+    </style>
+    <script>
+        $(function () {
+
+          var $headings = $('.page-content').find('h2,h3');
+          var $anchor_list =  $('<ul class="anchor-list"></ul>');
+          var idx = 1;
+          var $list_item;
+          $headings.each(function() {
+            $(this).prepend('<a id="link-' + idx + '"></a>');
+            $list_item =  $('<li></li>');
+
+            if ($(this).prop("tagName") == 'H2') {
+              $list_item.html('<h2><a href="#link-' + idx + '">' + $(this).text() + '</a></h2>');
+              //$sub_list = $('<ul></ul>');
+              
+            } else if ($(this).prop("tagName") == 'H3') {
+              $list_item.html('<h3><a href="#link-' + idx + '">' + $(this).text() + '</a></h3>');
+              //$sub_list.append($list_item);
+            }
+          
+            $anchor_list.append($list_item);
+            idx++;
+          });
+
+          $('.page-content').prepend($anchor_list);
+
+          $anchor_list.find('a').on('click', function() {
+            var link_id = $(this).attr('href');
+            var $anchor =  $(link_id);
+            if ($anchor.length) {
+              $('html, body').animate({
+                scrollTop: $anchor.offset().top - 70
+                    }, 1000);
+              return false;				
+            }
+          });
+
+
+          $('.page-content').prepend($anchor_list);
+        })
+      
+     </script>
+  </head>
+  <body>
+
+    <h1>Anchor List Demo</h1>
+
+    <nav id="anchor-list"></nav>
+    
+    <article class="page-content">
+
+
+      <h2>Title 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="item">
+            <h3>Title 1-1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+      <h2>Title 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="item">
+            <h3>Title 2-1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+      <h2>Title 3</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="item">
+            <h3>Title 3-1</h3>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+      <h2>Title 4</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="item">
+          <h3>Title 4-1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      
+    
+    </article>
+    
+
+    
+   
+
+    
+  </body>
+</html>

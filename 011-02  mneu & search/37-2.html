@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>youtube rwd menu</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        
+      }
+
+      .container img {
+
+        width:100%;
+      }
+
+      #box-1, #box-2 {
+        opacity: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      header {
+        background: #fff;
+        width:100%;
+      
+       
+      
+      }
+      .menu-wrap {
+
+        width:100%;
+      }
+       
+    
+      
+      .top-menu {
+        display: flex;
+        
+       /* flex-wrap: wrap;*/
+        justify-content: space-between;
+        align-items: center;
+        background-color: beige;
+        width:100%;
+      }
+
+      .menu-left {
+        display: flex;
+
+      }
+      .main-menu a{
+          
+          font-size: 18px;
+        }
+
+
+      #menu-toggle {
+            width: 35px;
+            height: 35px;
+            position: relative;
+            padding: 5px;
+            background: none;
+            border:1px solid black;
+           
+        }
+
+      @media(min-width:768px) {
+        .main-menu{
+
+          display: flex;
+          
+        }
+        .main-menu li {
+          padding:0 15px;
+          
+        }
+        
+
+        input[type="checkbox"] {
+          display: none;
+        }  /* 相異處 */
+
+
+        #menu-toggle {
+          display: none;
+        }
+      
+      }
+      @media(max-width:767px) {
+        #menu-toggle {
+          display:block;
+         /* position: absolute;
+          left:0;*/
+        }
+
+        .main-menu {
+            position: absolute;
+            top:135px;
+            width:100%;
+            left:-100%;
+            transition: 0.3s ease-in-out;
+        }
+
+        .main-menu li{
+          display:block;
+
+        }
+
+
+
+        #box-1:checked ~ ul{
+
+          left:0;
+
+        } 
+        
+      }
+
+      /* search */
+
+      #navbar-form {
+         position:relative;
+         display: inline-flex;
+
+      }
+      #search-form {
+        display:inline-flex;
+        width:280px;
+        height:30px;
+        padding:15px;
+        position:absolute;
+        right:100%;
+        transform: scale(0,0);
+        transform-origin: center rigth;
+        transition:0.3s transform linear;
+
+      }
+
+      #search-bar {
+
+          width:200px;
+          height:30px;
+          padding:10px;
+          color:black;
+          font-size: 16px;
+      }
+
+      #search-btn {
+          width:30px;
+          height:30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+      }
+
+      #search-form-opener {
+          width:30px;
+          height:30px;
+          padding:15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size:18px;
+          font-weight: bolder;
+      }
+      #search-form-closer {
+          width:30px;
+          height:30px;
+          padding:15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size:18px;
+          font-weight: bolder;
+       /*   background-color:rgba(0, 0, 0, 0.65);*/
+          display: none;
+      }
+      #box-2:checked ~ #search-form {
+
+        transform: scale(1,1);
+
+      } 
+      #box-2:checked ~ #search-form-opener {
+          display:none;
+        
+
+      } 
+      #box-2:checked ~ #search-form-closer {
+          display:block;
+        
+
+      } 
+    
+    </style>
+  </head>
+  <body>
+
+    <header>
+
+      <div class="container">
+        <a href="#" class="logo">
+        <img src="img/Victoria.png"/>
+
+        </a>
+      </div>
+      <div class="menu-wrap">
+        
+        <nav class="top-menu">
+          <!-- Navbar Toggler -->
+
+            <input type="checkbox" id="box-1">
+            <label id="menu-toggle" for="box-1">
+            <span><i class="fas fa-bars"></i></span>
+            </label>
+          
+
+          <!-- nav--> 
+          <ul class="main-menu"> 
+              <li><a href="#">Travel</a></li>
+              <li><a href="#">Fashion</a></li>
+              <li><a href="#">life-style</a>
+
+
+
+              </li>
+              <li><a href="#">movie</a></li>
+              <li><a href="#">about-me</a></li>
+            
+          </ul> 
+
+
+          <!-- search--> 
+
+          <div id="navbar-form">
+            
+            <input type="checkbox" id="box-2">
+            <form action="" id="search-form">
+              <input type="search" placeholder="Search" id="search-bar"> 
+              <button id="search-btn" type="submit">
+              <span><i class="fas fa-search"></i></span> </button>
+            </form>
+           
+
+            <label for="box-2" id="search-form-opener"> 
+              <span><i class="fas fa-search"></i></span>
+            </label>
+            <label for="box-2" id="search-form-closer"> 
+              <span><i class="fas fa-times"></i></span>
+            </label>
+
+            
+            
+          </div>
+            
+         
+        </nav>
+      </div>  
+      
+
+    </header>
+
+   
+   
+
+  </body>
+</html>

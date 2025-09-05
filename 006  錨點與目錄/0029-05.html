@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>anchor-list</title>
+    <style type="text/css">
+      #topic  {  border:1px solid #ccc; width:fit-content; margin:0 0 50px; padding:15px 25px;  }
+      #topic .title {margin:10px 0 20px;  border-bottom:1px solid #ccc; }
+      #topic h3 a { color:#656565; }
+      #topic  .show { display:block; float:left; margin:-2px 10px 0 0; }
+      #topic .show:after { content: "\f0d7"; font-family:'Font Awesome 5 Free'; font-size:28px; font-weight: 900; color:#000; text-align:center; margin-left:8px; }
+      #topic .list {  padding:0 45px 0 0; }
+      #topic .list li { list-style:none; }
+      #topic .list li h2, #topic .list li h3, #topic .list li h4 { font-size:18px; margin:0; padding:0;  color:#282828; }
+      #topic .list li a { color:#656565; }
+      #topic .list li a:hover { color:#0080FF; }
+      #topic .list li h3 { padding-left:28px; }
+      #topic .list li h4 { padding-left:58px; }
+      .post-body h1, .post-body h2, .post-body h3, .post-body h4 { position: relative; }
+      .post-body a.itop { text-transform: capitalize; display: inline-block; cursor: pointer; font-size:15px; color:#656565; /*margin-left:30px;*/  position: absolute; top:0; right:50px; }
+    </style>
+    <script type="text/javascript">
+    $(function () {
+      if ($('.post-body h1, .post-body h2, .post-body h3, .post-body h4').length > 0) {
+          var head = '<h3 class="title"><a>目錄</a><span class="show"></h3>';
+                var listHtml = '<ul class="list">';
+                $('.post-body h1, .post-body h2, .post-body h3, .post-body h4').each(function (index, obj) {
+                    $(obj).attr('id', 'point-' + index);
+                    if ($(obj).prop("tagName") == 'H2') {
+              listHtml += '<li><h2><a href="#point-' + index + '">' + $(obj).text() + '</a></h2></li>';
+            } else if ($(obj).prop('tagName') == 'H3') {
+                       listHtml += '<li><h3><a href="#point-' + index + '">' + $(obj).text() + '</a></h3></li>';
+                    } else if ($(obj).prop('tagName') == 'H4') {
+                        listHtml += '<li><h4><a href="#point-' + index + '">' + $(obj).text() + '</a></h4></li>';
+                    }
+             
+            $(this).append('<a href="#topic" class="itop">回目錄</a>')
+                });
+                listHtml += '</ul>';
+                $('#topic').html(head + listHtml);
+  
+          $(".title").each(function(e) {
+              (e = $(this)).on("click", function() {
+                  e.toggleClass("is-expanded"), $(".list").slideToggle(1000)
+              })
+          })		 
+            }
+      });
+  </script>
+  </head>
+  <body>
+
+ 
+    
+    
+
+    
+   
+  </body>
+</html>
