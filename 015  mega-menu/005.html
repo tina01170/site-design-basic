@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+     
+
+
+    </style>
+    
+  </head>
+  <body>
+    
+    <ul id="nav">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">TRAVEL</a></li>
+      <li><a href="#">Service</a></li>
+      <li><a href="#">Service</a>
+        <ul class="submenu" id="submenu">
+          <li class="show"><a href="#">Category 1</a>
+            <ul class="tab"></ul>
+          </li>
+          <li><a href="#">AI</a>
+            <ul class="tab"></ul>
+          </li>
+          <li><a href="#">travel</a>
+            <ul class="tab"></ul>
+          </li>
+          <li><a href="#">Category 4</a>
+            
+            
+          </li>
+        </ul>
+      </li>
+    </ul>
+  
+    <script>
+    
+      $(document).ready(function(){
+          
+          var tablist = $("ul>li>ul>li>ul");
+          tablist.append("<li>travel</li>");
+          /*
+          for(i=0;i<4;i++){
+            var tablist = $("ul>li>ul>li>ul");
+            //console.log(tablist)
+            tablist.append("<li>travel</li>");
+           
+          }*/
+         
+      })
+    </script>
+    
+   
+  </body>
+</html>

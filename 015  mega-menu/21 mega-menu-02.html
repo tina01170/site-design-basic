@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mega-menu non rwd</title>
+   
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+       
+        .wrapper {
+
+            width:100%;
+        }
+
+        .navbar-nav {
+            width:100%;
+          /*  height: 100%;*/
+            background-color: white;
+            text-align: center;
+           /* line-height: 60px;*/
+            position: relative;
+        }
+
+        .navbar-nav a {
+            color:black;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .navbar-nav > li {
+            padding: 20px 15px;
+            margin: 0 15px;
+        }
+
+        .navbar-nav li a {
+            text-decoration: none;
+        }
+        /*
+        .nav-tabs >li {
+            float: none;
+        }*/
+
+        .navbar-nav li .mega-down-menu {
+            position: absolute;
+            /*background-color: #F0F0F0;*/
+            border:1px solid #000;
+            width: 900px;
+            left:20px;
+            top:60px;
+            padding:20px 10px;
+            margin:0 20px;
+          
+            display: flex;
+            justify-content: space-around;
+            line-height:35px;
+           /*visibility: hidden;*/
+        }
+
+        .navbar-nav li:hover .mega-down-menu {
+            visibility: visible;
+        }
+
+        
+        .post-tabs > li {
+            display: block;
+        }
+
+        .nav-list {
+            margin-bottom: 25px;
+        }
+
+        .nav-list > li {
+            display: block;
+        }
+
+        .mega-down-menu .tabs-post-wrap {
+           width:900px;
+          
+            display: flex;
+        }
+
+        .tabs-post-head {
+            width:150px;
+            margin-right:15px;
+
+        }
+
+          .post-tabs {
+            padding:0;
+            margin:0;
+            list-style:none;
+           
+          }
+
+          .post-tabs li {
+            width:50%;
+            background-color: #f0f0f0;
+            padding:15px 10px;
+            margin:0;
+            cursor: pointer;
+            min-width:100px;
+         
+            
+          }
+
+          .post-tabs li a{
+            text-decoration:none;
+            color:#000;
+            font-size:18px;
+          }
+          .post-tabs li:hover,
+          .post-tabs li.active {
+            background-color:#fff;
+          }
+
+          .tab-container {
+            padding:10px;
+            display:none;
+          }
+          
+        
+
+          
+          .tab-container-wrap {
+            display:flex;
+            /*flex-wrap: wrap;*/
+            
+          }
+
+          .tab-item {
+            /*width:33.33%;*/
+
+          }
+
+          .nav-list {
+            margin:0 20px;
+            margin-bottom: 20px;
+          }
+          .nav-list > li {
+            display: block;
+            
+          }
+
+          .nav-list > li > a {
+                font-size: 15px;
+          }
+       
+          
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <ul class="nav navbar-nav">
+            <li><a href="#">FASHION</a></li>
+            <li><a href="#">MAKE-UP</a></li>
+            <li><a href="#">droptown-jpg</a>
+            </li>
+            <li><a href="#">SHOPPING</a></li>
+                <li class="dropdown mega-dropdown"><a href="#">dropdown</a>    
+                    <div class="mega-down-menu">
+                        <div class="tabs-post-wrap">
+                            <div class="tabs-post-head">
+                                <ul class="post-tabs">
+                                    <li><a href="#tab-1" class="latest">latest</a></li>
+                                    <li><a href="#tab-2" class="trending">trending</a></li>
+                                    <li><a href="#tab-3" class="trending">tab-post-3</a></li>
+                                    <li><a href="#tab-4" class="trending">tab-post-4</a></li> 
+                                </ul>
+                            </div>
+                            <div class="tab-container-area">
+                                <div class="tab-container" id="tab-1">
+                                    <p>latest</p>
+                                    <div class="tab-container-wrap">
+                                        <div class="tab-item">
+                                            <h4>Chemical Industry</h4>
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#" class="retail2">Auto Accessories Store</a></li>
+                                                <li><a href="#" class="retail4">Bridal Store</a></li>
+                                                <li><a href="#" class="retail5">Cake Shop</a></li>
+                                                <li><a href="#" class="retail6">Cartridge Refilling Store</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-item">
+                                            <h4>Chemical Industry</h4>
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#" class="retail2">Auto Accessories Store</a></li>
+                                                <li><a href="#" class="retail4">Bridal Store</a></li>
+                                                <li><a href="#" class="retail5">Cake Shop</a></li>
+                                                <li><a href="#" class="retail6">Cartridge Refilling Store</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-item">
+                                            <h4>Chemical Industry</h4>
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#" class="retail2">Auto Accessories Store</a></li>
+                                                <li><a href="#" class="retail4">Bridal Store</a></li>
+                                                <li><a href="#" class="retail5">Cake Shop</a></li>
+                                                <li><a href="#" class="retail6">Cartridge Refilling Store</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-item">
+                                            <h4>Chemical Industry</h4>
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#" class="retail2">Auto Accessories Store</a></li>
+                                                <li><a href="#" class="retail4">Bridal Store</a></li>
+                                                <li><a href="#" class="retail5">Cake Shop</a></li>
+                                                <li><a href="#" class="retail6">Cartridge Refilling Store</a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="tab-container" id="tab-2">
+                                    <p>trending post</p>
+                                    <div class="tab-container-wrap">
+                                        <div class="tab-item">
+                                            <h4>Chemical Industry</h4>
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#" class="retail2">Auto Accessories Store</a></li>
+                                                <li><a href="#" class="retail4">Bridal Store</a></li>
+                                                <li><a href="#" class="retail5">Cake Shop</a></li>
+                                                <li><a href="#" class="retail6">Cartridge Refilling Store</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-item">
+                                            <h4>Chemical Industry</h4>
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#" class="retail2">Auto Accessories Store</a></li>
+                                                <li><a href="#" class="retail4">Bridal Store</a></li>
+                                                <li><a href="#" class="retail5">Cake Shop</a></li>
+                                                <li><a href="#" class="retail6">Cartridge Refilling Store</a></li>
+                                            </ul>
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div class="tab-container" id="tab-3">
+                                    <p>tab-3</p>
+                                    <div class="tab-container-wrap">
+                                        <div class="tab-item">
+                                            <h4>Chemical Industry</h4>
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#" class="retail2">Auto Accessories Store</a></li>
+                                                <li><a href="#" class="retail4">Bridal Store</a></li>
+                                                <li><a href="#" class="retail5">Cake Shop</a></li>
+                                                <li><a href="#" class="retail6">Cartridge Refilling Store</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-container" id="tab-4">
+                                    <p>tabs-4</p>
+                                    <div class="tab-container-wrap">
+                                        <div class="tab-item">
+                                            <h4>Chemical Industry</h4>
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#" class="retail2">Auto Accessories Store</a></li>
+                                                <li><a href="#" class="retail4">Bridal Store</a></li>
+                                                <li><a href="#" class="retail5">Cake Shop</a></li>
+                                                <li><a href="#" class="retail6">Cartridge Refilling Store</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-item">
+                                            <h4>Chemical Industry</h4>
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#" class="retail2">Auto Accessories Store</a></li>
+                                                <li><a href="#" class="retail4">Bridal Store</a></li>
+                                                <li><a href="#" class="retail5">Cake Shop</a></li>
+                                                <li><a href="#" class="retail6">Cartridge Refilling Store</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-item">
+                                            <h4>Chemical Industry</h4>
+                                            <ul class="nav-list list-inline">
+                                                <li><a href="#" class="retail2">Auto Accessories Store</a></li>
+                                                <li><a href="#" class="retail4">Bridal Store</a></li>
+                                                <li><a href="#" class="retail5">Cake Shop</a></li>
+                                                <li><a href="#" class="retail6">Cartridge Refilling Store</a></li>
+                                            </ul>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </li>
+
+                
+        </ul>
+    </div>
+    
+    <script>
+        // tab post
+      
+        $(".tab-container:first").show();
+        $(".post-tabs li:first").addClass('active');
+        
+        $(".post-tabs li").click(function(){
+              index = $(this).index();
+              $(".post-tabs li").removeClass('active');
+              $(this).addClass('active');
+              $(".tab-container").hide();
+              $(".tab-container").eq(index).show();
+        });
+      </script>
+
+    
+   
+  </body>
+</html>

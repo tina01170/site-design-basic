@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+     
+
+
+    </style>
+     <script>
+      
+    </script>
+  </head>
+  <body>
+    <ul id="nav">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">TRAVEL</a></li>
+      <li><a href="#">Service</a></li>
+      <li><a href="#">Service</a>
+        <ul class="submenu" id="submenu">
+          <li class="show"><a href="#">Category 1</a>
+            
+          </li>
+          <li><a href="#">AI</a>
+           
+
+            
+          </li>
+          <li><a href="#">travel</a>
+           
+           
+          </li>
+          <li><a href="#">Category 4</a>
+            
+            
+          </li>
+        </ul>
+      </li>
+    </ul>
+  
+    <script>
+      
+      /*
+      var label = document.getElementsByTagName("li");
+      console.log(label.length);
+
+      var labelArr=[];    
+      for(i=0;i<label.length;i++){
+        labelArr.push(label[i].innerText);      
+      }
+      console.log(labelArr);*/
+
+      var sublist = document.getElementById("submenu").children;
+      console.log(sublist);
+
+      var postarr = [];
+      for(var i=0;i<sublist.length;i++){
+        postarr.push(sublist[i].innerText);
+      }
+      console.log(postarr);
+     
+      /*
+      var labelArr=[];
+      for(i=0;i<label.length;i++){
+        //labelArr.push(label[i].textContent);
+       // console.log(labelArr);
+        //console.log(labelArr[i]);
+      }*/
+     
+    </script>
+    
+   
+  </body>
+</html>

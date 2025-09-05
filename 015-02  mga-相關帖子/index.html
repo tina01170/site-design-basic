@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--<link rel="stylesheet" href="style.css" />-->
+    <style>
+    .related-posts-container {
+      max-width: 800px;
+      font-family: "Roboto", sans-serif;
+      margin: 0 auto;
+    }
+    
+    
+    
+    /*
+    .related-posts-title::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100px;
+      background: red;
+      left: 0;
+      bottom: -10px;
+    }*/
+    
+    .related-posts {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+    
+    /*
+    .related-post {
+      box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.2);
+      transition: all 500ms ease;
+    }
+    
+    .related-post:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.2);
+    }*/
+    
+    .related-post .post-title {
+      text-decoration: none;
+      color: #222;
+      font-size: 18px;
+      padding: 16px;
+      display: inline-block;
+      line-height: 1.6;
+      font-weight: bold;
+    }
+    
+    @media (max-width: 640px) {
+      .related-posts {
+        grid-template-columns: 1fr;
+      }
+    
+      .related-posts-container {
+        max-width: 400px;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="related-postwrap">
+      <h2 class="related-posts-title">Related Posts</h2>
+      
+      <!-- <div class="related-posts">
+         <div class="related-post">
+          <a href="#">
+            <img src="images/blog1.jpg" alt="" />
+          </a>
+          <a href="#" class="post-title">How Search Engine Works?</a>
+        </div>
+
+        <div class="related-post">
+          <a href="#">
+            <img src="images/blog2.jpg" alt="" />
+          </a>
+          <a href="#" class="post-title">Get More Traffic With These Tricks</a>
+        </div>
+
+        <div class="related-post">
+          <a href="#">
+            <img src="images/blog3.jpg" alt="" />
+          </a>
+          <a href="#" class="post-title">What Is On My Office Desk?</a>
+        </div> 
+      </div>-->
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
