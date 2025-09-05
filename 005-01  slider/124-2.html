@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;900&display=swap" rel="stylesheet">
+
+    
+    <title>Hiking Kings</title>
+    <style>
+        /* HEADER */
+
+        * {
+        margin: 0;
+        padding: 0;
+        font-family: "Mulish", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #efefef;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .container {
+            max-width: 1120px;
+            width:100%;
+            padding: 50px 0;
+            
+           
+        }
+
+        /* PRODUCTS */
+        .product {
+            position: relative;
+            overflow: hidden;
+            margin:0 15px;
+        
+        }
+
+        
+
+        .product-container {
+       
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+       .product-container::-webkit-scrollbar {
+          /*display: none;*/
+        }
+
+        .card {
+            background: #fff;
+            margin:0 15px;
+           
+        }
+        .card .image-box {
+            width:300px;
+            height: 200px;
+           
+        }
+        .card .image-box img {
+        
+            width: 100%;
+            height: 100%;
+        }
+
+        
+        .card .post-text {
+            align-items: center;
+            padding: 15px;
+
+        }
+
+        .post-text .title {
+                font-size: 20px;
+                font-weight: 900;
+                line-height: 1.7em;
+        }
+        .post-text .date,
+        .post-text .author {
+                font-size: 16px;
+                line-height: 1.5em;
+        }
+
+        .product-top {
+            margin:0 15px 10px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .product-top .text h4{
+            font-size: 28px;
+        }
+        .icon {
+
+            margin-left: 15px;
+            display: flex;
+          
+            
+          
+        }
+        collection-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        }
+
+        .collection {
+        position: relative;
+        }
+
+        .collection img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+
+        .collection p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff;
+        font-size: 50px;
+        text-transform: capitalize;
+        }
+
+        .collection:nth-child(3) {
+        grid-column: span 2;
+        margin-bottom: 10px;
+        }
+       
+       
+       
+     
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+    
+        <section class="product"> 
+        
+            <div class="product-top">
+                <div class="text">
+                    <h4>Related post</h4>
+                </div>
+                <div class="icon">
+                    <button class="pre-btn"><img src="icon/baseline-arrow-left-small.png" alt=""></button>
+                    <button class="nxt-btn"><img src="icon/baseline-arrow-right-small.png" alt=""></button>
+                </div>
+            
+            </div>
+            
+            <div class="product-container">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="img/pexels-01.jpg" alt="">
+                    </div>
+                    <div class="post-text">
+                    <!-- <span class="category">fashion</span>-->
+                        <h4 class="title">travel in the road</h4>
+                        <div class="date">2022 July 7</div>
+                        <div class="author">  by kelly</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-box">
+                        <img src="img/pexels-02.jpg" alt="">
+                    </div>
+                    <div class="post-text">
+                    <!-- <span class="category">fashion</span>-->
+                        <h4 class="title">trouble in the travel</h4>
+                        <div class="date">2022 July 7</div>
+                        <div class="author">  by kelly</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="image-box">
+                        <img src="img/pexels-03.jpg" alt="">
+                    </div>
+                    <div class="post-text">
+                    <!-- <span class="category">fashion</span>-->
+                        <h4 class="title">Spring Fashion Clothes</h4>
+                        <div class="date">2022 July 7</div>
+                        <div class="author">  by kelly</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="image-box">
+                        <img src="img/pexels-04.jpg" alt="">
+                    </div>
+                    <div class="post-text">
+                    <!-- <span class="category">fashion</span>-->
+                        <h4 class="title">Journey in the sunset</h4>
+                        <div class="date">2022 July 7</div>
+                        <div class="author">  by kelly</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-box">
+                        <img src="img/pexels-05.jpg" alt="">
+                    </div>
+                    <div class="post-text">
+                        <h4 class="title">Journey in the sunset</h4>
+                        <div class="date">2022 July 7</div>
+                        <div class="author">  by kelly</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="image-box">
+                        <img src="img/pexels-06.jpg" alt="">
+                    </div>
+                    <div class="post-text">
+                    <!-- <span class="category">fashion</span>-->
+                        <h4 class="title">Journey in the sunset</h4>
+                        <div class="date">2022 July 7</div>
+                        <div class="author">  by kelly</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    </div>
+    <script>
+        const productContainers = [...document.querySelectorAll('.product-container')];
+        const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+        const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+        productContainers.forEach((item, i) => {
+            let containerDimensions = item.getBoundingClientRect();
+            let containerWidth = containerDimensions.width;
+
+            nxtBtn[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth;
+            })
+
+            preBtn[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth;
+            })
+        })
+    </script>
+</body>
+</html>

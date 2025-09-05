@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <style>
+    .container {
+      max-width: 900px;
+      font-family: "Roboto", sans-serif;
+      margin: 0 auto;
+    }
+    
+   
+  
+    </style>
+  </head>
+  <body>
+    <!--<div class="owl-carousel owl-theme"></div>-->
+    <div id="slider">
+
+
+    </div>
+    <script src="main-02.js"></script>
+    <script>
+
+    $(".owl-carousel").owlCarousel({
+      items: 3, // 一次輪播幾個項目
+      loop: true, // 循環輪播
+      margin: 25, // 與右邊圖片的距離
+      nav: true, // 導航文字
+      dots: false,
+
+      autoplay: false, // 自動輪播
+      autoplayTimeout: 1000, // 切換時間
+      autoplayHoverPause: true // 滑鼠經過時暫停
+    })
+
+
+    </script>
+  </body>
+</html>

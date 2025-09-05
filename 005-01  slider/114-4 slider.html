@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+   
+    <title>slick.js</title>
+
+    <style>
+
+       
+        .container {
+          background-color: aqua;
+          margin:50px;
+        }
+
+
+        .slider {
+          padding:0 50px;
+        }
+
+        .dore-arrow::before {
+            color:black;
+            background-color: antiquewhite;
+        }
+
+        .slick-prev, .slick-next {
+          font-size: 0;
+          line-height: 0;
+          position: absolute;
+          top: 50%;
+          display: block;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          -webkit-transform: translate(0, -50%);
+          -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+          cursor: pointer;
+          color: #656565;
+          border: none;
+          outline: none;
+          /*background-color:rgba(233, 233, 233, 0);*/
+          background-color: gray;
+          }
+
+          .slick-prev:hover, 
+          .slick-next:hover {
+             background-color: aqua;
+          }
+
+
+    </style>  
+    
+  
+ 
+  </head>
+  <body>
+
+
+
+
+    <div class="container">
+     
+      <div class="slider single-item">
+        <div>
+        
+          <img src="https://picsum.photos/800/400/?random=1" alt="">
+        </div>
+        <div>
+         
+          <img src="https://picsum.photos/800/400/?random=2" alt="">
+        </div>
+        <div>
+         
+          <img src="https://picsum.photos/800/400/?random=3" alt="">
+        </div>
+        <div>
+        
+          <img src="https://picsum.photos/800/400/?random=4" alt="">
+        </div>
+            .....等
+      </div>
+    </div>
+    
+
+    <script>
+        $('.single-item').slick({
+          dots: false,
+          infinite: true,
+          speed: 500,
+          fade:true,
+          cssEase: 'linear',
+          //arrows: true,
+
+
+         
+        })
+      
+
+   
+       
+    </script>
+
+
+  
+    
+
+    
+   
+  </body>
+</html>

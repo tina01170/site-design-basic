@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+   
+    <title>slick.js</title>
+  
+ 
+  </head>
+  <body>
+    <div class="container">
+      <h2>Responsive Display</h2>
+      <div class="slider fade">
+        <div>
+          <h3>1</h3>
+          <img src="https://picsum.photos/980/400/?random=1" alt="">
+        </div>
+        <div>
+          <h3>2</h3>
+          <img src="https://picsum.photos/980/400/?random=2" alt="">
+        </div>
+        <div>
+          <h3>3</h3>
+          <img src="https://picsum.photos/980/400/?random=3" alt="">
+        </div>
+        <div>
+          <h3>4</h3>
+          <img src="https://picsum.photos/980/400/?random=4" alt="">
+        </div>
+            .....等
+      </div>
+    </div>
+    
+
+    <script>
+        $('.fade').slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear'
+        });
+
+   
+       
+    </script>
+
+
+  
+    
+
+    
+   
+  </body>
+</html>

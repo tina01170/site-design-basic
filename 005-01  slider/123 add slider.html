@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Searcg Funtion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /*navbar */
+
+        .navbar-nav li:hover>ul.dropdown-menu {
+                display: block;
+            }
+            
+            .dropdown-submenu {
+                position: relative;
+            }
+            
+            .dropdown-submenu>.dropdown-menu {
+                top: 0%;
+                left: 100%;
+                margin-top: -3px;
+            }
+            
+            .dropdown-menu>li>a:hover:after {
+                transform: rotate(-90deg);
+                transition: 1s;
+            }
+     
+            .nav{
+                height:70px;
+                
+            }
+            
+            .navbar {
+              background-color: white !important;
+            }
+  
+            li a {
+                color:black !important;
+                font-size: large !important;  
+              
+            }
+            .nav-link {
+                padding:20px;
+            }
+
+            .nav-item {
+                margin: 15px;
+            }
+
+            .nav-item .search-btn{
+                padding-top: 20px;;
+                
+            }
+            @media (max-width:600px){
+                nav{
+                    height:auto;
+                }
+                .nav-link {
+                    padding:10px;
+                }
+            }
+
+        /* search bar*/
+
+        .form {
+            float:left;
+        }
+
+        .search-btn {
+            right:-100px;
+            background-color: white;
+            border: none;
+        }
+
+
+        .product-list {
+            width:400px;
+            padding:10px;
+
+        }
+
+        .product {
+            width:300px;
+            margin:50px;
+            border: 1px solid gray;
+
+        }
+
+        .post-list {
+            width:400px;
+            padding:10px;
+            border: 1px solid gray;
+        }
+
+
+        
+        
+        .post {
+            width:300px;
+            margin:50px;
+            border: 1px solid gray;
+        }
+        
+        .post img{
+
+            width:100%;
+        }
+
+        /* slider */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+  
+        body {
+            margin: 0;
+        }
+        
+        .carousel {
+            width: 95vw;
+            height: 80vh;
+            position: relative;
+            margin:0 22px;
+        }
+        
+        .carousel > ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .slide {
+            position: absolute;
+            inset: 5px;
+            opacity: 0;
+            transition: 200ms opacity ease-in-out;
+            transition-delay: 200ms;
+            top:50px;
+
+           
+        }
+        .slide > img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .slide[data-active] {
+            opacity: 1;
+            z-index: 1;
+            transition-delay: 0ms;
+        }
+        
+        .carousel-button {
+            position: absolute;
+            z-index: 2;
+            background: none;
+            border: none;
+            font-size: 4rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color:white;
+            cursor: pointer;
+            border-radius: .25rem;
+            padding: 0 .5rem;
+            
+        }
+        
+        .carousel-button:hover,
+        .carousel-button:focus {
+            color: white;
+            background-color: rgba(0, 0, 0, .2);
+        }
+        
+        .carousel-button:focus {
+            outline: 1px solid black;
+        }
+        
+        .carousel-button.prev {
+            left: 1rem;
+        }
+        
+        .carousel-button.next {
+            right: 1rem;
+        }
+    </style>
+    <script>
+
+        const search = () =>{
+            const searchbox = document.getElementById("search-item").value.toUpperCase(); 
+            const storeitems = document.getElementById("product-list")
+            const product = document.querySelectorAll('.product')
+            const pname = document.getElementsByTagName("h2")
+
+            for(var i=0; i < pname.length; i++) {
+            let match = product[i].getElementsByTagName("h2")[0];
+
+            if(match) {
+            let textvalue = match.textcontent || match.innerHTML
+                if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+                product[i].style.display = ""; }
+                else{
+                product[i].style.display = "none";
+                    }    
+                }
+            }
+        }
+
+
+        
+
+    </script>
+
+       
+  </head>
+  <body>
+
+    <!--header --------------------------------------------------------------->
+    <div class="banner mb-3">
+
+        <img src="img/Victoria.png" class="w-100">
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      
+        <!-- RWD button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navDropdown2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- 導覽列上的超連結 links on nav -->
+        <div class="collapse navbar-collapse" id="navDropdown2">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="white-travel.html">Travel</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="white-restant.html">Restaurant</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Movie</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+                </li>
+                <!-- 下拉式選單 Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Fashion</a>
+    
+                    <!-- 下拉式選單選項 Dropdown items -->
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Clothes</a></li>
+                        <li><a class="dropdown-item" href="#">shoes</a></li>
+                        
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Accessories</a>
+    
+                            <!-- 子選單Level 2 -->
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="14.html">Stole</a></li>
+                                <li><a class="dropdown-item" href="#">Ascots </a></li>
+                                <li><a class="dropdown-item" href="#">ACape</a></li>
+                                
+                            </ul> 
+                        </li>
+                    </ul>
+    
+    
+                </li>
+                <li class="nav-item">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                        <ul class="dropdown-menu">
+                            <form>
+    
+                                <input type="text" name="" id="search-item" placeholder="Search" 
+                                onkeyup="search()">
+                                
+                            </form>
+                        </ul>
+                </li>
+                
+            </ul>
+            
+        </div>
+        
+        
+       
+    </nav> 
+
+    
+    <!--slider -->
+    <section aria-label="Newest Photos">
+        <div class="carousel" data-carousel>
+            <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+            <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+          
+            
+            
+            
+          <ul data-slides>
+            <li class="slide" data-active>
+              <img src="https:picsum.photos/800/700?random=11" class="w-100" alt="Nature Image #1 ">
+              
+            </li>
+            <li class="slide">
+                <img src="https:picsum.photos/800/700?random=12" class="w-100" alt="Nature Image #2 ">
+            </li>
+            <li class="slide">
+                <img src="https:picsum.photos/800/700?random=13" class="w-100" alt="Nature Image #3 ">
+            </li>
+          </ul>
+        </div>
+      </section>
+      <script>
+        // slider
+        const buttons = document.querySelectorAll("[data-carousel-button]")
+    
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const offset = button.dataset.carouselButton === "next" ? 1 : -1
+                const slides = button
+                .closest("[data-carousel]")
+                .querySelector("[data-slides]")
+    
+                const activeSlide = slides.querySelector("[data-active]")
+                let newIndex = [...slides.children].indexOf(activeSlide) + offset
+                if (newIndex < 0) newIndex = slides.children.length - 1
+                if (newIndex >= slides.children.length) newIndex = 0
+    
+                slides.children[newIndex].dataset.active = true
+                delete activeSlide.dataset.active
+            })
+        })
+      </script>
+  </body>
+</html>
