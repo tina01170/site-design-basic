@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+          header {
+            padding:12px 12px;
+            position: fixed; /*往下滾要固定，所以fixed*/
+            display: flex;
+            justify-content: space-between;
+            top: 0;
+            /*左右靠邊滿版*/
+            right: 0;
+            left: 0;
+            background-color:#EEEEEE;
+          }
+          
+          .logo {
+            font-size: 36px;
+            text-decoration: none;
+            color:#000;
+            margin:10px 20px;
+            display: flex;
+            align-items: center;
+          }
+
+          
+          .header-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          .header-nav .nav-item {
+            list-style: none;
+            color:#000;
+            padding:0 12px;
+            text-align: center;
+          }
+
+          .header-nav .nav-item a {
+            font-size: 20px;
+            text-decoration: none;
+            color:#000;
+            line-height: 1.6;
+          }
+
+          .main {
+            padding-top:60px ;
+          }
+
+          section {
+              padding:20px;
+              margin-bottom: 120px;
+          }
+
+          section .section__title {
+              font-size:24px;
+              margin-bottom:10px;
+          }
+
+          .hambar {
+            width: 45px;
+            height: 45px;
+            font-size: 38px;  
+            /*padding:20px 0;*/
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+          }
+
+          @media all and (max-width: 768px) {   
+            .hambar{
+              display: block;
+            }
+
+            .header-nav  .hambar{
+                display: flex;  
+            }
+            
+            .header-nav {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transform: translateY(100%);
+                background-color: #fff;
+                
+                height: 0px;  /*height設定成 0*/
+                overflow: hidden;
+                transition: all 0.3s;
+            }
+
+            .header-nav .nav-item{
+                width: 100%;
+                border-bottom:1px solid #cccccc;
+            }
+              
+            .header-nav.show{
+                height: 220px;
+                transition: all .3s;
+            }
+          }
+
+    </style>
+
+    <script>
+          $(document).ready(function() {
+              $('.hambar').click(function(){
+                    event.preventDefault();
+                    //可以忽略 a 標籤本身的連結功能，我們只用來當做按鈕就好。
+                    //本次改成：
+                    $('.header-nav').toggleClass('show');  
+              });
+
+
+              /*
+              $('.header-nav li a').click(function(){
+                  //本次改成：
+                  $('.header-nav').removeClass('show');
+              })*/
+
+          });
+
+
+        
+    </script>
+  </head>
+  <body>
+    <header>
+        <a href="#" class="logo">LOGO</a>
+        <ul class="header-nav">
+            <li class="nav-item"><a href="#" title="1">section</a></li>
+            <li class="nav-item"><a href="#" title="2">section2</a></li>
+            <li class="nav-item"><a href="#" title="3">section3</a></li>
+            <li class="nav-item"><a href="#" title="4">section4</a></li>
+            <li class="nav-item"><a href="#" title="5">section5</a></li>
+        </ul>
+        <a class="hambar" href="#"><i class="fas fa-bars"></i></a>
+    </header>
+
+
+    <main class="main">
+      <section id="section--1">
+        <h2 class="section__title">section1</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?</p>
+      </section>
+      <section id="section--2">
+        <h2 class="section__title">section2</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?</p>
+      </section>
+      <section id="section--3">
+        <h2 class="section__title">section3</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?</p>
+      </section>
+     
+    </main>
+    
+
+    
+   
+  </body>
+</html>

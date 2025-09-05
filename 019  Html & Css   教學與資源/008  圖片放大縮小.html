@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>圖片放大縮小</title>
+   
+    <style>
+        .pic{
+           width:320px;
+           height:216px;
+           /*height: auto;*/
+           overflow: hidden;
+        }
+        .pic img{ 
+          transform:scale(1,1);
+          transition: all 1s ease-out;
+          transition:all 0.7s ease-out 0.5s; 
+          transition: all 0.3s ease-out;      
+        }
+        .pic img:hover {
+          transform:scale(1.2,1.2);
+        }
+
+    </style>
+  </head>
+  <body>
+
+      <div class="pic">
+        <img src="images/pexels-23.jpg">
+      </div>
+      <br><br><br><br>
+
+      <div class="item">
+        
+        <div class="pic">
+          <img src="images/pexels-23.jpg">
+        </div>
+        <div class="text">
+          <h2>item title</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+      </div>
+    
+
+    
+   
+  </body>
+</html>

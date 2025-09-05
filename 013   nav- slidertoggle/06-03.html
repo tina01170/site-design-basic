@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+         .site-logo,
+         .site-logo img {
+           width:100%;
+         }
+
+         .top-menu {
+            position: relative;
+         }
+
+         .hambar {
+            width: 45px;
+            height: 45px;
+            font-size: 38px;  
+            padding:20px;
+            display: none;
+           /* display: flex;
+            align-items: center;
+            justify-content: center;*/
+          }
+
+          .menu-toggle {
+              display: block;
+              width:45px;
+              height:45px;
+              margin:20px;
+              padding:0;
+              position: relative;
+              background: none;
+              /* border:1px solid #fff;*/
+              border:none;  
+          }
+
+          .menu-toggle span {
+              display:block;
+              width:36px;
+              height:3px;
+              margin:8px 3px;
+              background-color:#000;
+          }
+
+
+          .header-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          .header-nav .nav-item {
+            list-style: none;
+            color:#000;
+            padding:0 12px;
+            text-align: center;
+          }
+
+          .header-nav .nav-item a {
+            font-size: 20px;
+            text-decoration: none;
+            color:#000;
+            line-height: 20px;
+          }
+
+          @media all and (max-width: 768px) {   
+            .hambar{
+              display: block;
+            }
+            /*
+            .header-nav  .hambar{
+                display: flex;  
+            }
+            */
+            .header-nav {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -20px;
+                
+                transform: translateY(100%);
+                background-color: #f0f0f0;
+                
+                height: 0px;  /*height設定成 0*/
+                overflow: hidden;
+                transition: all 0.9s;
+            }
+
+            
+
+            .header-nav .nav-item{
+               padding:10px 0;
+                
+            }
+
+            .header-nav .nav-item a {
+             
+              font-size: 22px;
+            }
+              
+            .header-nav.show{
+                height: 220px;
+               
+            }
+          }
+
+
+    </style>
+    <script>
+      $(document).ready(() => {
+          $('.hambar').click(function(){
+              event.preventDefault();
+              //可以忽略 a 標籤本身的連結功能，我們只用來當做按鈕就好。
+              //本次改成：
+              $('.header-nav').toggleClass('show');  
+          })
+      });
+
+
+      $(document).ready(() => {
+          $('.menu-toggle').click(function(){
+              event.preventDefault();
+              //可以忽略 a 標籤本身的連結功能，我們只用來當做按鈕就好。
+              //本次改成：
+              $('.header-nav').toggleClass('show');  
+          })
+          /*
+          $('.header-nav li a').click(function(){
+              //本次改成：
+              $('.header-nav').removeClass('show');
+          })*/
+      });
+  </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-logo">
+          <a href="#">
+            <img src="img/Victoria.png">
+          </a>
+      </div>
+      <div class="top-menu">
+          <!--<a class="hambar" href="#"><i class="fas fa-bars"></i></a>-->
+          <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <ul class="header-nav">
+            
+            <li class="nav-item"><a href="#" title="1">section</a></li>
+            <li class="nav-item"><a href="#" title="2">section2</a></li>
+            <li class="nav-item"><a href="#" title="3">section3</a></li>
+            <li class="nav-item"><a href="#" title="4">section4</a></li>
+            <li class="nav-item"><a href="#" title="5">section5</a></li>
+          </ul>
+      </div>
+      
+      
+    </header>
+
+
+    <div class="main">
+      
+        <h2 class="title">section1</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error vitae, debitis unde dicta odio? Ipsam, odio nulla. Dignissimos nisi quisquam officiis dicta illum nesciunt velit architecto soluta harum nostrum?</p>
+      
+    
+    
+    </div>
+    
+
+    
+   
+  </body>
+</html>

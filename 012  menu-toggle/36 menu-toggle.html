@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>menu toggle jquery</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+          
+         
+          .header {
+            width: 960px;
+           
+            
+          }
+
+          .logo {
+            width:80%;
+           
+          }
+
+          .logo a {
+              font-size: 50px;
+              font-weight: 700;
+              text-decoration: none;
+              color:#000;
+          }
+ 
+          .menu-btn span {
+            display: block;
+            width: 19px;
+            height: 3px;
+            margin: 4px 0;
+            background: rgb(0,0,0);
+            z-index: 99;
+          }
+          
+          
+          .responsive-menu{
+            list-style: none;
+            padding-right: 8px;
+            margin-top: 25px;
+            line-height: 1.2;
+            font-size: 18px;
+            font-weight:400;
+            z-index: 99; 
+           
+            position: absolute;
+            top:35px;
+            left:40px;
+            transform: translateY(-160%);
+            transition: 2s;
+          }
+          
+          .expand {
+            transform: translateY(0);
+          }
+
+          .responsive-menu li {
+            margin:10px 0;
+          }
+
+          .responsive-menu a {
+            text-decoration: none;
+            font-size: 20px;
+          }
+          
+          .container {
+            margin: 15px;
+            padding-left:16px;
+            background-color: antiquewhite;
+          }
+
+          .container h3,
+          .container p {
+            padding: 15px;
+          }
+
+
+    </style>
+
+    <script>
+      $(function($){
+          $( '.menu-btn' ).on('click', function(){
+             $('.responsive-menu').toggleClass('expand');
+          })
+      })
+    </script>
+  </head>
+  <body>
+
+      <div class="header">
+          <div class="logo">
+            <a href="#">Victoria
+              <!--<img src="img/Victoria.png">-->
+            </a>
+          </div>
+          <div class="nav">
+            <div class="menu-btn" id="menu-btn">
+          
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <ul class="responsive-menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Webdesign</a></li>
+              <li><a href="#">Sales</a></li>
+            </ul>
+          </div>
+      </div>
+
+    <!--<div class="container">
+      <h3>Vertical Mobile Navbar</h3>
+      <p>This example demonstrates how a navigation menu on a mobile/smart phone could look like.</p>
+      <p>Click on the hamburger menu (three bars) in the top right corner, to toggle the menu.</p>
+    </div>-->
+    
+
+    
+   
+  </body>
+</html>

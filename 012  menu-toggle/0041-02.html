@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>menu toggle jquery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        .main-navigation .toggle {
+          display: block;
+          cursor: pointer;
+          /*position: absolute;*/
+          top:10px;
+          left:20px;
+          background-color: #fff;
+          border:none;
+          
+        }
+
+      
+        .main-navigation .toggle .bar{
+          display: block;
+          width: 25px;
+          height: 3px;
+          margin: 5px auto;
+          -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+          background-color: #000;
+        }
+     
+        .nav-menu {
+          list-style: none;
+        }
+
+        .nav-menu li {
+          margin: 10px;
+        }
+     
+    </style>    
+  </head>
+  <body>
+    <header>
+        <nav class="main-navigation">
+            <button class="toggle" onclick="myFunction()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Travel</a></li>
+              <li><a href="#">fashion</a></li>
+              <li><a href="#">food</a></li>
+              <li><a href="#">Life-style</a>
+              </li>
+
+              <li><a href="#">About</a></li>
+            </ul>  
+        </nav><!-- #site-navigation -->
+
+    </header>
+
+    <div class="container">
+      <h3>Vertical Mobile Navbar</h3>
+      <p>This example demonstrates how a navigation menu on a mobile/smart phone could look like.</p>
+      <p>Click on the hamburger menu (three bars) in the top right corner, to toggle the menu.</p>
+    </div>
+    
+    <script>
+      function myFunction() {
+        var x = document.getElementsByClassName('.nav-menu')
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+   
+   
+  </body>
+</html>

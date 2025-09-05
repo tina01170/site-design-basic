@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .item { width:33%;}
+      .item img { width:100%;}
+      .item:nth-child(2) img { filter: grayscale(100%);}
+      .item:nth-child(3) img { filter: sepia(100%); }
+      .item:nth-child(4) img { filter: blur(2px); }
+      .item:nth-child(5) img { filter: brightness(0.70); }
+ 
+      .item:nth-child(6) img { filter: contrast(270%); }
+      .item:nth-child(7) img { filter: invert(20%); }
+      .item:nth-child(8) img { filter: saturate(300%); }
+      .item:nth-child(9) img { filter: hue-rotate(180deg); }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">
+        <img src="images/autumn.jpg" alt="cat">
+      </div>
+      <div class="item">
+        <img src="images/autumn.jpg" alt="cat">
+        <h3>灰階</h3>
+      </div>
+      <div class="item">
+        <img src="images/autumn.jpg" alt="cat">
+        <h3>棕褐色</h3>
+      </div>
+      <div class="item">
+        <img src="images/autumn.jpg" alt="cat">
+        <h3>模糊</h3>
+      </div>
+      <div class="item">
+        <img src="images/autumn.jpg" alt="cat">
+        <h3>亮度</h3>
+      </div>
+      <div class="item">
+        <img src="images/autumn.jpg" alt="cat">
+        <h3>對比</h3>
+      </div> 
+      <div class="item">
+        <img src="images/autumn.jpg" alt="cat">
+        <h3>反轉</h3>
+      </div> 
+      <div class="item">
+        <img src="images/autumn.jpg" alt="cat">
+        <h3>影像飽合</h3>
+      </div>
+      <div class="item">
+        <img src="images/autumn.jpg" alt="cat">
+        <h3>色相旋轉</h3>
+      </div>
+
+
+    </div>
+    
+    
+
+    
+   
+  </body>
+</html>

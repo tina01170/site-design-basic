@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>menu toggle js</title>
+
+
+    <style>
+         /*
+        .main-navigation {
+          display: block;
+          width: 100%;
+          position: relative;
+          margin-top:1.5em;
+          
+        } 
+
+        .main-navigation ul {
+        display:none;
+          list-style: none;
+          margin:0;
+          padding-left: 0.625em;
+          width:100%;
+          
+        }
+
+        .main-navigation ul li.menu-item-has-children>a::after {
+            line-height: 1;
+            font-family: Font Awesome\ 5 Free;
+            font-weight:800;
+            line-height: inherit;
+            vertical-align: baseline;
+            content: "\f107";
+            display: inline-block;
+          margin-inline-start: 10px;
+
+        }*/
+
+       
+
+          .menu-toggle {
+              display: block;
+          }
+
+          .menu-toggle.active .bar:nth-child(2){
+              opacity: 0;
+          }
+
+          .menu-toggle.active .bar:nth-child(1){
+              transform: translateY(8px) rotate(45deg);
+          }
+
+          .menu-toggle.active .bar:nth-child(3){
+              transform: translateY(-8px) rotate(-45deg);
+          }
+        
+          .nav-menu {
+            list-style: none;
+            background-color: beige;
+            text-align: center;
+            width:97%;
+           /* position: absolute;*/
+           /* top:-100%;*/
+            left:-100%;
+            padding-right:10px;
+            
+          }
+
+          .nav-menu.active {
+            /*top:70px;*/
+            left:0;
+          }
+          
+        
+        /*
+        .main-navigation ul ul li:hover > ul,
+        .main-navigation ul ul li.focus > ul 
+        {
+          display: block;
+            left:8.75em;
+        }
+
+        .main-navigation ul li:hover > ul,
+        .main-navigation ul li.focus > ul {
+          display: block;
+          left: auto;
+        }  
+
+        .main-navigation ul ul {
+            display: none;
+        }*/
+
+        .main-navigation li {
+            position:relative;
+          padding:0 0.75em;
+
+        }
+
+        .main-navigation a {
+          text-decoration: none;
+          font-size: 1.125em;
+          color:#000;
+          text-transform: uppercase;	
+        }
+
+        .main-navigation li a:hover {
+          color:#000;
+          
+        }
+
+
+        /* Small menu. */
+        .menu-toggle {
+          display: block;
+        }
+
+        .menu-toggle {
+          display: block;
+          width: 2.8125em;
+            height: 2.8125em;
+          margin:1.25em;
+          padding:0;
+          position: relative;
+            background: none;
+            border: none;
+            
+        }
+
+        .menu-toggle span {
+          display:block;
+          width:2.375em;
+          height:0.1875em;
+          margin:0.5em 0.125em;
+          background-color:#000;
+        }
+
+    
+
+        /*      
+        @media screen and (min-width: 50em) {
+
+          .menu-toggle {
+            display: none;
+          }
+          
+          .main-navigation ul {
+            display: flex;
+              padding:0.75em;
+            
+          }
+
+          .main-navigation ul ul {
+            display:block;
+            width:12.5em;
+            padding-left:0.75em;	
+          }
+          
+          .main-navigation ul ul li{	
+            padding:0.5em;
+          }
+
+          .main-navigation ul ul {
+              box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+              float: left;
+              position: absolute;
+                top: 100%;
+                left: -999em;
+                z-index: 99;
+            background-color:#fff;
+            }
+
+          .main-navigation ul ul ul {                
+            top: 1.875em;
+            left: -999em;
+            background-color:#fff;
+          }
+
+          .main-navigation ul .sub-menu li a{
+            color:#000;
+          }
+
+          .main-navigation ul li ul li a:hover{
+            color:#2894ff;
+          }
+          
+          
+        }*/
+        
+
+        .container {
+            margin: 15px;
+            padding-left:16px;
+            background-color: antiquewhite;
+        }
+
+        .container h3,
+        .container p {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>  
+
+        <nav id="site-navigation" class="main-navigation">
+            <button class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Travel</a></li>
+              <li><a href="#">fashion</a></li>
+              <li><a href="#">food</a></li>
+              <li><a href="#">Life-style</a></li>
+              <li><a href="#">About</a></li>
+            </ul>  
+        </nav><!-- #site-navigation -->
+
+        <div class="container">
+          <h3>Vertical Mobile Navbar</h3>
+          <p>This example demonstrates how a navigation menu on a mobile/smart phone could look like.</p>
+          <p>Click on the hamburger menu (three bars) in the top right corner, to toggle the menu.</p>
+        </div>
+  
+  
+        <script>
+          const toggle = document.querySelector(".menu-toggle");
+          const navMenu = document.querySelector(".nav-menu");
+    
+          toggle.addEventListener("click", () => {
+            toggle.classList.toggle("active");
+            navMenu.classList.toggle("active");
+          })
+        </script>
+         
+        
+</body>
+</html>  
